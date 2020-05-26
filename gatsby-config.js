@@ -5,6 +5,28 @@
  */
 
 module.exports = {
+  siteMetadata: {
+    title: `portfolio`,
+    description: `jmreyesortiz.com portfolio`,
+  },
+
   /* Your site config here */
-  plugins: [],
+  plugins: [
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/pages/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images/`,
+      },
+    },
+  ],
 }
