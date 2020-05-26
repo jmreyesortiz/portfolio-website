@@ -1,7 +1,13 @@
 import React from "react"
+import Logo from "./Logo"
 
 const Navbar = () => {
-  return <h1>This is Navbar</h1>
+  return (
+    <>
+      <Logo></Logo>
+      <h1>This is Navbar</h1>
+    </>
+  )
 }
 
 export default Navbar
