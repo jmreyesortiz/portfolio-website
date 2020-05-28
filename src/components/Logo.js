@@ -1,6 +1,9 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 import Image from "gatsby-image"
+import styled from "styled-components"
+
+const LogoW = styled.div``
 
 const Logo = () => {
   const data = useStaticQuery(graphql`
@@ -15,7 +18,11 @@ const Logo = () => {
     }
   `)
 
-  return <Image fluid={data.file.childImageSharp.fluid}></Image>
+  return (
+    <LogoW as={Link} to="/">
+      <Image fluid={data.file.childImageSharp.fluid} alt="logo"></Image>
+    </LogoW>
+  )
 }
 
 export default Logo
