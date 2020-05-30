@@ -3,20 +3,31 @@ import { Link } from "gatsby"
 import { v4 as uuidv4 } from "uuid"
 import styled from "styled-components"
 
-const LinkLi = styled.li`
+const LinkLi = styled.li``
+
+const NavLinks = styled.ul`
+  display: none;
   @media screen and (min-width: 768px) {
     display: flex;
     justify-content: flex-end;
-    margin-left: 2rem;
+    list-style-type: none;
+
+    li {
+      margin-right: 2rem;
+    }
     a {
-      text-transform: capitalize;
-      color: "#bb2525";
+      color: ${({ theme }) => theme.colorGrey1};
       font-weight: bold;
-      letter-spacing: 0.2rem;
-      transition: all 0.3s linear;
+      font-size: x-large;
+      font-family: ${({ theme }) => theme.secondaryFont};
+      letter-spacing: ${({ theme }) => theme.spacing};
+      transition: ${({ theme }) => theme.transition};
       padding: 0.5rem 0;
+      color: ${({ theme }) => theme.colorPrimary};
     }
     a:hover {
+      color: ${({ theme }) => theme.colorPrimary7};
+      box-shadow: 0px 2px ${({ theme }) => theme.colorPrimary7};
     }
   }
 `
@@ -58,7 +69,7 @@ const temporalLinks = data.map(link => {
 })
 
 const Links = () => {
-  return <>{temporalLinks}</>
+  return <NavLinks>{temporalLinks}</NavLinks>
 }
 
 export default Links

@@ -1,6 +1,6 @@
-import React, { useState } from "react"
+import React from "react"
 import Layout from "../components/layout"
-import GlobalStyles from "../styles/fonts/styles.js"
+import GlobalStyles from "../styles/fonts/GlobalStyles.js"
 import Hero from "../components/Hero"
 import { ThemeProvider } from "styled-components"
 import { lightTheme, darkTheme } from "../components/Themes"
@@ -15,7 +15,6 @@ export default function Home() {
       <>
         <Layout>
           <Hero></Hero>
-          <button onClick={themeToggler}>Switch Theme</button>
           <Toggle theme={theme} toggleTheme={themeToggler}></Toggle>
           <GlobalStyles />
         </Layout>

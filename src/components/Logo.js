@@ -3,7 +3,13 @@ import { graphql, useStaticQuery, Link } from "gatsby"
 import Image from "gatsby-image"
 import styled from "styled-components"
 
-const LogoW = styled.div``
+const LogoW = styled.div`
+  @media screen and (min-width: 768px) {
+    width: 80px;
+  }
+  @media screen and (max-width: 768px) {
+  }
+`
 
 const Logo = () => {
   const data = useStaticQuery(graphql`
