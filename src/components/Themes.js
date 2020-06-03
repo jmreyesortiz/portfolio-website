@@ -9,7 +9,7 @@ export const lightTheme = {
   colorSun: "#FFAB00",
 
   // Primary Colors
-  colorPrimary: "#044e53",
+  colorPrimary1: "#044e53",
   colorPrimary2: "#0a6c75",
   colorPrimary3: "#0e7c86",
   colorPrimary4: "#149199",

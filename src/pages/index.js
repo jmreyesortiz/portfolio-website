@@ -6,8 +6,15 @@ import { ThemeProvider } from "styled-components"
 import { lightTheme, darkTheme } from "../components/Themes"
 import { Toggle } from "../components/Toggler"
 import { useDarkMode } from "../components/useDarkMode"
+import Projects from "../components/Projects.js"
+import { graphql } from "gatsby"
 
-export default function Home() {
+export default function Home({ data }) {
+  //destructuring
+  const {
+    allStrapiProjects: { nodes: projects },
+  } = data
+
   const [theme, themeToggler] = useDarkMode()
   const themeMode = theme === "light" ? lightTheme : darkTheme
   return (
@@ -15,6 +22,7 @@ export default function Home() {
       <>
         <Layout>
           <Hero></Hero>
+          <Projects booleanLink projects={projects} title="Projects" />
           <Toggle theme={theme} toggleTheme={themeToggler}></Toggle>
           <GlobalStyles />
         </Layout>
@@ -22,3 +30,28 @@ export default function Home() {
     </ThemeProvider>
   )
 }
+
+export const query = graphql`
+  {
+    allStrapiProjects(filter: { featured: { eq: true } }) {
+      nodes {
+        github
+        id
+        description
+        title
+        url
+        image {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        stack {
+          id
+          title
+        }
+      }
+    }
+  }
+`

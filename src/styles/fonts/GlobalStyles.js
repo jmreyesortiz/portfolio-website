@@ -36,6 +36,17 @@ h1{
   font-family: ${({ theme }) => theme.primaryFont};
 }
 
+p {
+  margin-bottom: 1.25rem;
+  font-family: ${({ theme }) => theme.colorGrey3};
+}
+
+ul{
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
 
 @media screen and (min-width: 800px) {
   h1 {
@@ -101,17 +112,7 @@ text-transform: uppercase;
 }
 
 
-p {
-  margin-bottom: 1.25rem;
-  font-family: ${({ theme }) => theme.colorGrey3};
-}
 
-ul{
-  list-style-type: none;
-}
-a {
-  text-decoration: none;
-}
 
 
 
