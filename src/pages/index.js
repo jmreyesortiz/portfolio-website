@@ -1,33 +1,25 @@
 import React from "react"
-import Layout from "../components/layout"
-import GlobalStyles from "../styles/fonts/GlobalStyles.js"
+import Layout from "../components/Layout"
 import Hero from "../components/Hero"
-import { ThemeProvider } from "styled-components"
-import { lightTheme, darkTheme } from "../components/Themes"
-import { Toggle } from "../components/Toggler"
-import { useDarkMode } from "../components/useDarkMode"
 import Projects from "../components/Projects.js"
 import { graphql } from "gatsby"
+import Blogs from "../components/Blogs"
 
-export default function Home({ data }) {
+export default ({ data }) => {
   //destructuring
   const {
     allStrapiProjects: { nodes: projects },
+    allStrapiBlogs: { nodes: blogs },
   } = data
 
-  const [theme, themeToggler] = useDarkMode()
-  const themeMode = theme === "light" ? lightTheme : darkTheme
   return (
-    <ThemeProvider theme={themeMode}>
-      <>
-        <Layout>
-          <Hero></Hero>
-          <Projects booleanLink projects={projects} title="Projects" />
-          <Toggle theme={theme} toggleTheme={themeToggler}></Toggle>
-          <GlobalStyles />
-        </Layout>
-      </>
-    </ThemeProvider>
+    <>
+      <Layout>
+        <Hero></Hero>
+        <Projects booleanLink projects={projects} title="Projects" showLink />
+        <Blogs blogs={blogs} title="Latest Articles" showLink></Blogs>
+      </Layout>
+    </>
   )
 }
 
@@ -50,6 +42,25 @@ export const query = graphql`
         stack {
           id
           title
+        }
+      }
+    }
+
+    allStrapiBlogs(sort: { fields: date, order: DESC }, limit: 3) {
+      nodes {
+        slug
+        content
+        desc
+        date(formatString: "MMM Do, YYYY")
+        id
+        title
+        category
+        image {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
         }
       }
     }

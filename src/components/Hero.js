@@ -7,13 +7,13 @@ const Hero = () => {
     <HeroHeader>
       <HeroCenter>
         <HeroInfo>
-          <div>
+          <section>
             <Underline></Underline>
             <h1>I'm Juan Reyes Ortiz</h1>
             <h4>Web Developer and Android Developer</h4>
             <HeroButton>Click</HeroButton>
             <SocialLinks />
-          </div>
+          </section>
         </HeroInfo>
       </HeroCenter>
     </HeroHeader>
@@ -47,7 +47,7 @@ const HeroHeader = styled.header`
     font-size: 1rem;
   }
 `
-const HeroCenter = styled.div`
+const HeroCenter = styled.section`
   height: 100%;
   display: grid;
   align-items: center;
@@ -72,7 +72,7 @@ const HeroInfo = styled.article`
     grid-column: 1 / span 8;
   }
 `
-const Underline = styled.div`
+const Underline = styled.section`
   margin-right: auto;
   margin-bottom: 0.5rem;
   margin-left: 0;

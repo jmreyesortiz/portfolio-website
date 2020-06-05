@@ -17,16 +17,13 @@ const Project = ({ description, title, github, stack, url, image, index }) => {
           })}
         </ProjStack>
         <ProjLinks>
-          <ProjIcon>
-            <ProjIconLink href={github}>
-              <FaGithubSquare />
-            </ProjIconLink>
-          </ProjIcon>
-          <ProjIcon>
-            <ProjIconLink href={github}>
-              <FaShareSquare />
-            </ProjIconLink>
-          </ProjIcon>
+          <ProjIconLink href={github}>
+            <FaGithubSquare />
+          </ProjIconLink>
+
+          <ProjIconLink href={github}>
+            <FaShareSquare />
+          </ProjIconLink>
         </ProjLinks>
       </ProjInfo>
     </Proj>
@@ -35,30 +32,31 @@ const Project = ({ description, title, github, stack, url, image, index }) => {
 
 export default Project
 
-const Proj = styled.div`
+export const Proj = styled.section`
   display: grid;
   margin-bottom: 5rem;
-
-  :hover {
-    & ::after ${ProjImage} {
-      opacity: 0;
-    }
-  }
 
   @media screen and (min-width: 992px) {
     grid-template-columns: repeat(12, 1fr);
     align-items: center;
     /*
-    :nth-of-type(even) {
-       {
-        opacity: 0;
-      }
+    :nth-of-type(even) & ::after{ProjImage}{
+      
+        grid-column: 5 / -1;
+        grid-row: 1 / 1;
+      
+    
     }
-    */
+  
+  */
   }
 `
 
-const ProjImage = styled(Image)`
+export const ProjImage = styled(Image)`
+  ${Proj}:hover & ::after {
+    opacity: 0;
+  }
+
   border-top-left-radius: ${({ theme }) => theme.radius};
   border-top-right-radius: ${({ theme }) => theme.radius};
   height: 19rem;
@@ -98,19 +96,20 @@ const ProjImage = styled(Image)`
   }
 `
 
-const ProjNumber = styled.span`
+export const ProjNumber = styled.span`
   display: inline-block;
   font-size: 1.25rem;
   color: ${({ theme }) => theme.colorPrimary5};
   margin-bottom: 0.75rem;
 `
-const ProjTitle = styled.h3``
+export const ProjTitle = styled.h3``
 
-const ProjDesc = styled.span`
+export const ProjDesc = styled.p`
+  margin-bottom: 1.25rem;
   word-spacing: 15px;
   color: ${({ theme }) => theme.colorGrey3};
 `
-const ProjStack = styled.div`
+export const ProjStack = styled.section`
   margin-bottom: 1rem;
   span {
     display: inline-block;
@@ -124,8 +123,8 @@ const ProjStack = styled.div`
     font-size: 0.75rem;
   }
 `
-const ProjInfo = styled.div`
-  background: ${({ theme }) => theme.white};
+export const ProjInfo = styled.section`
+  background: ${({ theme }) => theme.colorWhite};
   padding: 1rem 2rem;
   border-bottom-left-radius: ${({ theme }) => theme.radius};
   border-bottom-right-radius: ${({ theme }) => theme.radius};
@@ -145,11 +144,9 @@ const ProjInfo = styled.div`
   }
 `
 
-const ProjLinks = styled.div``
+export const ProjLinks = styled.section``
 
-const ProjIcon = styled.div``
-
-const ProjIconLink = styled.a`
+export const ProjIconLink = styled.a`
   color: ${({ theme }) => theme.colorPrimary5};
   font-size: 1.25rem;
   margin-right: 0.5rem;

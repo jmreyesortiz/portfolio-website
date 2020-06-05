@@ -10,13 +10,13 @@ const Title = ({ title }) => {
   )
 }
 
-const SectionTitle = styled.div`
+const SectionTitle = styled.section`
   margin-bottom: 4rem;
   text-align: center;
 `
 
 const DefaultTitle = styled.h2``
-const Underline = styled.div`
+const Underline = styled.section`
   width: 5rem;
   height: 0.25rem;
   margin-bottom: 1.25rem;

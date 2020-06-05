@@ -3,7 +3,7 @@ import { graphql, useStaticQuery, Link } from "gatsby"
 import Image from "gatsby-image"
 import styled from "styled-components"
 
-const LogoW = styled.div`
+const LogoW = styled.section`
   @media screen and (min-width: 768px) {
     width: 80px;
   }

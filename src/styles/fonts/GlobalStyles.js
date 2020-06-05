@@ -38,7 +38,7 @@ h1{
 
 p {
   margin-bottom: 1.25rem;
-  font-family: ${({ theme }) => theme.colorGrey3};
+  font-family: ${({ theme }) => theme.primaryFont};
 }
 
 ul{

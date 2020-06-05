@@ -20,7 +20,7 @@ const SectionProjects = styled.section`
   padding: 5rem 0;
   background: ${({ theme }) => theme.colorGrey10};
 `
-const ProjectsCenter = styled.div`
+const ProjectsCenter = styled.section`
   width: 90vw;
   margin: 0 auto;
   max-width: 1170px;

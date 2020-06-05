@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { func, string } from "prop-types"
 
-const DarkModeToggle = styled.div`
+const DarkModeToggle = styled.section`
   display: flex;
   margin: 0 auto;
   & > button {

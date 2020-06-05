@@ -17,7 +17,7 @@ const Nav = styled.nav`
   @media screen and (min-width: 992px) {
   }
 `
-const NavCenter = styled.div`
+const NavCenter = styled.section`
   width: 90vw;
   max-width: 1170px;
   margin: 0 auto;
@@ -28,7 +28,7 @@ const NavCenter = styled.div`
     align-items: center;
   }
 `
-const NavHeader = styled.div`
+const NavHeader = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
