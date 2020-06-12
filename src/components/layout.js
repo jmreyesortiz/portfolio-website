@@ -5,6 +5,7 @@ import { useDarkMode } from "./useDarkMode"
 import { Toggle } from "./Toggler"
 import { lightTheme, darkTheme } from "./Themes"
 import GlobStyles from "../styles/fonts/GlobalStyles.js"
+import { Footer } from "./Footer"
 
 const Layout = ({ children }) => {
   const [theme, themeToggler] = useDarkMode()
@@ -16,6 +17,7 @@ const Layout = ({ children }) => {
         {children}
         <Toggle theme={theme} toggleTheme={themeToggler}></Toggle>
         <GlobStyles />
+        <Footer />
       </ThemeProvider>
     </>
   )

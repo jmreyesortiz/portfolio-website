@@ -1,20 +1,9 @@
 import React from "react"
 import { v4 as uuidv4 } from "uuid"
-import {
-  FaFacebookSquare,
-  FaLinkedin,
-  FaDribbbleSquare,
-  FaBehanceSquare,
-  FaTwitterSquare,
-} from "react-icons/fa"
+import { FaLinkedin, FaGithub, FaMedium, FaTwitterSquare } from "react-icons/fa"
 import styled from "styled-components"
 
 const data = [
-  {
-    id: uuidv4,
-    icon: <FaFacebookSquare className="social-icon"></FaFacebookSquare>,
-    url: "https://www.twitter.com",
-  },
   {
     id: uuidv4,
     icon: <FaLinkedin className="social-icon"></FaLinkedin>,
@@ -22,12 +11,12 @@ const data = [
   },
   {
     id: uuidv4,
-    icon: <FaDribbbleSquare className="social-icon"></FaDribbbleSquare>,
+    icon: <FaGithub className="social-icon"></FaGithub>,
     url: "https://www.twitter.com",
   },
   {
     id: uuidv4,
-    icon: <FaBehanceSquare className="social-icon"></FaBehanceSquare>,
+    icon: <FaMedium className="social-icon"></FaMedium>,
     url: "https://www.twitter.com",
   },
   {
@@ -46,7 +35,6 @@ const SocialLink = styled.a`
   }
 `
 const SocialLinks = styled.ul`
-  justify-items: flex-start;
   margin-top: 2rem;
   width: 15rem;
   display: flex;

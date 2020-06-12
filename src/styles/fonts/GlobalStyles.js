@@ -48,6 +48,26 @@ a {
   text-decoration: none;
 }
 
+
+footer{
+  place-items: center;
+  height: rem;
+  background: #222;
+  text-align: center;
+  display: grid;
+  
+}
+footer h4 {
+  margin-top: 0.5rem;
+  color: ${({ theme }) => theme.colorWhite};
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+footer h4 span{
+ color: ${({ theme }) => theme.colorPrimary5};
+}
+
 @media screen and (min-width: 800px) {
   h1 {
     font-size: 4rem;
