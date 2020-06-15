@@ -17,10 +17,9 @@ const Project = ({ description, title, github, stack, url, image, index }) => {
           })}
         </ProjStack>
         <ProjLinks>
-          <ProjIconLink href={github}>
+          <ProjIconLink href={url}>
             <FaGithubSquare />
           </ProjIconLink>
-
           <ProjIconLink href={github}>
             <FaShareSquare />
           </ProjIconLink>

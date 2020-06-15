@@ -1,22 +1,25 @@
 import React from "react"
-import SocialLinks from "../constants/socialLinks"
 import styled from "styled-components"
+
+import SocialLinks from "../constants/SocialLinks"
 
 export const Footer = () => {
   return (
     <InnerFooter>
-      <FooterLinks />
-      <h4>copyright&copy;{new Date().getFullYear}</h4>
-      <Span>jmreyesortiz.com</Span> All Rights Reserved
+      <SocialLinks />
+      <h4>Copyright&copy;{new Date().getFullYear}</h4>
+      <Span>Jmreyesortiz All Rights Reserved</Span>
     </InnerFooter>
   )
 }
 
-const InnerFooter = styled.footer``
-const FooterLinks = styled(SocialLinks)`
+const InnerFooter = styled.footer`
   margin: 0 auto 1rem auto;
-  color: ${({ theme }) => theme.colorWhite};
+  h4 {
+    color: ${({ theme }) => theme.colorPrimary9};
+  }
 `
+
 const Span = styled.span`
-  color: ${({ theme }) => theme.colorPrimary5};
+  color: ${({ theme }) => theme.colorPrimary9};
 `

@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import SocialLinks from "../constants/socialLinks"
+import SocialLinks from "../constants/SocialLinks"
 
 const Hero = () => {
   return (
@@ -12,7 +12,7 @@ const Hero = () => {
             <h1>I'm Juan Reyes Ortiz</h1>
             <h4>Web Developer and Android Developer</h4>
             <HeroButton>Click</HeroButton>
-            <SocialLinks />
+            <SocialLinks color="white" />
           </section>
         </HeroInfo>
       </HeroCenter>
@@ -24,7 +24,7 @@ const HeroHeader = styled.header`
   margin-top: -5rem;
   padding-top: 5rem;
   height: 100vh;
-  background: ${({ theme }) => theme.colorPrimary10};
+  background: ${({ theme }) => theme.colorPrimary7};
   position: relative;
 
   @media screen and (min-width: 992px) {
@@ -60,7 +60,7 @@ const HeroCenter = styled.section`
   }
 `
 const HeroInfo = styled.article`
-  background: ${({ theme }) => theme.colorPrimary10};
+  background: ${({ theme }) => theme.colorPrimary7};
   h4 {
     color: ${({ theme }) => theme.colorGrey5};
   }

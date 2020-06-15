@@ -3,6 +3,14 @@ import { v4 as uuidv4 } from "uuid"
 import { FaLinkedin, FaGithub, FaMedium, FaTwitterSquare } from "react-icons/fa"
 import styled from "styled-components"
 
+const SocialLinks = ({ color }) => {
+  return (
+    <>
+      <SocLinks>{Links(data, color)}</SocLinks>
+    </>
+  )
+}
+
 const data = [
   {
     id: uuidv4,
@@ -27,28 +35,39 @@ const data = [
 ]
 
 const SocialLink = styled.a`
+  ${props => {
+    const newColor = props.defineColor
+    if (newColor === "white") {
+      return { color: props.theme.colorWhite }
+    } else {
+      return { color: props.theme.colorPrimary7 }
+    }
+  }};
   font-size: 1.75rem;
-  color: ${({ theme }) => theme.colorGrey1};
   transition: ${({ theme }) => theme.transition};
   &:hover {
     color: ${({ theme }) => theme.colorPrimary5};
   }
 `
-const SocialLinks = styled.ul`
+
+const SocLinks = styled.ul`
   margin-top: 2rem;
   width: 15rem;
   display: flex;
   justify-content: space-between;
 `
 
-const links = data.map(link => {
-  return (
-    <li key={link.id}>
-      <SocialLink href={link.url}>{link.icon}</SocialLink>
-    </li>
-  )
-})
-
-export default socialLinks => {
-  return <SocialLinks>{links}</SocialLinks>
+function Links(data, color) {
+  return data.map(link => {
+    return (
+      <li key={link.id}>
+        {console.log("col" + color)}
+        <SocialLink defineColor={color} href={link.url}>
+          {link.icon}
+        </SocialLink>
+      </li>
+    )
+  })
 }
+
+export default SocialLinks

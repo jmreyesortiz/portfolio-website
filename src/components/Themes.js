@@ -29,6 +29,11 @@ export const lightTheme = {
   colorGrey8: "#bcccdc",
   colorGrey9: "#dae2ec",
   colorGrey10: "#f1f5f8",
+  // Red Colors
+  colorGreenDark: "#1d9527",
+  colorRedDark: "#bb2525",
+  colorRedLight: "#e66b6b",
+
   colorGreenDark: "#1d9527",
   colorRedDark: "#bb2525",
   colorRedLight: "#e66b6b",

@@ -6,6 +6,7 @@ import { Toggle } from "./Toggler"
 import { lightTheme, darkTheme } from "./Themes"
 import GlobStyles from "../styles/fonts/GlobalStyles.js"
 import { Footer } from "./Footer"
+import SideBar from "../components/Sidebar"
 
 const Layout = ({ children }) => {
   const [theme, themeToggler] = useDarkMode()
@@ -14,6 +15,7 @@ const Layout = ({ children }) => {
     <>
       <ThemeProvider theme={themeMode}>
         <Navbar />
+        <SideBar />
         {children}
         <Toggle theme={theme} toggleTheme={themeToggler}></Toggle>
         <GlobStyles />
