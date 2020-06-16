@@ -3,6 +3,44 @@ import { Link } from "gatsby"
 import { v4 as uuidv4 } from "uuid"
 import styled from "styled-components"
 
+const SideLinks = styled.ul`
+  li {
+    opacity: 1;
+    animation: slideRight 0.5s ease-in-out 0.3s forwards;
+  }
+  li a {
+    display: block;
+    text-align: center;
+    text-transform: capitalize;
+    color: ${({ theme }) => theme.colorGrey5};
+    letter-spacing: ${({ theme }) => theme.spacing};
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    transition: ${({ theme }) => theme.transition};
+    border-radius: ${({ theme }) => theme.radius};
+  }
+  li a:hover {
+    background: ${({ theme }) => theme.colorPrimary9};
+    color: ${({ theme }) => theme.colorPrimary5};
+  }
+  /* Animations */
+  li:nth-of-type(1) {
+    animation-delay: 0.25s;
+  }
+  li:nth-of-type(2) {
+    animation-delay: 0.5s;
+  }
+  li:nth-of-type(3) {
+    animation-delay: 0.75s;
+  }
+  li:nth-of-type(4) {
+    animation-delay: 1s;
+  }
+  li:nth-of-type(5) {
+    animation-delay: 1.25s;
+  }
+`
+
 const LinkLi = styled.li``
 
 const NavLinks = styled.ul`
@@ -11,7 +49,6 @@ const NavLinks = styled.ul`
     display: flex;
     justify-content: flex-end;
     list-style-type: none;
-
     li {
       margin-right: 2rem;
     }
@@ -68,7 +105,13 @@ const temporalLinks = data.map(link => {
   )
 })
 
-const Links = () => {
+const Links = ({ sideLinks, showSideBar }) => {
+  return func1(sideLinks)
+}
+
+function func1(sideLinks, showSideBar) {
+  if (sideLinks === "sidebar") {
+  }
   return <NavLinks>{temporalLinks}</NavLinks>
 }
 
