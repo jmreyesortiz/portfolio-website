@@ -105,12 +105,13 @@ const temporalLinks = data.map(link => {
   )
 })
 
-const Links = ({ sideLinks, showSideBar }) => {
+const Links = ({ sideLinks }) => {
   return func1(sideLinks)
 }
 
-function func1(sideLinks, showSideBar) {
+function func1(sideLinks, sideBarBool) {
   if (sideLinks === "sidebar") {
+    return <SideLinks>{temporalLinks}</SideLinks>
   }
   return <NavLinks>{temporalLinks}</NavLinks>
 }

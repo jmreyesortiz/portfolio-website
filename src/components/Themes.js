@@ -52,6 +52,10 @@ export const lightTheme = {
   darkShadow: "0 5px 15px rgba(0, 0, 0, 0.2)",
   MaxWidth: "1170px",
   FixedWidth: "700px",
+
+  //SideBar
+  showSideBar: "translateX(0%)",
+  hideSideBar: "translateX(100%)",
 }
 
 export const darkTheme = {

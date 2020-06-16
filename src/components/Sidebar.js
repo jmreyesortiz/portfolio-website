@@ -5,10 +5,11 @@ import { FaTimes } from "react-icons/fa"
 import SocialLinks from "../constants/SocialLinks"
 import { keyframes } from "styled-components"
 
-const SideBar = () => {
+const SideBar = ({ isOpen, toggleSidebar }) => {
+  const sideBarBool = true
   return (
-    <SBar>
-      <CloseButton>
+    <SBar sideBarBool={isOpen}>
+      <CloseButton onClick={toggleSidebar}>
         <FaTimes />
       </CloseButton>
       <div>
@@ -30,7 +31,9 @@ const SBar = styled.aside`
   display: grid;
   place-items: center;
   opacity: 1;
-  transform: translateX(0);
+  opacity: ${props => (props.sideBarBool ? 1 : 0)};
+  transform: ${props =>
+    props.sideBarBool ? props.theme.showSideBar : props.theme.hideSideBar};
   transition: ${({ theme }) => theme.transition};
   @media screen and (min-width: 992px) {
     transform: translateX(-100%);

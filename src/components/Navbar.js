@@ -50,14 +50,14 @@ const ToggleButton = styled.button`
   }
 `
 
-const Navbar = () => {
+const Navbar = ({ toggleSidebar }) => {
   return (
     <>
       <Nav>
         <NavCenter>
           <NavHeader>
             <Logo />
-            <ToggleButton>
+            <ToggleButton onClick={toggleSidebar}>
               <FaAlignRight />
             </ToggleButton>
           </NavHeader>

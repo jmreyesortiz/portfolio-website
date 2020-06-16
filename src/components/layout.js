@@ -11,11 +11,15 @@ import SideBar from "../components/Sidebar"
 const Layout = ({ children }) => {
   const [theme, themeToggler] = useDarkMode()
   const themeMode = theme === "light" ? lightTheme : darkTheme
+  const [isOpen, setIsOpen] = React.useState(false)
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen)
+  }
   return (
     <>
       <ThemeProvider theme={themeMode}>
-        <Navbar />
-        <SideBar />
+        <Navbar toggleSidebar={toggleSidebar} />
+        <SideBar isOpen={isOpen} toggleSidebar={toggleSidebar} />
         {children}
         <Toggle theme={theme} toggleTheme={themeToggler}></Toggle>
         <GlobStyles />
