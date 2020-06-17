@@ -15,10 +15,6 @@ const SideBar = ({ isOpen, toggleSidebar }) => {
       <div>
         {showLinks(isOpen, Links1)}
         {showLinks(isOpen, Links2)}
-        {/*
-        <Links sideLinks="sidebar" showLinks={isOpen} />
-        <SLinks showLinks={isOpen} />
-        */}
       </div>
     </SBar>
   )
@@ -42,10 +38,6 @@ const SBar = styled.aside`
   @media screen and (min-width: 992px) {
     transform: translateX(-100%);
   }
-`
-const ShowSideBar = styled.aside`
-  opacity: 1;
-  transform: translateX(0);
 `
 const CloseButton = styled.button`
   position: absolute;

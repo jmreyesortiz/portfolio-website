@@ -38,7 +38,6 @@ const Links = ({ sideLinks, toggleAnimation }) => {
 
 const SideLinks = styled.ul`
   li {
-    background-color: blue;
     opacity: 0;
   }
   li a {
@@ -59,28 +58,7 @@ const SideLinks = styled.ul`
   }
   /* Animations */
 `
-const SideLinksAnimations = styled(SideLinks)`
-  li {
-    opacity: 1;
-    background-color: red;
-    animation: slideRight 0.5s ease-in-out 0.3s forwards;
-  }
-  &li:nth-of-type(1) {
-    animation-delay: 0.25s;
-  }
-  &li:nth-of-type(2) {
-    animation-delay: 0.5s;
-  }
-  &li:nth-of-type(3) {
-    animation-delay: 0.75s;
-  }
-  &li:nth-of-type(4) {
-    animation-delay: 1s;
-  }
-  &li:nth-of-type(5) {
-    animation-delay: 1.25s;
-  }
-`
+
 const slideRight = keyframes`
  0% {
     transform: translateX(-200px);
@@ -91,24 +69,25 @@ const slideRight = keyframes`
     opacity: 1;
   }
 }`
-const LinkLi = styled.li``
-const Animation = styled(LinkLi)`
-  animation: slideRight 0.5s ease-in-out 0.3s forwards;
-  opacity: 1;
 
-  ${Link}:nth-of-type(1) {
+const SideLinksAnimations = styled(SideLinks)`
+  li {
+    opacity: 1;
+    animation: ${slideRight} 0.5s ease-in-out 0.3s forwards;
+  }
+  li:nth-of-type(1) {
     animation-delay: 0.25s;
   }
-  :nth-of-type(2) {
+  li:nth-of-type(2) {
     animation-delay: 0.5s;
   }
-  :nth-of-type(3) {
+  li:nth-of-type(3) {
     animation-delay: 0.75s;
   }
-  :nth-of-type(4) {
+  li:nth-of-type(4) {
     animation-delay: 1s;
   }
-  :nth-of-type(5) {
+  li:nth-of-type(5) {
     animation-delay: 1.25s;
   }
 `
