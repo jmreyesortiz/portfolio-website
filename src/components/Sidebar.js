@@ -3,18 +3,22 @@ import styled from "styled-components"
 import Links from "../constants/links"
 import { FaTimes } from "react-icons/fa"
 import SocialLinks from "../constants/SocialLinks"
-import { keyframes } from "styled-components"
 
 const SideBar = ({ isOpen, toggleSidebar }) => {
-  const sideBarBool = true
+  const Links1 = <Links toggleAnimation={true} sideLinks="sidebar" />
+  const Links2 = <SLinks toggleAnimation />
   return (
     <SBar sideBarBool={isOpen}>
       <CloseButton onClick={toggleSidebar}>
         <FaTimes />
       </CloseButton>
       <div>
-        <Links sideLinks="sidebar" />
-        <SocLinks />
+        {showLinks(isOpen, Links1)}
+        {showLinks(isOpen, Links2)}
+        {/*
+        <Links sideLinks="sidebar" showLinks={isOpen} />
+        <SLinks showLinks={isOpen} />
+        */}
       </div>
     </SBar>
   )
@@ -53,48 +57,14 @@ const CloseButton = styled.button`
   color: ${({ theme }) => theme.colorRedDark};
   cursor: pointer;
 `
-const SocLinks = styled(SocialLinks)`
-  li {
-    opacity: 0;
-    animation: slideUp 0.5s ease-in-out 0.3s forwards;
-  }
-  li:nth-of-type(1) {
-    animation-delay: 0.25s;
-  }
-  li:nth-of-type(2) {
-    animation-delay: 0.5s;
-  }
-  li:nth-of-type(3) {
-    animation-delay: 0.75s;
-  }
-  li:nth-of-type(4) {
-    animation-delay: 1s;
-  }
-  li:nth-of-type(5) {
-    animation-delay: 1.25s;
-  }
-`
+const SLinks = styled(SocialLinks)``
 
-const slideRight = keyframes`
- 0% {
-    transform: translateX(-200px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
+function showLinks(isOpen, links) {
+  if (isOpen) {
+    return links
+  } else {
+    return null
   }
 }
-`
-const slideUp = keyframes`
- 0% {
-    transform: translateY(200px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-`
 
 export default SideBar

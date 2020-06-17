@@ -2,13 +2,16 @@ import React from "react"
 import { v4 as uuidv4 } from "uuid"
 import { FaLinkedin, FaGithub, FaMedium, FaTwitterSquare } from "react-icons/fa"
 import styled from "styled-components"
+import { keyframes } from "styled-components"
 
-const SocialLinks = ({ color }) => {
-  return (
-    <>
-      <SocLinks>{Links(data, color)}</SocLinks>
-    </>
-  )
+const SocialLinks = ({ color, toggleAnimation }) => {
+  if (toggleAnimation) {
+    return (
+      <BaseAnimation>{(toggleAnimation, Links(data, color))}</BaseAnimation>
+    )
+  } else {
+    return <SocLinks>{(toggleAnimation, Links(data, color))}</SocLinks>
+  }
 }
 
 const data = [
@@ -49,6 +52,16 @@ const SocialLink = styled.a`
     color: ${({ theme }) => theme.colorPrimary5};
   }
 `
+const slideUp = keyframes`
+ 0% {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`
 
 const SocLinks = styled.ul`
   margin-top: 2rem;
@@ -56,7 +69,27 @@ const SocLinks = styled.ul`
   display: flex;
   justify-content: space-between;
 `
-
+const BaseAnimation = styled(SocLinks)`
+  li {
+    opacity: 0;
+    animation: ${slideUp} 0.5s ease-in-out 0.3s forwards;
+  }
+  li:nth-of-type(1) {
+    animation-delay: 0.25s;
+  }
+  li:nth-of-type(2) {
+    animation-delay: 0.5s;
+  }
+  li:nth-of-type(3) {
+    animation-delay: 0.75s;
+  }
+  li:nth-of-type(4) {
+    animation-delay: 1s;
+  }
+  li:nth-of-type(5) {
+    animation-delay: 1.25s;
+  }
+`
 function Links(data, color) {
   return data.map(link => {
     return (

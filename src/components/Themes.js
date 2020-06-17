@@ -56,6 +56,10 @@ export const lightTheme = {
   //SideBar
   showSideBar: "translateX(0%)",
   hideSideBar: "translateX(100%)",
+  //SideBar Animation (may have to use ; at the end)
+  animationOpacity: "0",
+  animationLi: "`${slideUp} 0.5s ease-in-out 0.3s forwards`",
+  animationDelay: "animation-delay: 0.25s",
 }
 
 export const darkTheme = {
