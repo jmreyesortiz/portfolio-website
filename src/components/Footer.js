@@ -16,10 +16,13 @@ export const Footer = () => {
 const InnerFooter = styled.footer`
   margin: 0 auto 1rem auto;
   h4 {
+    font-family: Montserrat;
     color: ${({ theme }) => theme.colorPrimary9};
   }
 `
 
 const Span = styled.span`
+  font-family: Montserrat;
+
   color: ${({ theme }) => theme.colorPrimary9};
 `

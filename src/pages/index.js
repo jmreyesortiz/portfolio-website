@@ -4,7 +4,6 @@ import Hero from "../components/Hero"
 import Projects from "../components/Projects.js"
 import { graphql } from "gatsby"
 import Blogs from "../components/Blogs"
-
 export default ({ data }) => {
   //destructuring
   const {

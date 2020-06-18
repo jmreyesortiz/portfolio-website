@@ -88,7 +88,11 @@ footer h4 span{
   h2,
   h3,
   h4 {
-    line-height: 1;
+    letter-spacing: ${({ theme }) => theme.spacing};
+    text-transform: capitalize;
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+    font-family: ${({ theme }) => theme.primaryFont};
   }
 }
 
@@ -109,6 +113,7 @@ h4 {
 
 button{
 text-transform: uppercase;
+  font-family: ${({ theme }) => theme.secondaryFont};
   background: ${({ theme }) => theme.colorPrimary5};
   color: ${({ theme }) => theme.colorPrimary9};
   padding: 0.375rem 0.75rem;

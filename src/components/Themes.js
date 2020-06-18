@@ -39,7 +39,7 @@ export const lightTheme = {
   colorNav: "#fff",
 
   //PrimaryFonts
-  primaryFont: "Verdana",
+  primaryFont: "Montserrat",
   secondaryFont: "Staatliches-regular",
   transition: "all 0.3s linear",
   spacing: "0.2rem",

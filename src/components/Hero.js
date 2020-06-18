@@ -7,18 +7,20 @@ const Hero = () => {
     <HeroHeader>
       <HeroCenter>
         <HeroInfo>
-          <section>
+          <HeroSection>
             <Underline></Underline>
-            <h1>I'm Juan Reyes Ortiz</h1>
-            <h4>Web Developer and Android Developer</h4>
-            <HeroButton>Click</HeroButton>
+            <h2>I'm Juan Reyes Ortiz</h2>
+            <h4>Software Engineer</h4>
+            <HeroButton>About Me</HeroButton>
             <SocialLinks color="white" />
-          </section>
+          </HeroSection>
         </HeroInfo>
       </HeroCenter>
     </HeroHeader>
   )
 }
+
+const HeroSection = styled.section``
 
 const HeroHeader = styled.header`
   margin-top: -5rem;
