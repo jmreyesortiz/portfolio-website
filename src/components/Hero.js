@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <HeroHeader>
       <HeroCenter>
-        <HeroInfo>
+        <HeroInfo data-sal="zoom-out" data-sal-duration="1000">
           <HeroSection>
             <Underline></Underline>
             <h2>I'm Juan Reyes Ortiz</h2>
@@ -20,6 +20,7 @@ const Hero = () => {
   )
 }
 
+const H11 = styled.h1``
 const HeroSection = styled.section``
 
 const HeroHeader = styled.header`

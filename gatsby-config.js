@@ -12,6 +12,7 @@ module.exports = {
 
   /* Your site config here */
   plugins: [
+    `gatsby-plugin-scroll-reveal`,
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -33,6 +34,7 @@ module.exports = {
         path: `${__dirname}/src/pages/`,
       },
     },
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {

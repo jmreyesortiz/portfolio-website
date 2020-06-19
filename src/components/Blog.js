@@ -5,7 +5,11 @@ import Image from "gatsby-image"
 
 const Blog = ({ id, title, image, date, category, slug, desc }) => {
   return (
-    <BlogComp to={`/blogs/${slug}`}>
+    <BlogComp
+      data-sal="slide-up"
+      data-sal-duration="1000"
+      to={`/blogs/${slug}`}
+    >
       <article>
         <BlogImage fluid={image.childImageSharp.fluid}></BlogImage>
         <BlogCard>

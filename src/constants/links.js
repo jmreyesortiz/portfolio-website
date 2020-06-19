@@ -44,7 +44,6 @@ const SideLinks = styled.ul`
     display: block;
     text-align: center;
     text-transform: capitalize;
-    font-family: ${({ theme }) => theme.secondaryFont};
     color: ${({ theme }) => theme.colorGrey5};
     letter-spacing: ${({ theme }) => theme.spacing};
     margin-bottom: 0.5rem;

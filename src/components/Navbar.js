@@ -1,9 +1,14 @@
 import React from "react"
 import Logo from "./Logo"
-import Navlinks from "../constants/links"
+import Links from "../constants/links"
 import styled from "styled-components"
 import { FaAlignRight } from "react-icons/fa"
 
+const NavLinks = styled(Links)`
+  ul a {
+    font-family: Montserrat;
+  }
+`
 const Nav = styled.nav`
   position: absolute;
   top: 0;
@@ -61,7 +66,7 @@ const Navbar = ({ toggleSidebar }) => {
               <FaAlignRight />
             </ToggleButton>
           </NavHeader>
-          <Navlinks></Navlinks>
+          <Links></Links>
         </NavCenter>
       </Nav>
     </>

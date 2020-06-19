@@ -40,7 +40,7 @@ export const lightTheme = {
 
   //PrimaryFonts
   primaryFont: "Montserrat",
-  secondaryFont: "Staatliches-regular",
+  secondaryFont: "Staatliches",
   transition: "all 0.3s linear",
   spacing: "0.2rem",
   radius: "0.25rem",

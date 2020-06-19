@@ -5,7 +5,7 @@ import styled from "styled-components"
 
 const Project = ({ description, title, github, stack, url, image, index }) => {
   return (
-    <Proj>
+    <Proj data-sal="slide-up" data-sal-duration="1000">
       <ProjImage fluid={image.childImageSharp.fluid} />
       <ProjInfo>
         <ProjNumber>{index + 1}</ProjNumber>

@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Title from "../components/Title"
 import Blog from "../components/Blog"
+
 const Blogs = ({ blogs, title, showLink }) => {
   return (
     <Section>
@@ -18,6 +19,7 @@ const Blogs = ({ blogs, title, showLink }) => {
 const Section = styled.section`
   padding: 5rem 0;
 `
+
 const BlogsCenter = styled.div`
   width: 90vw;
   margin: 0 auto;

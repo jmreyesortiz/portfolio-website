@@ -5,7 +5,7 @@ import styled from "styled-components"
 const contact = () => {
   return (
     <Layout>
-      <ContactPage>
+      <ContactPage data-sal="zoom-out" data-sal-duration="1000">
         <ContactForm>
           <h3>Get in Touch!</h3>
           <FormGroup action="https://formspree.io/xgenzowp" method="POST">

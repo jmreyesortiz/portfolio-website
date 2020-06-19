@@ -23,6 +23,5 @@ const InnerFooter = styled.footer`
 
 const Span = styled.span`
   font-family: Montserrat;
-
   color: ${({ theme }) => theme.colorPrimary9};
 `

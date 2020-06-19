@@ -13,7 +13,7 @@ const About = ({
   const { title, stack, info, image } = nodes[0]
   return (
     <Layout>
-      <AboutPage>
+      <AboutPage data-sal="zoom-out" data-sal-duration="1000">
         <AboutCenter>
           <AboutImage fluid={image.childImageSharp.fluid}></AboutImage>
           <AboutText>
