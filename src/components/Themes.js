@@ -38,7 +38,7 @@ export const lightTheme = {
   //Other Colors
   colorNav: "#fff",
 
-  //PrimaryFonts
+  //PrimaryFonts + Misc
   primaryFont: "Montserrat",
   secondaryFont: "Staatliches",
   transition: "all 0.3s linear",
@@ -60,6 +60,10 @@ export const darkTheme = {
   toggleBorder: "#6B8096",
   background: "#999",
 
+  //Toggle Button
+  colorMoon: "#E0F7FA",
+  colorSun: "#BDBDBD",
+
   // Primary Colors
   colorPrimary: "#FFF",
   colorPrimary2: "FFF",
@@ -73,9 +77,23 @@ export const darkTheme = {
   colorPrimary9: "#bff8fd",
   colorPrimary10: "#455A64",
 
-  //Toggle Button
-  colorMoon: "#E0F7FA",
-  colorSun: "#BDBDBD",
+  //darkest grey
+  colorGrey1: "#102a42",
+  colorGrey3: "#324d67",
+  colorGrey4: "#48647f",
+  //gray for paragraphs
+  colorGrey5: "#617d98",
+  colorGrey8: "#bcccdc",
+  colorGrey9: "#dae2ec",
+  colorGrey10: "#f1f5f8",
+  //Other Colors
+  colorGreenDark: "#1d9527",
+  colorRedDark: "#bb2525",
+  colorRedLight: "#e66b6b",
+  colorWhite: "#363537",
+  colorNav: "#363537",
+
+  //Fonts + Misc
   primaryFont: "Montserrat",
   secondaryFont: "Staatliches",
   transition: "all 0.3s linear",
@@ -86,10 +104,9 @@ export const darkTheme = {
   MaxWidth: "1170px",
   FixedWidth: "700px",
 
-  //Darkest Grey
-  colorGrey1: "#FFF",
+  //SideBar
+  showSideBar: "translateX(0%)",
+  hideSideBar: "translateX(100%)",
 
   //Other colors
-  colorWhite: "#363537",
-  colorNav: "#363537",
 }

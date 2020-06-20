@@ -3,7 +3,6 @@ import Logo from "./Logo"
 import Links from "../constants/links"
 import styled from "styled-components"
 import { FaAlignRight } from "react-icons/fa"
-import Toggle from "../components/Toggler"
 const Navbar = ({ toggleSidebar, theme, themeToggler }) => {
   return (
     <>
@@ -21,6 +20,7 @@ const Navbar = ({ toggleSidebar, theme, themeToggler }) => {
     </>
   )
 }
+
 const NavLinks = styled(Links)`
   ul a {
     font-family: Montserrat;
