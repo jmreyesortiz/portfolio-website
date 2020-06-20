@@ -76,8 +76,8 @@ export const darkTheme = {
   //Toggle Button
   colorMoon: "#E0F7FA",
   colorSun: "#BDBDBD",
-  primaryFont: "Verdana",
-  secondaryFont: "Staatliches-regular",
+  primaryFont: "Montserrat",
+  secondaryFont: "Staatliches",
   transition: "all 0.3s linear",
   spacing: "0.2rem",
   radius: "0.25rem",

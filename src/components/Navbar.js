@@ -3,7 +3,24 @@ import Logo from "./Logo"
 import Links from "../constants/links"
 import styled from "styled-components"
 import { FaAlignRight } from "react-icons/fa"
-
+import Toggle from "../components/Toggler"
+const Navbar = ({ toggleSidebar, theme, themeToggler }) => {
+  return (
+    <>
+      <Nav>
+        <NavCenter>
+          <NavHeader>
+            <Logo />
+            <ToggleButton onClick={toggleSidebar}>
+              <FaAlignRight />
+            </ToggleButton>
+          </NavHeader>
+          <Links></Links>
+        </NavCenter>
+      </Nav>
+    </>
+  )
+}
 const NavLinks = styled(Links)`
   ul a {
     font-family: Montserrat;
@@ -54,23 +71,5 @@ const ToggleButton = styled.button`
     display: none;
   }
 `
-
-const Navbar = ({ toggleSidebar }) => {
-  return (
-    <>
-      <Nav>
-        <NavCenter>
-          <NavHeader>
-            <Logo />
-            <ToggleButton onClick={toggleSidebar}>
-              <FaAlignRight />
-            </ToggleButton>
-          </NavHeader>
-          <Links></Links>
-        </NavCenter>
-      </Nav>
-    </>
-  )
-}
 
 export default Navbar

@@ -1,44 +1,91 @@
 import React from "react"
 import styled from "styled-components"
 import SocialLinks from "../constants/SocialLinks"
+import Particles from "react-particles-js"
 
 const Hero = () => {
   return (
-    <HeroHeader>
-      <HeroCenter>
-        <HeroInfo data-sal="zoom-out" data-sal-duration="1000">
-          <HeroSection>
-            <Underline></Underline>
-            <h2>I'm Juan Reyes Ortiz</h2>
-            <h4>Software Engineer</h4>
-            <HeroButton>About Me</HeroButton>
-            <SocialLinks color="white" />
-          </HeroSection>
+    <>
+      <HeroHeader>
+        <Part
+          params={{
+            fps_limit: 60,
+            background: {
+              color: {
+                value: "#0d47a1",
+              },
+            },
+            links: {
+              color: "#F4FF81",
+            },
+            particles: {
+              value: ["#ffffff", "#1254ef"],
+              color: "#F4FF81",
+              number: {
+                value: 70,
+              },
+              size: {
+                value: 1,
+              },
+            },
+
+            interactivity: {
+              detect_on: "canvas",
+              events: {
+                onhover: {
+                  enable: true,
+                  mode: "push",
+                },
+              },
+            },
+          }}
+        ></Part>
+        <HeroInfo>
+          <HeroCenter>
+            <HeroSection>
+              <Underline></Underline>
+              <H2>I'm Juan Reyes Ortiz</H2>
+              <h4>Software Engineer</h4>
+              <HeroButton>About Me</HeroButton>
+              <SocialLinks color="white" />
+            </HeroSection>
+          </HeroCenter>
         </HeroInfo>
-      </HeroCenter>
-    </HeroHeader>
+      </HeroHeader>
+    </>
   )
 }
 
-const H11 = styled.h1``
-const HeroSection = styled.section``
+const H2 = styled.h2`
+  color: ${({ theme }) => theme.colorPrimary5};
+  font-size: 70px;
+  width: 20rem;
+
+  @media screen and (min-width: 992px) {
+    width: 100%;
+  }
+
+  @media screen and (min-width: 1170px) {
+    width: 100%;
+  }
+`
+const HeroSection = styled.section`
+  width: 100vh;
+`
+const Part = styled(Particles)`
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+`
 
 const HeroHeader = styled.header`
-  margin-top: -5rem;
-  padding-top: 5rem;
   height: 100vh;
-  background: ${({ theme }) => theme.colorPrimary7};
   position: relative;
 
   @media screen and (min-width: 992px) {
     ::before {
       content: "";
-      position: absolute;
-      top: 0;
-      left: 65%;
-      right: 0;
-      bottom: 0;
-      background: ${({ theme }) => theme.colorWhite};
+      position: relative;
     }
     h4 {
       font-size: 0.85rem;
@@ -51,6 +98,7 @@ const HeroHeader = styled.header`
   }
 `
 const HeroCenter = styled.section`
+  position: relative;
   height: 100%;
   display: grid;
   align-items: center;
@@ -63,7 +111,9 @@ const HeroCenter = styled.section`
   }
 `
 const HeroInfo = styled.article`
-  background: ${({ theme }) => theme.colorPrimary7};
+  margin-left: 8rem;
+  margin-top: 14rem;
+  position: absolute;
   h4 {
     color: ${({ theme }) => theme.colorGrey5};
   }
@@ -81,7 +131,6 @@ const Underline = styled.section`
   margin-left: 0;
   width: 5rem;
   height: 0.25rem;
-  margin-bottom: 1.25rem;
   background: ${({ theme }) => theme.colorPrimary5};
 `
 const HeroButton = styled.button`

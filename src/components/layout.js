@@ -9,7 +9,7 @@ import { Footer } from "./Footer"
 import SideBar from "../components/Sidebar"
 
 const Layout = ({ children }) => {
-  const [theme, themeToggler] = useDarkMode()
+  const [theme, useTheme] = useDarkMode()
   const themeMode = theme === "light" ? lightTheme : darkTheme
   const [isOpen, setIsOpen] = React.useState(false)
   const toggleSidebar = () => {
@@ -18,10 +18,10 @@ const Layout = ({ children }) => {
   return (
     <>
       <ThemeProvider theme={themeMode}>
+        <Toggle theme={theme} toggleTheme={useTheme}></Toggle>
         <Navbar toggleSidebar={toggleSidebar} />
         <SideBar isOpen={isOpen} toggleSidebar={toggleSidebar} />
         {children}
-        <Toggle theme={theme} toggleTheme={themeToggler}></Toggle>
         <GlobStyles />
         <Footer />
       </ThemeProvider>
