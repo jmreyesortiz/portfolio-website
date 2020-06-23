@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import SocialLinks from "../constants/SocialLinks"
+import Links from "../constants/SocialLinks"
 
 export const Footer = () => {
   return (
@@ -13,6 +13,7 @@ export const Footer = () => {
   )
 }
 
+const SocialLinks = styled(Links)``
 const InnerFooter = styled.footer`
   margin: 0 auto 1rem auto;
   h4 {

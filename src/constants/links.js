@@ -43,11 +43,12 @@ const SideLinks = styled.ul`
   li a {
     display: block;
     text-align: center;
+    font-family: ${({ theme }) => theme.secondaryFont};
     text-transform: capitalize;
     color: ${({ theme }) => theme.colorGrey5};
     letter-spacing: ${({ theme }) => theme.spacing};
-    margin-bottom: 0.5rem;
-    font-size: 2rem;
+    margin-top: 1rem;
+    font-size: 1.5rem;
     transition: ${({ theme }) => theme.transition};
     border-radius: ${({ theme }) => theme.radius};
   }
@@ -71,7 +72,7 @@ const slideRight = keyframes`
 
 const SideLinksAnimations = styled(SideLinks)`
   li {
-    opacity: 1;
+    opacity: 0;
     animation: ${slideRight} 0.5s ease-in-out 0.3s forwards;
   }
   li:nth-of-type(1) {
@@ -105,10 +106,10 @@ const NavLinks = styled.ul`
       margin-right: 2rem;
     }
     a {
+      font-family: ${({ theme }) => theme.secondaryFont};
       color: ${({ theme }) => theme.colorGrey1};
       font-weight: bold;
       font-size: x-large;
-      font-family: ${({ theme }) => theme.secondaryFont};
       letter-spacing: ${({ theme }) => theme.spacing};
       transition: ${({ theme }) => theme.transition};
       padding: 0.5rem 0;

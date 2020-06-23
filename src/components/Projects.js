@@ -18,7 +18,7 @@ const Projects = ({ title, projects, booleanLink }) => {
 
 const SectionProjects = styled.section`
   padding: 5rem 0;
-  background: ${({ theme }) => theme.colorGrey10};
+  background: ${({ theme }) => theme.body};
 `
 const ProjectsCenter = styled.section`
   width: 90vw;

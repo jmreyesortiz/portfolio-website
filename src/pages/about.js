@@ -13,20 +13,22 @@ const About = ({
   const { title, stack, info, image } = nodes[0]
   return (
     <Layout>
-      <AboutPage data-sal="zoom-out" data-sal-duration="1000">
-        <AboutCenter>
-          <AboutImage fluid={image.childImageSharp.fluid}></AboutImage>
-          <AboutText>
-            <AboutTitle title={title} aboutTitle></AboutTitle>
-            <AboutParagraph>{info}</AboutParagraph>
-            <AboutStack>
-              {stack.map(item => {
-                return <span key={item.id}>{item.title}</span>
-              })}
-            </AboutStack>
-          </AboutText>
-        </AboutCenter>
-      </AboutPage>
+      <div data-sal="zoom-out" data-sal-duration="1000">
+        <AboutPage>
+          <AboutCenter>
+            <AboutImage fluid={image.childImageSharp.fluid}></AboutImage>
+            <AboutText>
+              <AboutTitle title={title} aboutTitle></AboutTitle>
+              <AboutParagraph>{info}</AboutParagraph>
+              <AboutStack>
+                {stack.map(item => {
+                  return <span key={item.id}>{item.title}</span>
+                })}
+              </AboutStack>
+            </AboutText>
+          </AboutCenter>
+        </AboutPage>
+      </div>
     </Layout>
   )
 }

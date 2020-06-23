@@ -22,6 +22,7 @@ const Section = styled.section`
 
 const BlogsCenter = styled.div`
   width: 90vw;
+  height: 100%;
   margin: 0 auto;
   max-width: 1170px;
   @media screen and (min-width: 576px) {

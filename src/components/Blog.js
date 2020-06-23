@@ -5,29 +5,40 @@ import Image from "gatsby-image"
 
 const Blog = ({ id, title, image, date, category, slug, desc }) => {
   return (
-    <BlogComp
-      data-sal="slide-up"
-      data-sal-duration="1000"
-      to={`/blogs/${slug}`}
-    >
-      <article>
-        <BlogImage fluid={image.childImageSharp.fluid}></BlogImage>
-        <BlogCard>
-          <h4>{title}</h4>
-          <p>{desc}</p>
-        </BlogCard>
-        <BlogFooter>
-          <p>{category}</p>
-          <p>{date}</p>
-        </BlogFooter>
-      </article>
-    </BlogComp>
+    <Div data-sal="slide-up" data-sal-duration="1000">
+      <BlogComp to={`/blogs/${slug}`}>
+        <article>
+          <BlogImage fluid={image.childImageSharp.fluid}></BlogImage>
+          <BlogCard>
+            <h4>{title}</h4>
+            <p>{desc}</p>
+          </BlogCard>
+          <BlogFooter>
+            <p>{category}</p>
+            <p>{date}</p>
+          </BlogFooter>
+        </article>
+      </BlogComp>
+    </Div>
   )
 }
 
+const Div = styled.div`
+  padding-bottom: 5rem;
+  @media screen and (min-width: 850px) {
+  }
+  @media screen and (min-width: 576px) {
+  }
+`
+
 const BlogComp = styled(Link)`
+  @media screen and (min-width: 768px) {
+  }
+  @media screen and (max-width: 667px) {
+  }
   display: block;
-  margin-bottom: 2rem;
+  height: 100%;
+
   background: ${({ theme }) => theme.colorGrey10};
   border-radius: ${({ theme }) => theme.radius};
   box-shadow: ${({ theme }) => theme.lightShadow};

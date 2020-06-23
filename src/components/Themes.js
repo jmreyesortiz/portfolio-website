@@ -1,5 +1,7 @@
 export const lightTheme = {
+  //BACKGROUND 1
   body: "#FFF",
+  body2: "#f1f5f8",
   text: "#363537",
   toggleBorder: "#FFF",
   background: "#363537",
@@ -19,7 +21,9 @@ export const lightTheme = {
   colorPrimary7: "#52d1da",
   colorPrimary8: "#88ebf2",
   colorPrimary9: "#bff8fd",
+  //BACKGROUND 2
   colorPrimary10: "#e0fcff",
+  colorPrimary11: "##212121",
   //darkest grey
   colorGrey1: "#102a42",
   colorGrey3: "#324d67",
@@ -76,6 +80,7 @@ export const darkTheme = {
   colorPrimary8: "#88ebf2",
   colorPrimary9: "#bff8fd",
   colorPrimary10: "#455A64",
+  colorPrimary11: "#fafafa",
 
   //darkest grey
   colorGrey1: "#102a42",
@@ -85,7 +90,8 @@ export const darkTheme = {
   colorGrey5: "#617d98",
   colorGrey8: "#bcccdc",
   colorGrey9: "#dae2ec",
-  colorGrey10: "#f1f5f8",
+  //BACKGROUND 2
+  colorGrey10: "#62656C",
   //Other Colors
   colorGreenDark: "#1d9527",
   colorRedDark: "#bb2525",

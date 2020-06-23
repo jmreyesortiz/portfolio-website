@@ -3,6 +3,7 @@ import styled from "styled-components"
 import Links from "../constants/links"
 import { FaTimes } from "react-icons/fa"
 import SocialLinks from "../constants/SocialLinks"
+import DarkModeToggle from "../components/Toggler2"
 
 const SideBar = ({ isOpen, toggleSidebar }) => {
   const Links1 = <Links toggleAnimation={true} sideLinks="sidebar" />
@@ -14,6 +15,7 @@ const SideBar = ({ isOpen, toggleSidebar }) => {
       </CloseButton>
       <div>
         {showLinks(isOpen, Links1)}
+        <DarkModeToggle isNav={false} />
         {showLinks(isOpen, Links2)}
       </div>
     </SBar>
@@ -43,7 +45,7 @@ const CloseButton = styled.button`
   position: absolute;
   right: 4.75%;
   top: 2.75%;
-  font-size: 2.5rem;
+  font-size: 2rem;
   background: transparent;
   border-color: transparent;
   color: ${({ theme }) => theme.colorRedDark};

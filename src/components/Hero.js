@@ -1,43 +1,88 @@
 import React from "react"
 import styled from "styled-components"
-import SocialLinks from "../constants/SocialLinks"
+import Links from "../constants/SocialLinks"
 import Particles from "react-particles-js"
+import { useContext } from "react"
+import { ThemeContext } from "styled-components"
 
 const Hero = () => {
+  // Using Context to get the Theme
+  const themeContext = useContext(ThemeContext)
+  console.log("Current theme: ", themeContext)
+  const color = themeContext.colorPrimary1
+
   return (
-    <>
+    <HeroDiv>
       <HeroHeader>
         <Part
           params={{
-            fps_limit: 60,
-            background: {
-              color: {
-                value: "#0d47a1",
-              },
-            },
-            links: {
-              color: "#F4FF81",
-            },
             particles: {
-              value: ["#ffffff", "#1254ef"],
-              color: "#F4FF81",
               number: {
-                value: 70,
+                value: 80,
+                density: { enable: false, value_area: 800 },
+              },
+              color: { value: "#03a78a" },
+              shape: {
+                type: "circle",
+                stroke: { width: 1, color: "#00fff0" },
+                polygon: { nb_sides: 3 },
+                image: { src: "", width: 100, height: 100 },
+              },
+              opacity: {
+                value: 0.12626362266116362,
+                random: true,
+                anim: { enable: true, speed: 1, opacity_min: 0.1, sync: true },
               },
               size: {
-                value: 1,
+                value: 5,
+                random: true,
+                anim: {
+                  enable: true,
+                  speed: 2.4362316369040378,
+                  size_min: 0,
+                  sync: true,
+                },
+              },
+              line_linked: {
+                enable: true,
+                distance: 176.37532669520735,
+                color: "#2eb9b9",
+                opacity: 0.6786669718037545,
+                width: 1.8939543399174543,
+              },
+              move: {
+                enable: true,
+                speed: 2,
+                direction: "right",
+                random: true,
+                straight: true,
+                out_mode: "out",
+                bounce: false,
+                attract: { enable: false, rotateX: 600, rotateY: 1200 },
               },
             },
-
             interactivity: {
               detect_on: "canvas",
               events: {
-                onhover: {
-                  enable: true,
-                  mode: "push",
+                onhover: { enable: false, mode: "grab" },
+                onclick: { enable: false, mode: "repulse" },
+                resize: true,
+              },
+              modes: {
+                grab: { distance: 200, line_linked: { opacity: 1 } },
+                bubble: {
+                  distance: 400,
+                  size: 40,
+                  duration: 2,
+                  opacity: 8,
+                  speed: 3,
                 },
+                repulse: { distance: 200, duration: 0.4 },
+                push: { particles_nb: 4 },
+                remove: { particles_nb: 2 },
               },
             },
+            retina_detect: true,
           }}
         ></Part>
         <HeroInfo>
@@ -52,30 +97,37 @@ const Hero = () => {
           </HeroCenter>
         </HeroInfo>
       </HeroHeader>
-    </>
+    </HeroDiv>
   )
 }
 
-const H2 = styled.h2`
-  color: ${({ theme }) => theme.colorPrimary5};
-  font-size: 70px;
-  width: 20rem;
-
-  @media screen and (min-width: 992px) {
-    width: 100%;
-  }
-
-  @media screen and (min-width: 1170px) {
-    width: 100%;
-  }
-`
-const HeroSection = styled.section`
-  width: 100vh;
+const HeroDiv = styled.div`
+  background: linear-gradient(145deg, #0d1221, #2c3184);
 `
 const Part = styled(Particles)`
   position: absolute;
   width: 100%;
   height: 100vh;
+  z-index: -1;
+`
+const SocialLinks = styled(Links)``
+const H2 = styled.h2`
+  color: ${({ theme }) => theme.colorPrimary5};
+  font-size: 40px;
+  width: 20rem;
+
+  @media screen and (min-width: 992px) {
+    font-size: 70px;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 1170px) {
+    font-size: 70px;
+    width: 100%;
+  }
+`
+const HeroSection = styled.section`
+  width: 100vh;
 `
 
 const HeroHeader = styled.header`
@@ -112,22 +164,24 @@ const HeroCenter = styled.section`
 `
 const HeroInfo = styled.article`
   margin-left: 8rem;
-  margin-top: 14rem;
+  margin-top: 10rem;
   position: absolute;
   h4 {
     color: ${({ theme }) => theme.colorGrey5};
   }
   @media screen and (min-width: 992px) {
+    margin-top: 10rem;
     grid-row: 1/1;
     grid-column: 1 / span 8;
   }
   @media screen and (min-width: 1170px) {
+    margin-top: 10rem;
     grid-column: 1 / span 8;
   }
 `
 const Underline = styled.section`
   margin-right: auto;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
   margin-left: 0;
   width: 5rem;
   height: 0.25rem;

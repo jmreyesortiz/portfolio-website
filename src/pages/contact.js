@@ -4,27 +4,41 @@ import styled from "styled-components"
 
 const contact = () => {
   return (
-    <Layout>
-      <ContactPage data-sal="zoom-out" data-sal-duration="1000">
-        <ContactForm>
-          <h3>Get in Touch!</h3>
-          <FormGroup action="https://formspree.io/xgenzowp" method="POST">
-            <FormContent>
-              <InputText name="name" type="text" placeholder="name"></InputText>
-              <EmailText
-                name="email"
-                type="email"
-                placeholder="email"
-              ></EmailText>
-              <TextArea name="message" placeholder="message" rows="5" />
-              <SubmitButton type="submit">Submit Here</SubmitButton>
-            </FormContent>
-          </FormGroup>
-        </ContactForm>
-      </ContactPage>
-    </Layout>
+    <FormLayout>
+      <div data-sal="zoom-out" data-sal-duration="1000">
+        <ContactPage>
+          <ContactForm>
+            <Heading>Get in Touch!</Heading>
+            <FormGroup action="https://formspree.io/xgenzowp" method="POST">
+              <FormContent>
+                <InputText
+                  name="name"
+                  type="text"
+                  placeholder="name"
+                ></InputText>
+                <EmailText
+                  name="email"
+                  type="email"
+                  placeholder="email"
+                ></EmailText>
+                <TextArea name="message" placeholder="message" rows="5" />
+                <SubmitButton type="submit">Submit Here</SubmitButton>
+              </FormContent>
+            </FormGroup>
+          </ContactForm>
+        </ContactPage>
+      </div>
+    </FormLayout>
   )
 }
+
+const Heading = styled.h3`
+  font-family: ${({ theme }) => theme.primaryFont};
+  padding-top: 1.25rem;
+  color: ${({ theme }) => theme.text};
+`
+
+const FormLayout = styled(Layout)``
 
 const ContactPage = styled.section`
   display: grid;
@@ -43,10 +57,6 @@ const ContactForm = styled.form`
   :hover {
     box-shadow: ${({ theme }) => theme.darkShadow};
   }
-  h3 {
-    padding-top: 1.25rem;
-    color: ${({ theme }) => theme.colorGrey5};
-  }
 `
 const FormGroup = styled.form`
   padding: 1rem 1.5rem;
@@ -55,6 +65,11 @@ const FormContent = styled.div`
   padding: 1rem 1.5rem;
 `
 const InputText = styled.input`
+  ::placeholder {
+    color: ${({ theme }) => theme.text};
+  }
+  color: ${({ theme }) => theme.text};
+  font-family: ${({ theme }) => theme.primaryFont};
   display: block;
   width: 100%;
   padding: 0.75rem 1rem;
@@ -65,8 +80,18 @@ const InputText = styled.input`
   text-transform: uppercase;
   letter-spacing: ${({ theme }) => theme.spacing};
 `
-const EmailText = styled(InputText)``
+const EmailText = styled(InputText)`
+  color: ${({ theme }) => theme.text};
+  ::placeholder {
+    color: ${({ theme }) => theme.text};
+  }
+`
 const TextArea = styled.textarea`
+  color: ${({ theme }) => theme.text};
+  ::placeholder {
+    color: ${({ theme }) => theme.text};
+  }
+  font-family: ${({ theme }) => theme.primaryFont};
   display: block;
   width: 100%;
   padding: 0.75rem 1rem;
@@ -82,6 +107,7 @@ const SubmitButton = styled.button`
   display: block;
   width: 100%;
   padding: 1rem;
+  margin-left: 1rem;
   border-bottom-left-radius: ${({ theme }) => theme.radius};
   border-bottom-right-radius: ${({ theme }) => theme.radius};
   border-top-right-radius: 0;

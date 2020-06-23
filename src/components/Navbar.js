@@ -3,7 +3,8 @@ import Logo from "./Logo"
 import Links from "../constants/links"
 import styled from "styled-components"
 import { FaAlignRight } from "react-icons/fa"
-const Navbar = ({ toggleSidebar, theme, themeToggler }) => {
+import Toggler2 from "../components/Toggler2"
+const Navbar = ({ toggleSidebar, theme, toggleTheme }) => {
   return (
     <>
       <Nav>
@@ -16,10 +17,17 @@ const Navbar = ({ toggleSidebar, theme, themeToggler }) => {
           </NavHeader>
           <Links></Links>
         </NavCenter>
+        <TogglerNightMode
+          theme={theme}
+          toggleTheme={toggleTheme}
+          isNav={true}
+        ></TogglerNightMode>
       </Nav>
     </>
   )
 }
+
+const TogglerNightMode = styled(Toggler2)``
 
 const NavLinks = styled(Links)`
   ul a {
@@ -69,6 +77,7 @@ const ToggleButton = styled.button`
 
   @media screen and (min-width: 768px) {
     display: none;
+    font-size: 4rem;
   }
 `
 

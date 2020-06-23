@@ -18,22 +18,22 @@ const data = [
   {
     id: uuidv4,
     icon: <FaLinkedin className="social-icon"></FaLinkedin>,
-    url: "https://www.twitter.com",
+    url: "https://www.linkedin.com/in/juanmareyesortiz/",
   },
   {
     id: uuidv4,
     icon: <FaGithub className="social-icon"></FaGithub>,
-    url: "https://www.twitter.com",
+    url: "https://github.com/jmreyesortiz",
   },
   {
     id: uuidv4,
     icon: <FaMedium className="social-icon"></FaMedium>,
-    url: "https://www.twitter.com",
+    url: "https://twitter.com/jmreyesortiz",
   },
   {
     id: uuidv4,
     icon: <FaTwitterSquare className="social-icon"></FaTwitterSquare>,
-    url: "https://www.twitter.com",
+    url: "https://twitter.com/jmreyesortiz",
   },
 ]
 
@@ -68,6 +68,9 @@ const SocLinks = styled.ul`
   width: 15rem;
   display: flex;
   justify-content: space-between;
+  @media screen and (max-width: 768px) {
+    margin-top: 4rem;
+  }
 `
 const BaseAnimation = styled(SocLinks)`
   li {

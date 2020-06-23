@@ -18,8 +18,11 @@ const Layout = ({ children }) => {
   return (
     <>
       <ThemeProvider theme={themeMode}>
-        <Toggle theme={theme} toggleTheme={useTheme}></Toggle>
-        <Navbar toggleSidebar={toggleSidebar} />
+        <Navbar
+          toggleSidebar={toggleSidebar}
+          theme={theme}
+          toggleTheme={useTheme}
+        />
         <SideBar isOpen={isOpen} toggleSidebar={toggleSidebar} />
         {children}
         <GlobStyles />

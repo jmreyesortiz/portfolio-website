@@ -81,16 +81,7 @@ footer h4 span{
   }
 }
 
-h1,
-h2,
-h3,
-h4 {
-  letter-spacing:${({ theme }) => theme.spacing};
-  text-transform: capitalize;
-  line-height: 1.25;
-  margin-bottom: 0.75rem;
-  font-family: ${({ theme }) => theme.primaryFont};
-}
+
 /* Might have to change this later*/
 
 button{

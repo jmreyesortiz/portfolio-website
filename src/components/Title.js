@@ -29,7 +29,9 @@ const AboutTitle = styled(SectionTitle)`
   text-align: left;
 `
 
-const DefaultTitle = styled.h2``
+const DefaultTitle = styled.h2`
+  font-family: ${({ theme }) => theme.secondaryFont};
+`
 const Underline = styled.section`
   width: 5rem;
   height: 0.25rem;

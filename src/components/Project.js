@@ -38,16 +38,6 @@ export const Proj = styled.section`
   @media screen and (min-width: 992px) {
     grid-template-columns: repeat(12, 1fr);
     align-items: center;
-    /*
-    :nth-of-type(even) & ::after{ProjImage}{
-      
-        grid-column: 5 / -1;
-        grid-row: 1 / 1;
-      
-    
-    }
-  
-  */
   }
 `
 
@@ -106,7 +96,7 @@ export const ProjTitle = styled.h3``
 export const ProjDesc = styled.p`
   margin-bottom: 1.25rem;
   word-spacing: 15px;
-  color: ${({ theme }) => theme.colorGrey3};
+  color: ${({ theme }) => theme.colorGrey11};
 `
 export const ProjStack = styled.section`
   margin-bottom: 1rem;
@@ -123,7 +113,7 @@ export const ProjStack = styled.section`
   }
 `
 export const ProjInfo = styled.section`
-  background: ${({ theme }) => theme.colorWhite};
+  background: ${({ theme }) => theme.colorGrey10}; /* Background */
   padding: 1rem 2rem;
   border-bottom-left-radius: ${({ theme }) => theme.radius};
   border-bottom-right-radius: ${({ theme }) => theme.radius};
