@@ -5,7 +5,7 @@ import styled from "styled-components"
 const contact = () => {
   return (
     <FormLayout>
-      <div data-sal="zoom-out" data-sal-duration="1000">
+      <Div data-sal="zoom-out" data-sal-duration="1000">
         <ContactPage>
           <ContactForm>
             <Heading>Get in Touch!</Heading>
@@ -27,11 +27,12 @@ const contact = () => {
             </FormGroup>
           </ContactForm>
         </ContactPage>
-      </div>
+      </Div>
     </FormLayout>
   )
 }
 
+const Div = styled.div``
 const Heading = styled.h3`
   font-family: ${({ theme }) => theme.primaryFont};
   padding-top: 1.25rem;
@@ -44,6 +45,7 @@ const ContactPage = styled.section`
   display: grid;
   place-items: center;
   padding: 5rem 0;
+  height: 60vh;
   background: ${({ theme }) => theme.colorGrey10};
 `
 const ContactForm = styled.form`

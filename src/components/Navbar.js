@@ -10,7 +10,7 @@ const Navbar = ({ toggleSidebar, theme, toggleTheme }) => {
       <Nav>
         <NavCenter>
           <NavHeader>
-            <Logo />
+            <NavLogo />
             <ToggleButton onClick={toggleSidebar}>
               <FaAlignRight />
             </ToggleButton>
@@ -29,10 +29,20 @@ const Navbar = ({ toggleSidebar, theme, toggleTheme }) => {
 
 const TogglerNightMode = styled(Toggler2)``
 
+const NavLogo = styled(Logo)`
+  margin-bottom: 4rem;
+  margin-left: 5rem;
+`
+
 const NavLinks = styled(Links)`
   ul a {
     font-family: Montserrat;
   }
+  color: ${({ theme }) => theme.colorGrey1};
+  font-weight: bold;
+  letter-spacing: ${({ theme }) => theme.spacing};
+  transition: ${({ theme }) => theme.transition};
+  padding: 0.5rem 0;
 `
 const Nav = styled.nav`
   position: absolute;
@@ -43,8 +53,11 @@ const Nav = styled.nav`
   display: flex;
   align-items: center;
   z-index: 200;
-
+  /* Navbar Color */
+  background: ${({ theme }) => theme.colorWhite};
   @media screen and (min-width: 992px) {
+    /* Could be transparent*/
+    background: ${({ theme }) => theme.colorWhite};
   }
 `
 const NavCenter = styled.section`

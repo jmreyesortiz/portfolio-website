@@ -15,7 +15,7 @@ export const Footer = () => {
 
 const SocialLinks = styled(Links)``
 const InnerFooter = styled.footer`
-  margin: 0 auto 1rem auto;
+  margin: 0 auto;
   h4 {
     font-family: Montserrat;
     color: ${({ theme }) => theme.colorPrimary9};

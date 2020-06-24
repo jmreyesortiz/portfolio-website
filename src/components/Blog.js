@@ -25,17 +25,9 @@ const Blog = ({ id, title, image, date, category, slug, desc }) => {
 
 const Div = styled.div`
   padding-bottom: 5rem;
-  @media screen and (min-width: 850px) {
-  }
-  @media screen and (min-width: 576px) {
-  }
 `
 
 const BlogComp = styled(Link)`
-  @media screen and (min-width: 768px) {
-  }
-  @media screen and (max-width: 667px) {
-  }
   display: block;
   height: 100%;
 

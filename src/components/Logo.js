@@ -5,7 +5,8 @@ import styled from "styled-components"
 
 const LogoW = styled.section`
   @media screen and (min-width: 768px) {
-    width: 80px;
+    width: 70px;
+    margin-bottom: 0.375rem;
   }
   @media screen and (max-width: 768px) {
   }

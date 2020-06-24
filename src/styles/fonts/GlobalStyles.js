@@ -11,10 +11,19 @@ export default createGlobalStyle`
 body {
     line-height: 1.5;
     font-size: 0.875rem;
-    margin-top: 5rem;
+    margin-top: 0rem;
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
     font-family: ${({ theme }) => theme.primaryFont};
+    margin-left:0;
+    margin-bottom:0;
+    margin-right:0;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
 }
 h1{
   font-size: 3rem;
@@ -105,6 +114,10 @@ text-transform: uppercase;
   :hover {
   color: ${({ theme }) => theme.colorPrimary1};
   background: ${({ theme }) => theme.colorPrimary8};
+}
+
+.section {
+  padding: 5rem 0;
 }
 
 }
