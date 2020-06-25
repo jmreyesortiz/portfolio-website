@@ -45,10 +45,10 @@ const SideLinks = styled.ul`
     text-align: center;
     font-family: ${({ theme }) => theme.secondaryFont};
     text-transform: capitalize;
-    color: ${({ theme }) => theme.colorGrey5};
+    color: ${({ theme }) => theme.text};
     letter-spacing: ${({ theme }) => theme.spacing};
     margin-top: 1rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
     transition: ${({ theme }) => theme.transition};
     border-radius: ${({ theme }) => theme.radius};
   }
@@ -113,7 +113,7 @@ const NavLinks = styled.ul`
       letter-spacing: ${({ theme }) => theme.spacing};
       transition: ${({ theme }) => theme.transition};
       padding: 0.5rem 0;
-      color: ${({ theme }) => theme.colorPrimary};
+      color: ${({ theme }) => theme.text};
     }
     a:hover {
       color: ${({ theme }) => theme.colorPrimary7};

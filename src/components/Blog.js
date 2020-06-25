@@ -24,8 +24,7 @@ const Blog = ({ id, title, image, date, category, slug, desc }) => {
 }
 
 const Date = styled.p`
-  margin-right: 0.5rem;
-  margin-bottom: 1rem;
+  margin-right: 1.25rem;
 `
 const Div = styled.div`
   padding-bottom: 5rem;
@@ -48,6 +47,9 @@ const BlogComp = styled(Link)`
     display: grid;
     grid-template-rows: auto 1fr;
   }
+  p {
+    color: ${({ theme }) => theme.text};
+  }
 `
 
 const BlogImage = styled(Image)`
@@ -67,7 +69,8 @@ const BlogCard = styled.div`
   grid-template-rows: auto 1fr auto;
   padding: 1.5rem 1rem;
   h4 {
-    color: ${({ theme }) => theme.colorGrey1};
+    font-family: ${({ theme }) => theme.secondaryFont};
+    color: ${({ theme }) => theme.text};
   }
 `
 
@@ -75,20 +78,21 @@ const BlogFooter = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 1.25rem;
+
   p {
     margin-bottom: 0;
     font-weight: bold;
-    color: ${({ theme }) => theme.colorGrey5};
+    color: ${({ theme }) => theme.text};
   }
 
   p:first-of-type {
+    margin-left: 1.25rem;
     display: inline-block;
     background: ${({ theme }) => theme.colorGrey9};
     color: ${({ theme }) => theme.colorGrey5};
-    margin-right: 0.5rem;
+    margin-right: 1.25rem;
     padding: 0.25rem 0.5rem;
-    margin-bottom: 1rem;
-    margin-left: 0.5rem;
     border-radius: ${({ theme }) => theme.radius};
     text-transform: uppercase;
     letter-spacing: 2px;
