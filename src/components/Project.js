@@ -45,7 +45,6 @@ export const ProjImage = styled(Image)`
   ${Proj}:hover & ::after {
     opacity: 0;
   }
-
   border-top-left-radius: ${({ theme }) => theme.radius};
   border-top-right-radius: ${({ theme }) => theme.radius};
   height: 19rem;
@@ -58,7 +57,7 @@ export const ProjImage = styled(Image)`
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.85;
+    opacity: 0.2;
     background: linear-gradient(
       to bottom left,
       ${({ theme }) => theme.colorPrimary5},
@@ -75,10 +74,9 @@ export const ProjImage = styled(Image)`
   }
 
   @media screen and (min-width: 992px) {
-    grid-column: 1 / span 8;
-    /* grid-column-end: 8; */
+    grid-column: 1 / 5;
     grid-row: 1 / 1;
-    height: 30rem;
+    height: 100%;
     border-radius: ${({ theme }) => theme.radius};
     /*Todo: need to double check this one */
     box-shadow: ${({ theme }) => theme.darkShadow};
@@ -91,11 +89,14 @@ export const ProjNumber = styled.span`
   color: ${({ theme }) => theme.colorPrimary5};
   margin-bottom: 0.75rem;
 `
-export const ProjTitle = styled.h3``
+export const ProjTitle = styled.h3`
+  font-family: ${({ theme }) => theme.secondaryFont};
+`
 
 export const ProjDesc = styled.p`
   margin-bottom: 1.25rem;
   word-spacing: 15px;
+  font-family: ${({ theme }) => theme.primaryFont};
   color: ${({ theme }) => theme.colorGrey11};
 `
 export const ProjStack = styled.section`
@@ -110,6 +111,7 @@ export const ProjStack = styled.section`
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 0.75rem;
+    margin-bottom: 0.5rem;
   }
 `
 export const ProjInfo = styled.section`
@@ -137,10 +139,11 @@ export const ProjLinks = styled.section``
 
 export const ProjIconLink = styled.a`
   color: ${({ theme }) => theme.colorPrimary5};
-  font-size: 1.25rem;
-  margin-right: 0.5rem;
+
+  font-size: 2rem;
+  margin-right: 1rem;
   transition: ${({ theme }) => theme.transition};
   :hover {
-    color: ${({ theme }) => theme.colorPrimary1};
+    color: ${({ theme }) => theme.text};
   }
 `

@@ -43,7 +43,7 @@ export const lightTheme = {
   colorNav: "#fff",
 
   //PrimaryFonts + Misc
-  primaryFont: "Montserrat",
+  primaryFont: "Open Sans",
   secondaryFont: "Staatliches",
   transition: "all 0.3s linear",
   spacing: "0.2rem",
@@ -100,7 +100,7 @@ export const darkTheme = {
   colorNav: "#363537",
 
   //Fonts + Misc
-  primaryFont: "Montserrat",
+  primaryFont: "Open Sans",
   secondaryFont: "Staatliches",
   transition: "all 0.3s linear",
   spacing: "0.2rem",

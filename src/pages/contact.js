@@ -42,6 +42,7 @@ const Heading = styled.h3`
 const FormLayout = styled(Layout)``
 
 const ContactPage = styled.section`
+  min-height: calc(100vh - 5rem - 9rem);
   display: grid;
   place-items: center;
   padding: 5rem 0;

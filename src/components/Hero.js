@@ -11,7 +11,7 @@ const Hero = () => {
             <Underline></Underline>
             <h1>I'm Juan Reyes Ortiz</h1>
             <h4>Web Developer and Android Developer</h4>
-            <HeroButton>Click</HeroButton>
+            <HeroButton to="/about">About Me</HeroButton>
             <SocialLinks color="white" />
           </div>
         </HeroInfo>
@@ -38,7 +38,7 @@ const HeroHeader = styled.header`
   margin-top: -5rem;
   padding-top: 5rem;
   height: 100vh;
-  background: ${({ theme }) => theme.colorPrimary3};
+  background: ${({ theme }) => theme.colorPrimary4};
   position: relative;
   @media screen and (min-width: 992px) {
     ::before {
@@ -69,7 +69,7 @@ const HeroCenter = styled.div`
   }
 `
 const HeroInfo = styled.article`
-  background: ${({ theme }) => theme.colorPrimary3};
+  background: ${({ theme }) => theme.colorPrimary4};
   h4 {
     color: ${({ theme }) => theme.colorGrey5};
   }

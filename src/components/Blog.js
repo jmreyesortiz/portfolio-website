@@ -15,7 +15,7 @@ const Blog = ({ id, title, image, date, category, slug, desc }) => {
           </BlogCard>
           <BlogFooter>
             <p>{category}</p>
-            <p>{date}</p>
+            <Date>{date}</Date>
           </BlogFooter>
         </article>
       </BlogComp>
@@ -23,6 +23,10 @@ const Blog = ({ id, title, image, date, category, slug, desc }) => {
   )
 }
 
+const Date = styled.p`
+  margin-right: 0.5rem;
+  margin-bottom: 1rem;
+`
 const Div = styled.div`
   padding-bottom: 5rem;
 `
@@ -83,7 +87,7 @@ const BlogFooter = styled.div`
     color: ${({ theme }) => theme.colorGrey5};
     margin-right: 0.5rem;
     padding: 0.25rem 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     margin-left: 0.5rem;
     border-radius: ${({ theme }) => theme.radius};
     text-transform: uppercase;

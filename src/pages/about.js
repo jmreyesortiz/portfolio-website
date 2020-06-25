@@ -41,8 +41,10 @@ const AboutParagraph = styled.p`
 const AboutPage = styled.section`
   background: ${({ theme }) => theme.colorGrey10};
   padding: 7rem 0;
+  min-height: calc(100vh - 5rem - 9rem);
 `
 const AboutCenter = styled.div`
+  min-height: calc(100vh - 5rem - 9rem);
   width: 90vw;
   margin: 0 auto;
   max-width: 1170px;
