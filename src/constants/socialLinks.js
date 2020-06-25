@@ -41,7 +41,7 @@ const SocialLink = styled.a`
   ${props => {
     const newColor = props.defineColor
     if (newColor === "white") {
-      return { color: props.theme.colorWhite }
+      return { color: props.theme.colorPrimary7 }
     } else {
       return { color: props.theme.colorPrimary7 }
     }
