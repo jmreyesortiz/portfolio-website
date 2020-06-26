@@ -23,7 +23,12 @@ const Layout = ({ children }) => {
           theme={theme}
           toggleTheme={useTheme}
         />
-        <SideBar isOpen={isOpen} toggleSidebar={toggleSidebar} />
+        <SideBar
+          theme={theme}
+          toggleTheme={useTheme}
+          isOpen={isOpen}
+          toggleSidebar={toggleSidebar}
+        />
         {children}
         <GlobStyles />
         <Footer />

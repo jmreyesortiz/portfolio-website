@@ -1,6 +1,6 @@
 import React from "react"
 import Image from "gatsby-image"
-import { FaGithubSquare, FaShareSquare } from "react-icons/fa"
+import { FaGithubSquare, FaShareSquare, FaAndroid } from "react-icons/fa"
 import styled from "styled-components"
 
 const Project = ({ description, title, github, stack, url, image, index }) => {
@@ -21,7 +21,12 @@ const Project = ({ description, title, github, stack, url, image, index }) => {
             <FaGithubSquare />
           </ProjIconLink>
           <ProjIconLink href={github}>
-            <FaShareSquare />
+            {stack.map(item => {
+              console.log(item.title)
+              if (item.title === "Google Play") {
+                return <FaAndroid />
+              }
+            })}
           </ProjIconLink>
         </ProjLinks>
       </ProjInfo>
@@ -57,7 +62,7 @@ export const ProjImage = styled(Image)`
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.2;
+    opacity: 0;
     background: linear-gradient(
       to bottom left,
       ${({ theme }) => theme.colorPrimary5},
@@ -77,6 +82,7 @@ export const ProjImage = styled(Image)`
     grid-column: 1 / 5;
     grid-row: 1 / 1;
     height: 100%;
+    width: 100%;
     border-radius: ${({ theme }) => theme.radius};
     /*Todo: need to double check this one */
     box-shadow: ${({ theme }) => theme.darkShadow};
@@ -95,22 +101,33 @@ export const ProjTitle = styled.h3`
 
 export const ProjDesc = styled.p`
   margin-bottom: 1.25rem;
-  word-spacing: 15px;
+  word-spacing: 5px;
   font-family: ${({ theme }) => theme.primaryFont};
   color: ${({ theme }) => theme.colorGrey11};
 `
 export const ProjStack = styled.section`
   margin-bottom: 1rem;
   span {
+    :nth-child(1) {
+      border-color: ${({ theme }) => theme.colorPrimary5};
+      color: ${({ theme }) => theme.colorPrimary5};
+    }
+    :nth-child(2) {
+      border-color: ${({ theme }) => theme.colorPrimary5};
+      color: ${({ theme }) => theme.colorPrimary5};
+    }
+    margin-right: 0.7rem;
+    font-family: ${({ theme }) => theme.secondaryFont};
     display: inline-block;
-    background: ${({ theme }) => theme.colorGrey9};
-    color: ${({ theme }) => theme.colorGrey5};
-    margin-right: 0.5rem;
-    padding: 0.25rem 0.5rem;
-    border-radius: ${({ theme }) => theme.radius};
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.75rem;
+    border: 1.4px solid;
+    word-spacing: 5px;
+    border-color: ${({ theme }) => theme.text};
+    padding: 0.2rem;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+    border-color: ${({ theme }) => theme.text};
+    font-weight: lighter;
+    font-size: 0.9rem;
     margin-bottom: 0.5rem;
   }
 `
@@ -138,12 +155,11 @@ export const ProjInfo = styled.section`
 export const ProjLinks = styled.section``
 
 export const ProjIconLink = styled.a`
-  color: ${({ theme }) => theme.colorPrimary5};
-
+  color: ${({ theme }) => theme.text};
   font-size: 2rem;
   margin-right: 1rem;
   transition: ${({ theme }) => theme.transition};
   :hover {
-    color: ${({ theme }) => theme.text};
+    color: ${({ theme }) => theme.colorPrimary5};
   }
 `

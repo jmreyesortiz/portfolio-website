@@ -9,7 +9,7 @@ export const lightTheme = {
 
   //Toggle Button
   colorMoon: "#9E9E9E",
-  colorSun: "#FFAB00",
+  colorSun: "#f56d23",
 
   // Primary Colors
   colorPrimary1: "#716913",
@@ -66,7 +66,7 @@ export const darkTheme = {
   background: "#062039",
 
   //Toggle Button
-  colorMoon: "#E0F7FA",
+  colorMoon: "#37bcc8",
   colorSun: "#BDBDBD",
 
   // Primary Colors

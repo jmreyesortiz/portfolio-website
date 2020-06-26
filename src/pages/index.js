@@ -15,7 +15,12 @@ export default ({ data }) => {
     <>
       <Layout>
         <Hero></Hero>
-        <Projects booleanLink projects={projects} title="Projects" showLink />
+        <Projects
+          booleanLink
+          projects={projects}
+          title="Featured Projects"
+          showLink
+        />
         <Blogs blogs={blogs} title="Latest Articles" showLink></Blogs>
       </Layout>
     </>
