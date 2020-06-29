@@ -20,11 +20,11 @@ const About = ({
             <AboutText>
               <AboutTitle title={title} aboutTitle></AboutTitle>
               <AboutParagraph>{info}</AboutParagraph>
-              <AboutStack>
+              <Category>
                 {stack.map(item => {
                   return <span key={item.id}>{item.title}</span>
                 })}
-              </AboutStack>
+              </Category>
             </AboutText>
           </AboutCenter>
         </AboutPage>
@@ -62,18 +62,21 @@ const AboutImage = styled(Image)`
 const AboutText = styled.article`
   grid-column: 6 / -1;
 `
-const AboutStack = styled.div`
+
+const Category = styled.section`
   span {
-    display: inline-block;
-    background: ${({ theme }) => theme.colorGrey9};
-    color: ${({ theme }) => theme.colorGrey5};
     margin-right: 0.5rem;
+    font-family: ${({ theme }) => theme.secondaryFont};
+    color: ${({ theme }) => theme.text};
+    display: inline-block;
+    border: 1.4px solid;
+    word-spacing: 5px;
+    border-color: ${({ theme }) => theme.text};
     padding: 0.25rem 0.5rem;
-    border-radius: ${({ theme }) => theme.radius};
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.85rem;
-    margin-top: 0.5rem;
+    border-color: ${({ theme }) => theme.text};
+    font-weight: lighter;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
   }
 `
 export const query = graphql`

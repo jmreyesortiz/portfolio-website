@@ -34,16 +34,6 @@ const NavLogo = styled(Logo)`
   margin-left: 5rem;
 `
 
-const NavLinks = styled(Links)`
-  ul a {
-    font-family: Montserrat;
-  }
-  color: ${({ theme }) => theme.colorGrey1};
-  font-weight: bold;
-  letter-spacing: ${({ theme }) => theme.spacing};
-  transition: ${({ theme }) => theme.transition};
-  padding: 0.5rem 0;
-`
 const Nav = styled.nav`
   position: absolute;
   top: 0;

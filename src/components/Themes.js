@@ -11,20 +11,23 @@ export const lightTheme = {
   colorMoon: "#9E9E9E",
   colorSun: "#f56d23",
 
+  buttonColor: "#363537",
+  buttonTxtColor: "#fff",
+
   // Primary Colors
-  colorPrimary1: "#716913",
+  colorPrimary1: "#FFE0B2",
   colorPrimary2: "#716913",
   colorPrimary3: "#EF6C00",
   colorPrimary4: "#ff7043",
   colorPrimary5: "#ff7043",
   // lighter shades
-  colorPrimary6: "#990005",
-  colorPrimary7: "#ff7043",
-  colorPrimary8: "#990005",
-  colorPrimary9: "#ffe4bc",
+  colorPrimary6: "#FFCC80",
+  colorPrimary7: "#FFB74D",
+  colorPrimary8: "#FFA726",
+  colorPrimary9: "#FFCC80",
   //BACKGROUND 2
-  colorPrimary10: "#FFE0B2",
-  colorPrimary11: "#FFF3E0",
+  colorPrimary10: "#FB8C00",
+  colorPrimary11: "#0197db",
   //darkest grey
   colorGrey1: "#102a42",
   colorGrey3: "#324d67",
@@ -68,6 +71,9 @@ export const darkTheme = {
   //Toggle Button
   colorMoon: "#37bcc8",
   colorSun: "#BDBDBD",
+
+  buttonColor: "#363537",
+  buttonTxtColor: "#fff",
 
   // Primary Colors
   colorPrimary: "#FFF",

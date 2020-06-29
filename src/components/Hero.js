@@ -1,7 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import SocialLinks from "../constants/SocialLinks"
+import Links from "../constants/SocialLinks"
 import Part from "react-particles-js"
+import { Link } from "gatsby"
 
 const Hero = () => {
   return (
@@ -85,8 +86,10 @@ const Hero = () => {
             <Underline></Underline>
             <H1>Juan Reyes Ortiz</H1>
             <H4>Web Developer and Android Developer</H4>
-            <HeroButton to="/about">About Me</HeroButton>
-            <SocialLinks color="white" />
+            <Link to="/about">
+              <HeroButton>About Me</HeroButton>
+            </Link>
+            <Links color="white" />
           </div>
         </HeroInfo>
       </HeroCenter>
@@ -97,7 +100,19 @@ const Hero = () => {
 const H1 = styled.h1`
   color: ${({ theme }) => theme.colorPrimary5};
 `
+const H4 = styled.h4`
+  color: ${({ theme }) => theme.colorPrimary4};
+`
+const Underline = styled.div`
+  margin-bottom: -1rem;
+  margin-left: 0;
 
+  margin-right: auto;
+  width: 5rem;
+  height: 0.25rem;
+
+  background: ${({ theme }) => theme.colorPrimary5};
+`
 const Particles = styled(Part)`
   position: absolute;
   margin-top: -5rem;
@@ -111,14 +126,8 @@ const Particles = styled(Part)`
 
   @media screen and (max-width: 992px) {
     height: 80vh;
-    opacity: 0;
   }
 `
-
-const H4 = styled.h4`
-  color: ${({ theme }) => theme.colorPrimary4};
-`
-
 const HeroHeader = styled.header`
   background: ${({ theme }) => theme.background};
 
@@ -151,16 +160,6 @@ const HeroInfo = styled.article`
   @media screen and (min-width: 1170px) {
     grid-column: 1 / span 8;
   }
-`
-const Underline = styled.div`
-  margin-bottom: -1rem;
-  margin-left: 0;
-
-  margin-right: auto;
-  width: 5rem;
-  height: 0.25rem;
-
-  background: ${({ theme }) => theme.colorPrimary5};
 `
 const HeroButton = styled.button`
   margin-top: 1.25rem;

@@ -1,16 +1,20 @@
 import React from "react"
 import Image from "gatsby-image"
-import { FaGithubSquare, FaShareSquare, FaAndroid } from "react-icons/fa"
+import { FaGithubSquare, FaGooglePlay } from "react-icons/fa"
 import styled from "styled-components"
 
 const Project = ({ description, title, github, stack, url, image, index }) => {
   return (
     <Proj data-sal="slide-up" data-sal-duration="1000">
-      <ProjImage fluid={image.childImageSharp.fluid} />
+      <Parent>
+        <Child>
+          <ProjImage fluid={image.childImageSharp.fluid} />
+        </Child>
+      </Parent>
       <ProjInfo>
         <ProjNumber>{index + 1}</ProjNumber>
         <ProjTitle>{title}</ProjTitle>
-        <ProjDesc>{description}</ProjDesc>
+        <ProjDescription>{description}</ProjDescription>
         <ProjStack>
           {stack.map(item => {
             return <span key={item.id}>{item.title}</span>
@@ -24,8 +28,9 @@ const Project = ({ description, title, github, stack, url, image, index }) => {
             {stack.map(item => {
               console.log(item.title)
               if (item.title === "Google Play") {
-                return <FaAndroid />
+                return <FaGooglePlay key={item.id} />
               }
+              return null
             })}
           </ProjIconLink>
         </ProjLinks>
@@ -35,6 +40,77 @@ const Project = ({ description, title, github, stack, url, image, index }) => {
 }
 
 export default Project
+
+export const Child = styled.div`
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  /* fallback color */
+
+  &::before {
+    content: "";
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+`
+
+export const Parent = styled.div`
+  border-top-left-radius: ${({ theme }) => theme.radius};
+  border-top-right-radius: ${({ theme }) => theme.radius};
+  height: 19rem;
+  z-index: 1;
+  overflow: hidden;
+  position: relative;
+
+  display: inline-block;
+  :hover ${Child} {
+    -ms-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  :focus ${Child} {
+    -ms-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  :hover ${Child}:before {
+    display: block;
+  }
+  :focus ${Child}:before {
+    display: block;
+  }
+  @media screen and (max-width: 960px) {
+    width: 100%;
+    margin: 20px 0px;
+  }
+  @media screen and (min-width: 576px) {
+    height: 19rem;
+  }
+  @media screen and (min-width: 768px) {
+    height: 22rem;
+  }
+  @media screen and (min-width: 992px) {
+    grid-column: 1 / 5;
+    grid-row: 1 / 1;
+    height: 100%;
+    width: 100%;
+    border-radius: ${({ theme }) => theme.radius};
+    box-shadow: ${({ theme }) => theme.darkShadow};
+  }
+`
 
 export const Proj = styled.section`
   display: grid;
@@ -99,7 +175,7 @@ export const ProjTitle = styled.h3`
   font-family: ${({ theme }) => theme.secondaryFont};
 `
 
-export const ProjDesc = styled.p`
+export const ProjDescription = styled.p`
   margin-bottom: 1.25rem;
   word-spacing: 5px;
   font-family: ${({ theme }) => theme.primaryFont};
@@ -122,9 +198,7 @@ export const ProjStack = styled.section`
     border: 1.4px solid;
     word-spacing: 5px;
     border-color: ${({ theme }) => theme.text};
-    padding: 0.2rem;
-    padding-top: 0.1rem;
-    padding-bottom: 0.1rem;
+    padding: 0.25rem 0.5rem;
     border-color: ${({ theme }) => theme.text};
     font-weight: lighter;
     font-size: 0.9rem;

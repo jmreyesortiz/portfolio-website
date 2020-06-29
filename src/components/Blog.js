@@ -14,7 +14,10 @@ const Blog = ({ id, title, image, date, category, slug, desc }) => {
             <p>{desc}</p>
           </BlogCard>
           <BlogFooter>
-            <p>{category}</p>
+            <Category>
+              <span>{category}</span>
+            </Category>
+
             <Date>{date}</Date>
           </BlogFooter>
         </article>
@@ -87,16 +90,39 @@ const BlogFooter = styled.div`
   }
 
   p:first-of-type {
-    margin-left: 1.25rem;
+    margin-bottom: 1rem;
+    span {
+      margin-right: 0.7rem;
+      font-family: ${({ theme }) => theme.secondaryFont};
+      display: inline-block;
+      border: 1.4px solid;
+      word-spacing: 5px;
+      border-color: ${({ theme }) => theme.text};
+      padding: 0.2rem;
+      padding-top: 0.1rem;
+      padding-bottom: 0.1rem;
+      border-color: ${({ theme }) => theme.text};
+      font-weight: lighter;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+`
+
+const Category = styled.section`
+  span {
+    margin-left: 1rem;
+    margin-right: 0.5rem;
+    font-family: ${({ theme }) => theme.secondaryFont};
+    color: ${({ theme }) => theme.text};
     display: inline-block;
-    background: ${({ theme }) => theme.colorGrey9};
-    color: ${({ theme }) => theme.colorGrey5};
-    margin-right: 1.25rem;
+    border: 1.4px solid;
+    word-spacing: 5px;
+    border-color: ${({ theme }) => theme.text};
     padding: 0.25rem 0.5rem;
-    border-radius: ${({ theme }) => theme.radius};
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.85rem;
+    border-color: ${({ theme }) => theme.text};
+    font-weight: lighter;
+    font-size: 0.9rem;
   }
 `
 Blog.propTypes = {}

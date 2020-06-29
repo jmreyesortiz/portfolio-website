@@ -25,9 +25,27 @@ ul {
 a {
   text-decoration: none;
 }
-h1{
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  font-family: var(--ff-primary);
+}
+h1 {
   font-size: 3rem;
-  font-family: ${({ theme }) => theme.primaryFont};
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
 }
 
 p {
@@ -97,14 +115,14 @@ button{
 text-transform: uppercase;
   font-family: ${({ theme }) => theme.secondaryFont};
   background: ${({ theme }) => theme.colorPrimary5};
-  color: ${({ theme }) => theme.colorPrimary9};
+  color: ${({ theme }) => theme.text};
   padding: 0.375rem 0.75rem;
   letter-spacing: ${({ theme }) => theme.spacing};
   display: inline-block;
-  font-weight: 700;
+  font-weight: 800;
   -webkit-transition: ${({ theme }) => theme.transition};
   transition: ${({ theme }) => theme.transition};
-  font-size: 0.875rem;
+  font-size: 0.975rem;
   border: 2px solid transparent;
   cursor: pointer;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
@@ -112,8 +130,8 @@ text-transform: uppercase;
 
 
   :hover {
-  color: ${({ theme }) => theme.colorPrimary1};
-  background: ${({ theme }) => theme.colorPrimary8};
+  color: ${({ theme }) => theme.buttonTxtColor};
+  background: ${({ theme }) => theme.buttonColor};
 }
 
 .section {
@@ -121,9 +139,6 @@ text-transform: uppercase;
 }
 
 }
-
-
-
 
 
 

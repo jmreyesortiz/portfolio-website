@@ -16,22 +16,22 @@ const SocialLinks = ({ color, toggleAnimation }) => {
 
 const data = [
   {
-    id: uuidv4,
+    id: uuidv4(),
     icon: <FaLinkedin className="social-icon"></FaLinkedin>,
     url: "https://www.linkedin.com/in/juanmareyesortiz/",
   },
   {
-    id: uuidv4,
+    id: uuidv4(),
     icon: <FaGithub className="social-icon"></FaGithub>,
     url: "https://github.com/jmreyesortiz",
   },
   {
-    id: uuidv4,
+    id: uuidv4(),
     icon: <FaMedium className="social-icon"></FaMedium>,
     url: "https://twitter.com/jmreyesortiz",
   },
   {
-    id: uuidv4,
+    id: uuidv4(),
     icon: <FaTwitterSquare className="social-icon"></FaTwitterSquare>,
     url: "https://twitter.com/jmreyesortiz",
   },
@@ -41,15 +41,15 @@ const SocialLink = styled.a`
   ${props => {
     const newColor = props.defineColor
     if (newColor === "white") {
-      return { color: props.theme.colorPrimary7 }
+      return { color: props.theme.colorPrimary4 }
     } else {
-      return { color: props.theme.colorPrimary7 }
+      return { color: props.theme.colorPrimary5 }
     }
   }};
   font-size: 1.75rem;
   transition: ${({ theme }) => theme.transition};
   &:hover {
-    color: ${({ theme }) => theme.colorPrimary5};
+    color: ${({ theme }) => theme.colorPrimary1};
   }
 `
 const slideUp = keyframes`
@@ -64,6 +64,7 @@ const slideUp = keyframes`
 `
 
 const SocLinks = styled.ul`
+  padding-left: 0;
   margin-top: 2rem;
   width: 15rem;
   display: flex;

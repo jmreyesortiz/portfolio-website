@@ -6,27 +6,27 @@ import { keyframes } from "styled-components"
 
 const data = [
   {
-    id: uuidv4,
+    id: uuidv4(),
     text: "home",
     url: "/",
   },
   {
-    id: uuidv4,
+    id: uuidv4(),
     text: "about",
     url: "/about/",
   },
   {
-    id: uuidv4,
+    id: uuidv4(),
     text: "projects",
     url: "/projects/",
   },
   {
-    id: uuidv4,
+    id: uuidv4(),
     text: "blog",
     url: "/blog/",
   },
   {
-    id: uuidv4,
+    id: uuidv4(),
     text: "contact",
     url: "/contact/",
   },

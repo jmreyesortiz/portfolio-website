@@ -7,20 +7,21 @@ export const Footer = () => {
   return (
     <InnerFooter>
       <SocialLinks />
-      <h4>Copyright&copy;{new Date().getFullYear}</h4>
+      <H4>Copyright &copy; {year}</H4>
       <Span>Jmreyesortiz All Rights Reserved</Span>
     </InnerFooter>
   )
 }
 
-const SocialLinks = styled(Links)``
-const InnerFooter = styled.footer`
+const year = new Date().getFullYear()
+
+const H4 = styled.h4`
   margin: 0 auto;
-  h4 {
-    font-family: Montserrat;
-    color: ${({ theme }) => theme.colorPrimary9};
-  }
+  font-family: Montserrat;
+  color: ${({ theme }) => theme.colorPrimary9};
 `
+const SocialLinks = styled(Links)``
+const InnerFooter = styled.footer``
 
 const Span = styled.span`
   font-family: Montserrat;
