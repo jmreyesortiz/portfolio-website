@@ -3,7 +3,7 @@ import Navbar from "./Navbar"
 import { ThemeProvider } from "styled-components"
 import { useDarkMode } from "./useDarkMode"
 import { lightTheme, darkTheme } from "./Themes"
-import GlobStyles from "../styles/fonts/GlobalStyles.js"
+import { GlobalStyles } from "./GlobalStyles.js"
 import { Footer } from "./Footer"
 import SideBar from "../components/Sidebar"
 
@@ -29,7 +29,7 @@ const Layout = ({ children }) => {
           toggleSidebar={toggleSidebar}
         />
         {children}
-        <GlobStyles />
+        <GlobalStyles />
         <Footer />
       </ThemeProvider>
     </>

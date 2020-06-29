@@ -3,51 +3,50 @@ import styled from "styled-components"
 import Links from "../constants/SocialLinks"
 import Part from "react-particles-js"
 import { Link } from "gatsby"
+import { useContext } from "react"
+import { ThemeContext } from "styled-components"
 
 const Hero = () => {
+  const themeContext = useContext(ThemeContext)
+  console.log("primary" + themeContext.colorPrimary4)
+
   return (
     <HeroHeader>
       <Particles
         params={{
           particles: {
-            number: { value: 50, density: { enable: true, value_area: 500 } },
+            number: { value: 100, density: { enable: true, value_area: 1000 } },
             color: { value: "#10d7bf" },
             shape: {
               type: "circle",
-              stroke: { width: 1, color: "#00ffd1" },
-              polygon: { nb_sides: 5 },
-              image: {
-                src:
-                  "http://wiki.lexisnexis.com/academic/images/f/fb/Itunes_podcast_icon_300.jpg",
-                width: 100,
-                height: 100,
-              },
+              stroke: { width: 0.8, color: "#00ffd1" },
+              polygon: { nb_sides: 0 },
             },
             opacity: {
               value: 0.04734885849793636,
-              random: true,
+              random: false,
               anim: {
                 enable: true,
                 speed: 3.9160839160839163,
-                opacity_min: 0.1,
-                sync: false,
+                opacity_min: 1,
+                sync: true,
               },
             },
             size: {
-              value: 3.945738208161363,
+              value: 2,
               random: true,
               anim: { enable: false, speed: 40, size_min: 0.1, sync: false },
             },
             line_linked: {
               enable: true,
-              distance: 100,
+              distance: 150,
               color: "#04c9e3",
               opacity: 0.8,
               width: 1.1,
             },
             move: {
               enable: true,
-              speed: 2,
+              speed: 1.3,
               direction: "left",
               random: true,
               straight: true,
@@ -59,7 +58,7 @@ const Hero = () => {
           interactivity: {
             detect_on: "canvas",
             events: {
-              onhover: { enable: false, mode: "grab" },
+              onhover: { enable: true, mode: "grab" },
               onclick: { enable: false, mode: "repulse" },
               resize: true,
             },
