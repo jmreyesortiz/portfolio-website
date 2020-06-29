@@ -5,8 +5,11 @@ import { func, string } from "prop-types"
 const DarkModeToggle = styled.section`
   display: flex;
   margin: 0 auto;
+  margin-left: 2rem;
+  justify-content: center;
+  margin-left: 2rem;
   & > button {
-    font-size: 1.2em;
+    font-size: 1em;
     background: none;
     border: none;
     color: ${({ theme }) => theme.colorSun};
@@ -18,6 +21,12 @@ const DarkModeToggle = styled.section`
     &:focus {
       outline: none;
     }
+  }
+  @media screen and (max-width: 768px) {
+    justify-content: center;
+    margin-left: 6rem;
+    ${props => (props.isNav ? { display: "none" } : { display: "absolute" })}
+    ${props => (props.isNav ? { position: "relative" } : { position: "fixed" })}
   }
 `
 
@@ -68,10 +77,10 @@ const ToggleLabel = styled.label``
 const SunIcon = styled.button``
 const MoonIcon = styled.button``
 
-export const Toggle = ({ theme, toggleTheme }) => {
+const Toggle = ({ theme, toggleTheme, isNav }) => {
   return (
     <>
-      <DarkModeToggle>
+      <DarkModeToggle isNav={isNav}>
         <SunIcon>☀</SunIcon>
         <ToggleControl>
           <ToggleCheckbox
@@ -92,3 +101,5 @@ Toggle.propTypes = {
   theme: string.isRequired,
   toggleTheme: func.isRequired,
 }
+
+export default Toggle

@@ -3,7 +3,7 @@ import styled from "styled-components"
 import Links from "../constants/links"
 import { FaTimes } from "react-icons/fa"
 import SocialLinks from "../constants/SocialLinks"
-import DarkModeToggle from "../components/Toggler2"
+import DarkModeToggle from "./Toggler"
 
 const SideBar = ({ isOpen, toggleSidebar, theme, toggleTheme }) => {
   const Links1 = <Links toggleAnimation={true} sideLinks="sidebar" />

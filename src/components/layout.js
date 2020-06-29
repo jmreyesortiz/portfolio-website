@@ -17,6 +17,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <ThemeProvider theme={themeMode}>
+        <GlobalStyles />
         <Navbar
           toggleSidebar={toggleSidebar}
           theme={theme}
@@ -29,7 +30,6 @@ const Layout = ({ children }) => {
           toggleSidebar={toggleSidebar}
         />
         {children}
-        <GlobalStyles />
         <Footer />
       </ThemeProvider>
     </>

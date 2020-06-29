@@ -3,7 +3,7 @@ import Logo from "./Logo"
 import Links from "../constants/links"
 import styled from "styled-components"
 import { FaAlignRight } from "react-icons/fa"
-import Toggler2 from "../components/Toggler2"
+import Toggler from "./Toggler"
 const Navbar = ({ toggleSidebar, theme, toggleTheme }) => {
   return (
     <>
@@ -27,7 +27,7 @@ const Navbar = ({ toggleSidebar, theme, toggleTheme }) => {
   )
 }
 
-const TogglerNightMode = styled(Toggler2)``
+const TogglerNightMode = styled(Toggler)``
 
 const NavLogo = styled(Logo)`
   margin-bottom: 4rem;
