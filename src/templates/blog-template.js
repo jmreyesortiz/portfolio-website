@@ -3,6 +3,7 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/Layout"
 import styled from "styled-components"
 import ReactMarkdown from "react-markdown"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
 const ComponentName = ({ data }) => {
   const { content } = data.blog
@@ -40,7 +41,6 @@ const BlogTemplate = styled.section`
     display: inline-block;
     color: ${({ theme }) => theme.colorGray8};
   }
-
   ul li {
     background: ${({ theme }) => theme.colorGrey9};
     color: ${({ theme }) => theme.colorGrey5};
@@ -48,7 +48,6 @@ const BlogTemplate = styled.section`
     margin: 1rem 0;
     text-transform: uppercase;
   }
-
   blockquote {
     background: ${({ theme }) => theme.colorPrimary9};
     border-radius: ${({ theme }) => theme.radius};
@@ -57,7 +56,6 @@ const BlogTemplate = styled.section`
     color: v ${({ theme }) => theme.colorPrimary5};
     margin: 2rem 0;
   }
-
   pre {
     background: #222;
     color: yellow;

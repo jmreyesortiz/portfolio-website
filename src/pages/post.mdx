@@ -1,0 +1,72 @@
+import { Link } from "gatsby"
+import { FiInfo } from "react-icons/fi"
+import { Counter, LikeButton, BlockQuote } from "../components/Complete"
+import Logo from "../components/Logo"
+
+<section className="mdx-page">
+
+<Logo />
+
+<h2> My first MDX file m8</h2>
+
+```Java
+
+int var1 = 20;
+
+```
+
+<h2 title={true}> Title</h2>
+<h2> regular heading</h2>
+
+<BlockQuote>
+Therefore I will initiate the suprassing of the theme of the tremendous insight that has been ascribed to me.
+
+</BlockQuote>
+
+<div className = "code">
+
+```js
+
+const tier = "variable"
+const tier 2 = 20;
+
+```
+
+</div>
+
+<Link to="/about">LINK</Link>
+
+<h3> nice text </h3>
+
+<div className="nice-text">
+  <FiInfo className="nice-text-icon"></FiInfo>
+
+    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+    The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+
+</div>
+
+<h2>React Components</h2>
+
+```jsx
+const Error = () => {
+  return (
+    <Layout>
+      <ErrorPage>
+        <div>
+          <h1>404 not found</h1>
+          <Link to="/">
+            <button>Back Home</button>
+          </Link>
+        </div>
+      </ErrorPage>
+    </Layout>
+  )
+}
+```
+
+<LikeButton />
+
+<Counter />
+
+</section>
