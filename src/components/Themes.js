@@ -72,8 +72,8 @@ export const darkTheme = {
   colorMoon: "#37bcc8",
   colorSun: "#BDBDBD",
 
-  buttonColor: "#363537",
-  buttonTxtColor: "#fff",
+  buttonColor: "#fff",
+  buttonTxtColor: "#363537",
 
   // Primary Colors
   colorPrimary: "#FFF",

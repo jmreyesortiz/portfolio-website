@@ -1,13 +1,19 @@
 import React from "react"
 import styled from "styled-components"
 
-const Title = ({ title, aboutTitle }) => {
+const Title = ({ title, aboutTitle, articleTitle }) => {
   if (aboutTitle) {
     return (
       <AboutTitle>
         <DefaultTitle>{title || "default title"}</DefaultTitle>
         <AboutUnderline></AboutUnderline>
       </AboutTitle>
+    )
+  } else if (articleTitle) {
+    return (
+      <ArticleTitle>
+        <ArticleHeader>{title || "default title"}</ArticleHeader>
+      </ArticleTitle>
     )
   } else {
     return (
@@ -19,6 +25,10 @@ const Title = ({ title, aboutTitle }) => {
   }
 }
 
+const ArticleTitle = styled.section`
+  text-align: center;
+`
+
 const SectionTitle = styled.section`
   margin-bottom: 4rem;
   text-align: center;
@@ -29,6 +39,9 @@ const AboutTitle = styled(SectionTitle)`
   text-align: left;
 `
 
+const ArticleHeader = styled.h2`
+  font-family: ${({ theme }) => theme.primaryFont};
+`
 const DefaultTitle = styled.h2`
   font-family: ${({ theme }) => theme.secondaryFont};
 `

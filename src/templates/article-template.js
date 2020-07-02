@@ -3,65 +3,72 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/Layout"
 import styled from "styled-components"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import ReactMarkdown from "react-markdown"
-import { Counter, LikeButton, BlockQuote } from "../components/Complete"
+import Title from "../components/Title"
 
 const ComponentName = ({ data }) => {
   const { body } = data.article.childStrapiArticlesContent.childMdx
+  const { title } = data.article
+  const { date } = data.article
+  const { category } = data.article
+
   return (
     <Layout>
-      <Wrapper>
-        <article>
+      <Div>
+        <Wrapper>
+          <ArtTitle articleTitle={true} title={title}></ArtTitle>
+          <Information>
+            <Author>Juan Reyes</Author>
+            <Separator> | </Separator>
+            <Date> {date} </Date>
+            <Separator> | </Separator>
+            <Category> {category} </Category>
+          </Information>
+          <Underline></Underline>
           <MDXRenderer>{body}</MDXRenderer>
-        </article>
-      </Wrapper>
+        </Wrapper>
+      </Div>
     </Layout>
   )
 }
 
+const Separator = styled.h4`
+  color: ${({ theme }) => theme.colorPrimary5};
+`
+const Underline = styled.section`
+  width: 25rem;
+  height: 0.15rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.25rem;
+  background: ${({ theme }) => theme.colorPrimary5};
+  margin-left: auto;
+  margin-right: auto;
+`
+
+const ArtTitle = styled(Title)`
+  .section {
+    margin-bottom: 0rem;
+  }
+`
+const Information = styled.div`
+  display: flex;
+  justify-content: center;
+`
+const Category = styled.h4``
+const Author = styled.h4``
+const Date = styled.h4``
+
+const Div = styled.div`
+  display: flex;
+  margin-top: 4rem;
+  height: 100%rem;
+  background: ${({ theme }) => theme.colorGrey10};
+`
+
 const Wrapper = styled.section`
-  width: 85vw;
-  max-width: 1100px;
-  margin: 0 auto;
-  margin-bottom: 4rem;
-  .post-info {
-    margin: 2rem 0 4rem 0;
-    text-align: center;
-    span {
-      background: ${({ theme }) => theme.colorPrimary5};
-      color: ${({ theme }) => theme.colorWhite};
-      border-radius: ${({ theme }) => theme.radius};
-      padding: 0.25rem 0.5rem;
-      text-transform: uppercase;
-      letter-spacing: ${({ theme }) => theme.spacing};
-    }
-    h2 {
-      margin: 1.25rem 0;
-      font-weight: 400;
-    }
-    p {
-      color: ${({ theme }) => theme.colorGrey5};
-    }
-    .underline {
-      width: 5rem;
-      height: 1px;
-      background: ${({ theme }) => theme.colorGrey5};
-      margin: 0 auto;
-      margin-bottom: 1rem;
-    }
-  }
-  @media (min-width: 992px) {
-    & {
-      width: 92vw;
-    }
-  }
-  @media (min-width: 1170px) {
-    & {
-      display: grid;
-      grid-template-columns: 1fr 200px;
-      column-gap: 4rem;
-    }
-  }
+  background: ${({ theme }) => theme.colorGrey10};
+  width: 90vw;
+  max-width: 700px;
+  margin: 4rem auto;
 `
 
 export const query = graphql`
@@ -72,6 +79,9 @@ export const query = graphql`
           body
         }
       }
+      title
+      date
+      category
     }
   }
 `

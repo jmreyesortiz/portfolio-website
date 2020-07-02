@@ -7,9 +7,7 @@ export const Footer = () => {
   return (
     <InnerFooter>
       <SocialLinks />
-      <H4>Copyright &copy; {year}</H4>
-      <Span>Jmreyesortiz</Span>
-      <Span>All Rights Reserved</Span>
+      <H4>JmReyesOrtiz &copy; {year}</H4>
     </InnerFooter>
   )
 }

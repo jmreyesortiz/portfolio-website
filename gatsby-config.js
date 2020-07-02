@@ -18,13 +18,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-mdx`,
     `gatsby-remark-images`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `posts`,
-        path: `${__dirname}/src/posts`,
-      },
-    },
+
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
