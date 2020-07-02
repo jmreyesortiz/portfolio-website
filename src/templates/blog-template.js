@@ -53,7 +53,7 @@ const BlogTemplate = styled.section`
     border-radius: ${({ theme }) => theme.radius};
     padding: 1rem;
     line-height: 2;
-    color: v ${({ theme }) => theme.colorPrimary5};
+    color: ${({ theme }) => theme.colorPrimary5};
     margin: 2rem 0;
   }
   pre {

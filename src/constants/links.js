@@ -23,7 +23,7 @@ const data = [
   {
     id: uuidv4(),
     text: "blog",
-    url: "/blog/",
+    url: "/article/",
   },
   {
     id: uuidv4(),

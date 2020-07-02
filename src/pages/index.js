@@ -3,12 +3,12 @@ import Layout from "../components/Layout"
 import Hero from "../components/Hero"
 import Projects from "../components/Projects.js"
 import { graphql } from "gatsby"
-import Blogs from "../components/Blogs"
+import Articles from "../components/Articles"
 export default ({ data }) => {
   //destructuring
   const {
     allStrapiProjects: { nodes: projects },
-    allStrapiBlogs: { nodes: blogs },
+    allStrapiArticles: { nodes: articles },
   } = data
 
   return (
@@ -21,7 +21,11 @@ export default ({ data }) => {
           title="Featured Projects"
           showLink
         />
-        <Blogs blogs={blogs} title="Latest Articles" showLink></Blogs>
+        <Articles
+          articles={articles}
+          title="Latest Articles"
+          showLink
+        ></Articles>
       </Layout>
     </>
   )
@@ -50,7 +54,7 @@ export const query = graphql`
       }
     }
 
-    allStrapiBlogs(sort: { fields: date, order: DESC }, limit: 3) {
+    allStrapiArticles(sort: { fields: date, order: DESC }, limit: 3) {
       nodes {
         slug
         content

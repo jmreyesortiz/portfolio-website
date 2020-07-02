@@ -11,7 +11,7 @@ const Article = ({ data }) => {
   return (
     <Layout>
       <ArticlePage>
-        <Articles articles={articles} title="article"></Articles>
+        <Articles articles={articles} title="All Articles"></Articles>
       </ArticlePage>
     </Layout>
   )
