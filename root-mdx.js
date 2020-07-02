@@ -1,24 +1,20 @@
 import "./src/css/main.css"
 import React from "react"
 import { MDXProvider } from "@mdx-js/react"
-
-const myH2 = props => {
-  if (props.title) {
-    return (
-      <h2 {...props} style={{ fontSize: "2rem", color: "red" }}>
-        {props.children}
-      </h2>
-    )
-  }
-  return (
-    <h2 {...props} className="code">
-      {props.children}
-    </h2>
-  )
-}
+import {
+  PrismWrapper,
+  Headings,
+  Code,
+  BlockQuote,
+  Example,
+} from "./src/components/Complete"
 
 const components = {
-  h2: myH2,
+  h2: Headings.myH2,
+  h4: Headings.myH4,
+  inlineCode: Code,
+  blockquote: BlockQuote,
+  pre: PrismWrapper,
 }
 
 export const wrapMDX = ({ element }) => {
