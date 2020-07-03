@@ -1,16 +1,17 @@
 import React from "react"
 import Navbar from "./Navbar"
 import { ThemeProvider } from "styled-components"
-import { useDarkMode } from "./useDarkMode"
 import { lightTheme, darkTheme } from "./Themes"
 import { GlobalStyles } from "./GlobalStyles.js"
 import { Footer } from "./Footer"
 import SideBar from "../components/Sidebar"
+import useDarkMode from "use-dark-mode"
 
 const Layout = ({ children }) => {
   //Dark Mode
-  const [theme, useTheme] = useDarkMode()
-  const themeMode = theme === "light" ? lightTheme : darkTheme
+
+  const darkMode = useDarkMode(false)
+  const themeMode = darkMode.value ? darkTheme : lightTheme
 
   //SideBar
   const [isOpen, setIsOpen] = React.useState(false)
@@ -23,14 +24,15 @@ const Layout = ({ children }) => {
       <ThemeProvider theme={themeMode}>
         <>
           <GlobalStyles />
+
           <Navbar
+            toggleTheme={darkMode.toggle}
+            theme={darkMode.value}
             toggleSidebar={toggleSidebar}
-            theme={theme}
-            toggleTheme={useTheme}
           />
           <SideBar
-            theme={theme}
-            toggleTheme={useTheme}
+            theme={darkMode.value}
+            toggleTheme={darkMode.toggle}
             isOpen={isOpen}
             toggleSidebar={toggleSidebar}
           />

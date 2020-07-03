@@ -2,13 +2,33 @@ import React from "react"
 import styled from "styled-components"
 import { func, string } from "prop-types"
 
+const Toggle = ({ theme, toggleTheme, isNav }) => {
+  return (
+    <>
+      <DarkModeToggle isNav={isNav}>
+        <SunIcon>☀</SunIcon>
+        <ToggleControl>
+          <ToggleCheckbox
+            type="checkbox"
+            checked={theme}
+            onChange={toggleTheme}
+            id="dmcheck"
+          ></ToggleCheckbox>
+          <ToggleLabel htmlFor="dmcheck" />
+        </ToggleControl>
+        <MoonIcon>☾</MoonIcon>
+      </DarkModeToggle>
+    </>
+  )
+}
+
 const DarkModeToggle = styled.section`
   display: flex;
   margin: 0 auto;
   margin-left: 2rem;
   justify-content: center;
   margin-left: 2rem;
-  & > button {
+  & > span {
     font-size: 1em;
     background: none;
     border: none;
@@ -74,28 +94,8 @@ const ToggleCheckbox = styled.input`
 `
 
 const ToggleLabel = styled.label``
-const SunIcon = styled.button``
-const MoonIcon = styled.button``
-
-const Toggle = ({ theme, toggleTheme, isNav }) => {
-  return (
-    <>
-      <DarkModeToggle isNav={isNav}>
-        <SunIcon>☀</SunIcon>
-        <ToggleControl>
-          <ToggleCheckbox
-            type="checkbox"
-            checked={theme === "light" ? false : true}
-            onChange={toggleTheme}
-            id="dmcheck"
-          ></ToggleCheckbox>
-          <ToggleLabel htmlFor="dmcheck" />
-        </ToggleControl>
-        <MoonIcon>☾</MoonIcon>
-      </DarkModeToggle>
-    </>
-  )
-}
+const SunIcon = styled.span``
+const MoonIcon = styled.span``
 
 Toggle.propTypes = {
   theme: string.isRequired,

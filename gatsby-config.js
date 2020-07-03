@@ -12,6 +12,7 @@ module.exports = {
 
   /* Your site config here */
   plugins: [
+    "gatsby-plugin-use-dark-mode",
     `gatsby-plugin-scroll-reveal`,
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
@@ -51,7 +52,7 @@ module.exports = {
       options: {
         apiURL: `http://localhost:1337`,
         queryLimit: 1000, // Default to 100
-        contentTypes: [`projects`, `blogs`, `articles`],
+        contentTypes: [`projects`, `articles`],
         singleTypes: [`about`],
       },
     },

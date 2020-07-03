@@ -84,7 +84,7 @@ const Hero = () => {
           <div>
             <Underline></Underline>
             <H1>Juan Reyes Ortiz</H1>
-            <H4>Web Developer and Android Developer</H4>
+            <H4>Software Engineer</H4>
             <Link to="/about">
               <HeroButton>About Me</HeroButton>
             </Link>

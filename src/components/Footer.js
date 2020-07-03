@@ -21,8 +21,3 @@ const H4 = styled.h4`
 `
 const SocialLinks = styled(Links)``
 const InnerFooter = styled.footer``
-
-const Span = styled.span`
-  font-family: ${({ theme }) => theme.primaryFont};
-  color: ${({ theme }) => theme.colorPrimary4};
-`

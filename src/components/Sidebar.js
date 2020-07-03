@@ -5,7 +5,7 @@ import { FaTimes } from "react-icons/fa"
 import SocialLinks from "../constants/SocialLinks"
 import DarkModeToggle from "./Toggler"
 
-const SideBar = ({ isOpen, toggleSidebar, theme, toggleTheme }) => {
+const SideBar = ({ isOpen, toggleSidebar, toggleTheme, theme }) => {
   const Links1 = <Links toggleAnimation={true} sideLinks="sidebar" />
   const Links2 = <SLinks toggleAnimation />
   return (
@@ -15,7 +15,7 @@ const SideBar = ({ isOpen, toggleSidebar, theme, toggleTheme }) => {
       </CloseButton>
       <div>
         {showLinks(isOpen, Links1)}
-        <DarkModeToggle theme={theme} toggleTheme={toggleTheme} isNav={false} />
+        <DarkModeToggle theme={theme} toggleTheme={toggleTheme} />
         {showLinks(isOpen, Links2)}
       </div>
     </SBar>

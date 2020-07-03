@@ -6,7 +6,6 @@ import {
   Headings,
   Code,
   BlockQuote,
-  Example,
 } from "./src/components/Complete"
 
 const components = {
