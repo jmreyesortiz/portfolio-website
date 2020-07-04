@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import Image from "gatsby-image"
 
-const Article = ({ id, title, image, date, category, slug, desc }) => {
+const Article = ({ title, image, date, category, slug, desc }) => {
   return (
     <Div data-sal="slide-up" data-sal-duration="1000">
       <ArticleComp to={`/articles/${slug}`}>
@@ -17,7 +17,6 @@ const Article = ({ id, title, image, date, category, slug, desc }) => {
             <Category>
               <span>{category}</span>
             </Category>
-
             <Date>{date}</Date>
           </ArticleFooter>
         </article>

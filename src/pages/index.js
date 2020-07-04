@@ -4,6 +4,7 @@ import Hero from "../components/Hero"
 import Projects from "../components/Projects.js"
 import { graphql } from "gatsby"
 import Articles from "../components/Articles"
+import SEO from "../components/SEO"
 export default ({ data }) => {
   //destructuring
   const {
@@ -14,6 +15,10 @@ export default ({ data }) => {
   return (
     <>
       <Layout>
+        <SEO
+          title="Home | Juan M. Reyes Ortiz"
+          description="Home Page Jmreyesortiz.com"
+        />
         <Hero></Hero>
         <Projects
           booleanLink

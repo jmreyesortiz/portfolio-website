@@ -1,10 +1,12 @@
 import React from "react"
 import Layout from "../components/Layout"
 import styled from "styled-components"
+import SEO from "../components/SEO"
 
 const contact = () => {
   return (
     <FormLayout>
+      <SEO title="Contact | Juan M. Reyes Ortiz" description="Contact"></SEO>
       <Div data-sal="zoom-out" data-sal-duration="1000">
         <ContactPage>
           <ContactForm>

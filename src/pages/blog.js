@@ -3,6 +3,7 @@ import styled from "styled-components"
 import Layout from "../components/Layout"
 import Articles from "../components/Articles"
 import { graphql } from "gatsby"
+import SEO from "../components/SEO"
 
 const Article = ({ data }) => {
   const {
@@ -10,6 +11,7 @@ const Article = ({ data }) => {
   } = data
   return (
     <Layout>
+      <SEO title="Blog | Juan M. Reyes-Ortiz"></SEO>
       <ArticlePage>
         <Articles articles={articles} title="All Articles"></Articles>
       </ArticlePage>

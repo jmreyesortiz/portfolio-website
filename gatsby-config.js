@@ -6,10 +6,13 @@
 
 module.exports = {
   siteMetadata: {
-    title: `portfolio`,
-    description: `jmreyesortiz.com portfolio`,
+    title: `Software Engineer`,
+    description: `This is the software developer portfolio website of Juan M. Reyes Ortiz`,
+    author: "@jmreyesortiz",
+    twitterUsername: "@jmreyesortiz",
+    image: "/twitter-img.png",
+    siteUrl: "https://jmreyesortiz.com",
   },
-
   /* Your site config here */
   plugins: [
     "gatsby-plugin-use-dark-mode",
@@ -19,7 +22,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-mdx`,
     `gatsby-remark-images`,
-
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {

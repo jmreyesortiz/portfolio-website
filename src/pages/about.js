@@ -4,6 +4,7 @@ import Image from "gatsby-image"
 import Layout from "../components/Layout"
 import styled from "styled-components"
 import Title from "../components/Title"
+import SEO from "../components/SEO"
 
 const About = ({
   data: {
@@ -13,6 +14,10 @@ const About = ({
   const { title, stack, info, image } = nodes[0]
   return (
     <Layout>
+      <SEO
+        title="About | Juan M. Reyes-Ortiz"
+        description="About Page jmreyesortiz.com"
+      />
       <div data-sal="zoom-out" data-sal-duration="1000">
         <AboutPage>
           <AboutCenter>

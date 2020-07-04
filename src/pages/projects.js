@@ -3,6 +3,7 @@ import Layout from "../components/Layout"
 import { graphql } from "gatsby"
 import Projects from "../components/Projects"
 import styled from "styled-components"
+import SEO from "../components/SEO"
 
 const ProjectsPage = ({ data }) => {
   const {
@@ -10,6 +11,7 @@ const ProjectsPage = ({ data }) => {
   } = data
   return (
     <Layout>
+      <SEO title="Projects | Juan Reyes-Ortiz" />
       <ProjPage>
         <Projects projects={projects} title="All Projects"></Projects>
       </ProjPage>

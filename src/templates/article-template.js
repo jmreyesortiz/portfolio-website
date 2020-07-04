@@ -4,15 +4,17 @@ import Layout from "../components/Layout"
 import styled from "styled-components"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Title from "../components/Title"
-
+import SEO from "../components/SEO"
 const ComponentName = ({ data }) => {
   const { body } = data.article.childStrapiArticlesContent.childMdx
   const { title } = data.article
   const { date } = data.article
   const { category } = data.article
+  const { desc } = data.article
 
   return (
     <Layout>
+      <SEO title={title} description={desc}></SEO>
       <Div>
         <Wrapper>
           <ArtTitle articleTitle={true} title={title}></ArtTitle>
@@ -82,6 +84,7 @@ export const query = graphql`
       title
       date
       category
+      desc
     }
   }
 `
