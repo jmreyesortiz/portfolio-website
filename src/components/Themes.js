@@ -5,14 +5,14 @@ export const lightTheme = {
   text: "#363537",
   toggleBorder: "#FFF",
   background:
-    "linear-gradient(90deg, rgba(11,51,89,1) 0%, rgba(8,42,75,1) 48%, rgba(6,32,57,1) 100%)",
-
+    "linear-gradient(90deg, rgba(16,63,97,1) 27%, rgba(16,63,97,1) 44%, rgba(7,5,62,1) 100%)",
   //Toggle Button
   colorMoon: "#9E9E9E",
   colorSun: "#f56d23",
 
   buttonColor: "#363537",
   buttonTxtColor: "#fff",
+  buttonStackColor: "#fff",
 
   // Primary Colors
   colorPrimary1: "#FFE0B2",
@@ -43,9 +43,11 @@ export const lightTheme = {
   colorRedLight: "#e66b6b",
   colorWhite: "#fff",
 
+  //Navbar Color
+  colorGrey9: "#dae2ec",
+
   //Other Colors
   colorNav: "#fff",
-
   //PrimaryFonts + Misc
   primaryFont: "Open Sans",
   secondaryFont: "Staatliches",
@@ -74,6 +76,7 @@ export const darkTheme = {
 
   buttonColor: "#fff",
   buttonTxtColor: "#363537",
+  buttonStackColor: "#fff",
 
   // Primary Colors
   colorPrimary: "#FFF",
@@ -104,7 +107,7 @@ export const darkTheme = {
   colorRedDark: "#bb2525",
   colorRedLight: "#e66b6b",
   colorWhite: "#363537",
-  colorNav: "#363537",
+  colorNav: "#424242",
 
   //Fonts + Misc
   primaryFont: "Open Sans",
@@ -116,6 +119,9 @@ export const darkTheme = {
   darkShadow: "0 5px 15px rgba(0, 0, 0, 0.2)",
   MaxWidth: "1170px",
   FixedWidth: "700px",
+
+  //Other Colors
+  colorNav: "#212121",
 
   //SideBar
   showSideBar: "translateX(0%)",

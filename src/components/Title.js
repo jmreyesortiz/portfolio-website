@@ -5,7 +5,7 @@ const Title = ({ title, aboutTitle, articleTitle }) => {
   if (aboutTitle) {
     return (
       <AboutTitle>
-        <DefaultTitle>{title || "default title"}</DefaultTitle>
+        <AboutTitleTxt>{title || "default title"}</AboutTitleTxt>
         <AboutUnderline></AboutUnderline>
       </AboutTitle>
     )
@@ -43,6 +43,9 @@ const ArticleHeader = styled.h2`
   font-family: ${({ theme }) => theme.primaryFont};
 `
 const DefaultTitle = styled.h2`
+  font-family: ${({ theme }) => theme.secondaryFont};
+`
+const AboutTitleTxt = styled.h2`
   font-family: ${({ theme }) => theme.secondaryFont};
 `
 const Underline = styled.section`

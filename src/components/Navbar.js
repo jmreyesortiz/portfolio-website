@@ -44,11 +44,7 @@ const Nav = styled.nav`
   align-items: center;
   z-index: 200;
   /* Navbar Color */
-  background: ${({ theme }) => theme.colorWhite};
-  @media screen and (min-width: 992px) {
-    /* Could be transparent*/
-    background: ${({ theme }) => theme.colorWhite};
-  }
+  background: ${({ theme }) => theme.colorNav};
 `
 const NavCenter = styled.section`
   width: 90vw;

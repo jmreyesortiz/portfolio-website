@@ -26,7 +26,6 @@ const Project = ({ description, title, github, stack, url, image, index }) => {
           </ProjIconLink>
           <ProjIconLink href={github}>
             {stack.map(item => {
-              console.log(item.title)
               if (item.title === "Google Play") {
                 return <FaGooglePlay key={item.id} />
               }
@@ -229,11 +228,11 @@ export const ProjInfo = styled.section`
 export const ProjLinks = styled.section``
 
 export const ProjIconLink = styled.a`
-  color: ${({ theme }) => theme.text};
+  color: ${({ theme }) => theme.colorPrimary5};
   font-size: 2rem;
   margin-right: 1rem;
   transition: ${({ theme }) => theme.transition};
   :hover {
-    color: ${({ theme }) => theme.colorPrimary5};
+    color: ${({ theme }) => theme.buttonStackColor};
   }
 `
