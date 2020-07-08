@@ -4,10 +4,12 @@ import { FaLinkedin, FaGithub, FaMedium, FaTwitterSquare } from "react-icons/fa"
 import styled from "styled-components"
 import { keyframes } from "styled-components"
 
-const SocialLinks = ({ color, toggleAnimation }) => {
+const SocialLinks = ({ color, toggleAnimation, isSideBar }) => {
   if (toggleAnimation) {
     return (
-      <BaseAnimation>{(toggleAnimation, Links(data, color))}</BaseAnimation>
+      <BaseAnimation isSideBar={isSideBar}>
+        {(toggleAnimation, Links(data, color))}
+      </BaseAnimation>
     )
   } else {
     return <SocLinks>{(toggleAnimation, Links(data, color))}</SocLinks>
@@ -41,15 +43,24 @@ const SocialLink = styled.a`
   ${props => {
     const newColor = props.defineColor
     if (newColor === "white") {
-      return { color: props.theme.colorPrimary4 }
+      return { color: props.theme.colorHeader }
     } else {
-      return { color: props.theme.colorPrimary5 }
+      return { color: props.theme.text }
     }
   }};
+  ${props => {
+    const newColor = props.defineColor
+    if (newColor === "white") {
+      return { color: props.theme.colorHeader }
+    } else {
+      return { color: props.theme.text }
+    }
+  }};
+
   font-size: 1.75rem;
   transition: ${({ theme }) => theme.transition};
   &:hover {
-    color: ${({ theme }) => theme.colorPrimary1};
+    color: ${({ theme }) => theme.colorPrimary5};
   }
 `
 const slideUp = keyframes`
@@ -74,6 +85,8 @@ const SocLinks = styled.ul`
   }
 `
 const BaseAnimation = styled(SocLinks)`
+  margin-left: ${props => (props.isSideBar ? "2rem" : "0rem")};
+
   li {
     opacity: 0;
     animation: ${slideUp} 0.5s ease-in-out 0.3s forwards;
@@ -98,7 +111,6 @@ function Links(data, color) {
   return data.map(link => {
     return (
       <li key={link.id}>
-        {console.log("col" + color)}
         <SocialLink defineColor={color} href={link.url}>
           {link.icon}
         </SocialLink>

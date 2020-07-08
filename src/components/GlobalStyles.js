@@ -29,17 +29,17 @@ h1,
 h2,
 h3,
 h4 {
-  letter-spacing: var(--spacing);
+  letter-spacing: ${({ theme }) => theme.spacing};;
   text-transform: capitalize;
   line-height: 1.25;
   margin-bottom: 0.75rem;
-  font-family: var(--ff-primary);
+  font-family: ${({ theme }) => theme.primaryFont};;
 }
 h1 {
   font-size: 3rem;
 }
 h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 h3 {
   font-size: 1.25rem;

@@ -25,7 +25,6 @@ const Toggle = ({ theme, toggleTheme, isNav }) => {
 const DarkModeToggle = styled.section`
   display: flex;
   margin: 0 auto;
-  margin-left: 2rem;
   justify-content: center;
   margin-left: 2rem;
   & > span {
@@ -44,7 +43,7 @@ const DarkModeToggle = styled.section`
   }
   @media screen and (max-width: 768px) {
     justify-content: center;
-    margin-left: 6rem;
+    margin-left: 7rem;
     ${props => (props.isNav ? { display: "none" } : { display: "absolute" })}
     ${props => (props.isNav ? { position: "relative" } : { position: "fixed" })}
   }

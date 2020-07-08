@@ -4,15 +4,17 @@ export const lightTheme = {
   body2: "#f1f5f8",
   text: "#363537",
   toggleBorder: "#FFF",
-  background:
-    "linear-gradient(90deg, rgba(16,63,97,1) 27%, rgba(16,63,97,1) 44%, rgba(7,5,62,1) 100%)",
+  colorHeader: "#FFF",
+  background: "#062039",
   //Toggle Button
   colorMoon: "#9E9E9E",
   colorSun: "#f56d23",
 
   buttonColor: "#363537",
   buttonTxtColor: "#fff",
-  buttonStackColor: "#fff",
+  //Stack
+  stackBorderColor: "#ff7043",
+  stackTextColor: "#363537",
 
   // Primary Colors
   colorPrimary1: "#FFE0B2",
@@ -35,6 +37,7 @@ export const lightTheme = {
   //gray for paragraphs
   colorGrey5: "#617d98",
   colorGrey8: "#bcccdc",
+  //Navbar Color
   colorGrey9: "#dae2ec",
   colorGrey10: "#f1f5f8",
   // Red Colors
@@ -42,9 +45,6 @@ export const lightTheme = {
   colorRedDark: "#bb2525",
   colorRedLight: "#e66b6b",
   colorWhite: "#fff",
-
-  //Navbar Color
-  colorGrey9: "#dae2ec",
 
   //Other Colors
   colorNav: "#fff",
@@ -66,18 +66,21 @@ export const lightTheme = {
 
 export const darkTheme = {
   body: "#363537",
+  body2: "#f1f5f8",
   text: "#FFF",
   toggleBorder: "#6B8096",
   background: "#062039",
-
+  colorHeader: "#FFF",
   //Toggle Button
   colorMoon: "#37bcc8",
   colorSun: "#BDBDBD",
 
-  buttonColor: "#fff",
-  buttonTxtColor: "#363537",
-  buttonStackColor: "#fff",
+  buttonColor: "#363537",
+  buttonTxtColor: "#fff",
 
+  //Stack
+  stackBorderColor: "#fff",
+  stackTextColor: "#2caeba",
   // Primary Colors
   colorPrimary: "#FFF",
   colorPrimary2: "FFF",
@@ -99,6 +102,7 @@ export const darkTheme = {
   //gray for paragraphs
   colorGrey5: "#617d98",
   colorGrey8: "#bcccdc",
+  //Color navbar too
   colorGrey9: "#dae2ec",
   //BACKGROUND 2
   colorGrey10: "#62656C",
@@ -107,8 +111,9 @@ export const darkTheme = {
   colorRedDark: "#bb2525",
   colorRedLight: "#e66b6b",
   colorWhite: "#363537",
-  colorNav: "#424242",
 
+  //Other Colors
+  colorNav: "#212121",
   //Fonts + Misc
   primaryFont: "Open Sans",
   secondaryFont: "Staatliches",
@@ -119,9 +124,6 @@ export const darkTheme = {
   darkShadow: "0 5px 15px rgba(0, 0, 0, 0.2)",
   MaxWidth: "1170px",
   FixedWidth: "700px",
-
-  //Other Colors
-  colorNav: "#212121",
 
   //SideBar
   showSideBar: "translateX(0%)",

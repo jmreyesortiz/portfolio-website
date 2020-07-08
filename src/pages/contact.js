@@ -7,34 +7,28 @@ const contact = () => {
   return (
     <FormLayout>
       <SEO title="Contact | Juan M. Reyes Ortiz" description="Contact"></SEO>
-      <Div data-sal="zoom-out" data-sal-duration="1000">
-        <ContactPage>
-          <ContactForm>
-            <Heading>Get in Touch!</Heading>
-            <FormGroup action="https://formspree.io/xgenzowp" method="POST">
-              <FormContent>
-                <InputText
-                  name="name"
-                  type="text"
-                  placeholder="name"
-                ></InputText>
-                <EmailText
-                  name="email"
-                  type="email"
-                  placeholder="email"
-                ></EmailText>
-                <TextArea name="message" placeholder="message" rows="5" />
-                <SubmitButton type="submit">Submit Here</SubmitButton>
-              </FormContent>
-            </FormGroup>
-          </ContactForm>
-        </ContactPage>
-      </Div>
+
+      <ContactPage>
+        <ContactForm>
+          <Heading>Get in Touch!</Heading>
+          <FormGroup action="https://formspree.io/xgenzowp" method="POST">
+            <FormContent>
+              <InputText name="name" type="text" placeholder="name"></InputText>
+              <EmailText
+                name="email"
+                type="email"
+                placeholder="email"
+              ></EmailText>
+              <TextArea name="message" placeholder="message" rows="5" />
+              <SubmitButton type="submit">Submit Here</SubmitButton>
+            </FormContent>
+          </FormGroup>
+        </ContactForm>
+      </ContactPage>
     </FormLayout>
   )
 }
 
-const Div = styled.div``
 const Heading = styled.h3`
   font-family: ${({ theme }) => theme.primaryFont};
   padding-top: 1.25rem;

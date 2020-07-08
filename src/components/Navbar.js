@@ -17,17 +17,11 @@ const Navbar = ({ toggleSidebar, theme, toggleTheme }) => {
           </NavHeader>
           <Links></Links>
         </NavCenter>
-        <TogglerNightMode
-          theme={theme}
-          toggleTheme={toggleTheme}
-          isNav={true}
-        ></TogglerNightMode>
+        <Toggler theme={theme} toggleTheme={toggleTheme} isNav={true}></Toggler>
       </Nav>
     </>
   )
 }
-
-const TogglerNightMode = styled(Toggler)``
 
 const NavLogo = styled(Logo)`
   margin-bottom: 4rem;

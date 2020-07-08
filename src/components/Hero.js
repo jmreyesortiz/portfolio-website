@@ -15,11 +15,14 @@ const Hero = () => {
       <Particles
         params={{
           particles: {
-            number: { value: 100, density: { enable: true, value_area: 1000 } },
+            number: {
+              value: 90,
+              density: { enable: true, value_area: 1000 },
+            },
             color: { value: "#10d7bf" },
             shape: {
               type: "circle",
-              stroke: { width: 0.8, color: "#00ffd1" },
+              stroke: { width: 1.8, color: "#00ffd1" },
               polygon: { nb_sides: 0 },
             },
             opacity: {
@@ -35,11 +38,11 @@ const Hero = () => {
             size: {
               value: 2,
               random: true,
-              anim: { enable: false, speed: 40, size_min: 0.1, sync: false },
+              anim: { enable: true, speed: 2, size_min: 0.1, sync: false },
             },
             line_linked: {
               enable: true,
-              distance: 150,
+              distance: 200,
               color: "#04c9e3",
               opacity: 0.8,
               width: 1.1,
@@ -88,7 +91,7 @@ const Hero = () => {
             <Link to="/about">
               <HeroButton>About Me</HeroButton>
             </Link>
-            <Links color="white" />
+            <Links isSideBar={false} color="white" />
           </div>
         </HeroInfo>
       </HeroCenter>
@@ -97,10 +100,10 @@ const Hero = () => {
 }
 
 const H1 = styled.h1`
-  color: ${({ theme }) => theme.colorPrimary5};
+  color: ${({ theme }) => theme.colorHeader};
 `
 const H4 = styled.h4`
-  color: ${({ theme }) => theme.colorPrimary4};
+  color: ${({ theme }) => theme.colorHeader};
 `
 const Underline = styled.div`
   margin-bottom: -1rem;
@@ -116,21 +119,24 @@ const Particles = styled(Part)`
   position: absolute;
   margin-top: -5rem;
   padding-top: 5rem;
-  height: 100vh;
   display: grid;
   align-items: center;
   width: 100%;
   margin: 0 auto;
-  height: 90vh;
+  height: 80vh;
 
+  @media screen and (min-width: 992px) {
+    height: 70vh;
+  }
   @media screen and (max-width: 992px) {
-    height: 80vh;
+    height: 30vh;
+    opacity: 0;
   }
 `
 const HeroHeader = styled.header`
   background: ${({ theme }) => theme.background};
 
-  height: 100vh;
+  height: 80vh;
 
   @media screen and (min-width: 992px) {
   }

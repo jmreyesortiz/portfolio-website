@@ -7,7 +7,7 @@ import DarkModeToggle from "./Toggler"
 
 const SideBar = ({ isOpen, toggleSidebar, toggleTheme, theme }) => {
   const Links1 = <Links toggleAnimation={true} sideLinks="sidebar" />
-  const Links2 = <SLinks toggleAnimation />
+  const SocLinks = <SLinks isSideBar={true} toggleAnimation />
   return (
     <SBar sideBarBool={isOpen}>
       <CloseButton onClick={toggleSidebar}>
@@ -16,7 +16,7 @@ const SideBar = ({ isOpen, toggleSidebar, toggleTheme, theme }) => {
       <div>
         {showLinks(isOpen, Links1)}
         <DarkModeToggle theme={theme} toggleTheme={toggleTheme} />
-        {showLinks(isOpen, Links2)}
+        {showLinks(isOpen, SocLinks)}
       </div>
     </SBar>
   )
@@ -51,6 +51,7 @@ const CloseButton = styled.button`
   color: ${({ theme }) => theme.colorRedDark};
   cursor: pointer;
 `
+
 const SLinks = styled(SocialLinks)``
 
 function showLinks(isOpen, links) {

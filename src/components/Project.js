@@ -5,7 +5,7 @@ import styled from "styled-components"
 
 const Project = ({ description, title, github, stack, url, image, index }) => {
   return (
-    <Proj data-sal="slide-up" data-sal-duration="1000">
+    <Proj>
       <Parent>
         <Child>
           <ProjImage fluid={image.childImageSharp.fluid} />
@@ -21,10 +21,10 @@ const Project = ({ description, title, github, stack, url, image, index }) => {
           })}
         </ProjStack>
         <ProjLinks>
-          <ProjIconLink href={url}>
+          <ProjIconLink href={github}>
             <FaGithubSquare />
           </ProjIconLink>
-          <ProjIconLink href={github}>
+          <ProjIconLink href={url}>
             {stack.map(item => {
               if (item.title === "Google Play") {
                 return <FaGooglePlay key={item.id} />
@@ -184,21 +184,21 @@ export const ProjStack = styled.section`
   margin-bottom: 1rem;
   span {
     :nth-child(1) {
-      border-color: ${({ theme }) => theme.colorPrimary5};
-      color: ${({ theme }) => theme.colorPrimary5};
+      border-color: ${({ theme }) => theme.stackTextColor};
+      color: ${({ theme }) => theme.stackBorderColor};
     }
     :nth-child(2) {
-      border-color: ${({ theme }) => theme.colorPrimary5};
-      color: ${({ theme }) => theme.colorPrimary5};
+      border-color: ${({ theme }) => theme.stackTextColor};
+      color: ${({ theme }) => theme.stackBorderColor};
     }
     margin-right: 0.7rem;
     font-family: ${({ theme }) => theme.secondaryFont};
     display: inline-block;
-    border: 1.4px solid;
+    border: 1px solid;
     word-spacing: 5px;
-    border-color: ${({ theme }) => theme.text};
+    color: ${({ theme }) => theme.text};
     padding: 0.25rem 0.5rem;
-    border-color: ${({ theme }) => theme.text};
+    border-color: ${({ theme }) => theme.stackBorderColor};
     font-weight: lighter;
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
@@ -228,11 +228,11 @@ export const ProjInfo = styled.section`
 export const ProjLinks = styled.section``
 
 export const ProjIconLink = styled.a`
-  color: ${({ theme }) => theme.colorPrimary5};
+  color: ${({ theme }) => theme.text};
   font-size: 2rem;
   margin-right: 1rem;
   transition: ${({ theme }) => theme.transition};
   :hover {
-    color: ${({ theme }) => theme.buttonStackColor};
+    color: ${({ theme }) => theme.colorPrimary5};
   }
 `

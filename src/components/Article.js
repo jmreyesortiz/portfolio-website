@@ -5,7 +5,7 @@ import Image from "gatsby-image"
 
 const Article = ({ title, image, date, category, slug, desc }) => {
   return (
-    <Div data-sal="slide-up" data-sal-duration="1000">
+    <Div>
       <ArticleComp to={`/articles/${slug}`}>
         <article>
           <ArticleImage fluid={image.childImageSharp.fluid}></ArticleImage>
@@ -111,17 +111,17 @@ const ArticleFooter = styled.div`
 const Category = styled.section`
   span {
     margin-left: 1rem;
-    margin-right: 0.5rem;
+    margin-right: 0.7rem;
     font-family: ${({ theme }) => theme.secondaryFont};
-    color: ${({ theme }) => theme.text};
     display: inline-block;
-    border: 1.4px solid;
+    border: 1px solid;
     word-spacing: 5px;
-    border-color: ${({ theme }) => theme.text};
+    color: ${({ theme }) => theme.stackBorderColor};
     padding: 0.25rem 0.5rem;
-    border-color: ${({ theme }) => theme.text};
+    border-color: ${({ theme }) => theme.stackTextColor};
     font-weight: lighter;
     font-size: 0.9rem;
+    margin-bottom: 0.5rem;
   }
 `
 Article.propTypes = {}

@@ -53,8 +53,8 @@ const SideLinks = styled.ul`
     border-radius: ${({ theme }) => theme.radius};
   }
   li a:hover {
-    background: ${({ theme }) => theme.colorPrimary9};
-    color: ${({ theme }) => theme.colorPrimary5};
+    background: ${({ theme }) => theme.colorPrimary5};
+    color: ${({ theme }) => theme.text};
   }
   /* Animations */
 `
@@ -116,8 +116,8 @@ const NavLinks = styled.ul`
       color: ${({ theme }) => theme.text};
     }
     a:hover {
-      color: ${({ theme }) => theme.colorPrimary7};
-      box-shadow: 0px 2px ${({ theme }) => theme.colorPrimary7};
+      color: ${({ theme }) => theme.colorPrimary5};
+      box-shadow: 0px 2px ${({ theme }) => theme.colorPrimary5};
     }
   }
 `
