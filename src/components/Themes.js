@@ -10,6 +10,10 @@ export const lightTheme = {
   colorMoon: "#9E9E9E",
   colorSun: "#f56d23",
 
+  //Logo Change
+  webKitFilter: "",
+  imageFilter: "",
+
   buttonColor: "#363537",
   buttonTxtColor: "#fff",
   //Stack
@@ -77,6 +81,9 @@ export const darkTheme = {
 
   buttonColor: "#363537",
   buttonTxtColor: "#fff",
+  //Logo Change
+  webKitFilter: "opacity(.4) drop-shadow(0 0 0 white)",
+  imageFilter: "opacity(.4) drop-shadow(0 0 0 white)",
 
   //Stack
   stackBorderColor: "#fff",

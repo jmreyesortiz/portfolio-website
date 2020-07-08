@@ -55,9 +55,6 @@ const Information = styled.div`
   display: flex;
   justify-content: center;
 `
-const Category = styled.h4``
-const Author = styled.h4``
-const Date = styled.h4``
 
 const Div = styled.div`
   display: flex;
@@ -72,6 +69,10 @@ const Wrapper = styled.section`
   max-width: 700px;
   margin: 4rem auto;
 `
+
+const Category = styled.h4``
+const Author = styled.h4``
+const Date = styled.h4``
 
 export const query = graphql`
   query GetSingleArticle($slug: String) {

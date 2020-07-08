@@ -15,15 +15,19 @@ const SideBar = ({ isOpen, toggleSidebar, toggleTheme, theme }) => {
       </CloseButton>
       <div>
         {showLinks(isOpen, Links1)}
-        <DarkModeToggle theme={theme} toggleTheme={toggleTheme} />
+        <Toggle theme={theme} toggleTheme={toggleTheme} />
         {showLinks(isOpen, SocLinks)}
       </div>
     </SBar>
   )
 }
 
+const Toggle = styled(DarkModeToggle)`
+  font-size: 2rem;
+`
+
 const SBar = styled.aside`
-  background: ${({ theme }) => theme.colorGrey10};
+  background: ${({ theme }) => theme.body};
   position: fixed;
   top: 0;
   left: 0;

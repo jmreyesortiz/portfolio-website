@@ -27,9 +27,14 @@ const Logo = () => {
 
   return (
     <LogoW as={Link} to="/">
-      <Image fluid={data.file.childImageSharp.fluid} alt="logo"></Image>
+      <LogoImage fluid={data.file.childImageSharp.fluid} alt="logo"></LogoImage>
     </LogoW>
   )
 }
+
+const LogoImage = styled(Image)`
+  -webkit-filter: ${({ theme }) => theme.webKitFilter};
+  filter: ${({ theme }) => theme.imageFilter};
+`
 
 export default Logo

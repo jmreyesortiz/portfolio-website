@@ -4,6 +4,7 @@ import Layout from "../components/Layout"
 import styled from "styled-components"
 import SEO from "../components/SEO"
 import ReactMarkdown from "react-markdown"
+import { FaWrench, FaCode, FaLink } from "react-icons/fa"
 
 const About = ({
   data: {
@@ -27,7 +28,9 @@ const About = ({
             <ReactMarkdown>{content}</ReactMarkdown>
           </AboutText>
           <SkillsDiv>
-            <h3>Skills</h3>
+            <h3>
+              Skills <FaWrench></FaWrench>
+            </h3>
             <Skills1>
               <Desc>Programming:</Desc>
               <Category>
@@ -54,7 +57,9 @@ const About = ({
             </Skills3>
           </SkillsDiv>
           <LinksCenter>
-            <h3>Links</h3>
+            <h3>
+              Links <FaLink></FaLink>
+            </h3>
             <LinksLu>
               <LinksLi>
                 <LinkA href="/projects">

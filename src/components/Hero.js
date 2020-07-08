@@ -8,7 +8,6 @@ import { ThemeContext } from "styled-components"
 
 const Hero = () => {
   const themeContext = useContext(ThemeContext)
-  console.log("primary" + themeContext.colorPrimary4)
 
   return (
     <HeroHeader>
@@ -17,56 +16,91 @@ const Hero = () => {
           particles: {
             number: {
               value: 90,
-              density: { enable: true, value_area: 1000 },
+              density: {
+                enable: true,
+                value_area: 315,
+              },
             },
-            color: { value: "#10d7bf" },
+            color: {
+              value: themeContext.colorPrimary4,
+            },
             shape: {
               type: "circle",
-              stroke: { width: 1.8, color: "#00ffd1" },
-              polygon: { nb_sides: 0 },
+              stroke: {
+                width: 0,
+                color: "#000000",
+              },
+              polygon: {
+                nb_sides: 5,
+              },
+              image: {
+                src: "img/github.svg",
+                width: 100,
+                height: 100,
+              },
             },
             opacity: {
-              value: 0.04734885849793636,
-              random: false,
+              value: 0.5,
+              random: true,
               anim: {
                 enable: true,
-                speed: 3.9160839160839163,
-                opacity_min: 1,
-                sync: true,
+                speed: 0.5,
+                opacity_min: 0.2,
+                sync: false,
               },
             },
             size: {
-              value: 2,
+              value: 3,
               random: true,
-              anim: { enable: true, speed: 2, size_min: 0.1, sync: false },
+              anim: {
+                enable: true,
+                speed: 1,
+                size_min: 0.1,
+                sync: false,
+              },
             },
             line_linked: {
-              enable: true,
-              distance: 200,
-              color: "#04c9e3",
-              opacity: 0.8,
-              width: 1.1,
+              enable: false,
+              distance: 150,
+              color: "#ffffff",
+              opacity: 0.4,
+              width: 1,
             },
             move: {
               enable: true,
-              speed: 1.3,
-              direction: "left",
+              speed: 0.5,
+              direction: "none",
               random: true,
-              straight: true,
+              straight: false,
               out_mode: "out",
               bounce: false,
-              attract: { enable: false, rotateX: 600, rotateY: 1200 },
+              attract: {
+                enable: false,
+                rotateX: 600,
+                rotateY: 1200,
+              },
             },
           },
           interactivity: {
             detect_on: "canvas",
             events: {
-              onhover: { enable: true, mode: "grab" },
-              onclick: { enable: false, mode: "repulse" },
+              onhover: {
+                enable: false,
+                mode: "repulse",
+              },
+              onclick: {
+                enable: false,
+                mode: "push",
+              },
               resize: true,
             },
             modes: {
-              grab: { distance: 200, line_linked: { opacity: 1 } },
+              grab: {
+                distance: 400,
+                line_linked: {
+                  opacity: 1,
+                },
+              },
               bubble: {
                 distance: 400,
                 size: 40,
@@ -74,9 +108,16 @@ const Hero = () => {
                 opacity: 8,
                 speed: 3,
               },
-              repulse: { distance: 200, duration: 0.4 },
-              push: { particles_nb: 4 },
-              remove: { particles_nb: 2 },
+              repulse: {
+                distance: 200,
+                duration: 0.4,
+              },
+              push: {
+                particles_nb: 4,
+              },
+              remove: {
+                particles_nb: 2,
+              },
             },
           },
           retina_detect: true,
@@ -129,8 +170,8 @@ const Particles = styled(Part)`
     height: 70vh;
   }
   @media screen and (max-width: 992px) {
-    height: 30vh;
-    opacity: 0;
+    height: 70vh;
+    opacity: 1;
   }
 `
 const HeroHeader = styled.header`
