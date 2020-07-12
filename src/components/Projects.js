@@ -9,14 +9,13 @@ const Projects = ({ title, projects, showLink }) => {
     <SectionProjects>
       <Title title={title}></Title>
       <ProjectsCenter>
+        {/*  From query get the items to project with ...project */}
         {projects.map((project, index) => {
           return <Project key={project.id} index={index} {...project} />
         })}
         {showLink && (
           <Link to="/projects">
-            <Button data-sal="slide-up" data-sal-duration="1000">
-              All Projects
-            </Button>
+            <Button>All Projects</Button>
           </Link>
         )}
       </ProjectsCenter>

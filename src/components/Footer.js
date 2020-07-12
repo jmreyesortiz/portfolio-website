@@ -1,17 +1,19 @@
 import React from "react"
 import styled from "styled-components"
 
-import Links from "../constants/SocialLinks"
+import Links from "../constants/sociallinks"
 
 export const Footer = () => {
   return (
     <InnerFooter>
+      {/* Copyright information */}
       <SocialLinks color="white" />
       <H4>JmReyesOrtiz &copy; {year}</H4>
     </InnerFooter>
   )
 }
 
+// Get the Year
 const year = new Date().getFullYear()
 
 const H4 = styled.h4`

@@ -4,6 +4,9 @@ import { v4 as uuidv4 } from "uuid"
 import styled from "styled-components"
 import { keyframes } from "styled-components"
 
+//Link information utilized all over the app
+// UUidv4 utilized to provide a unique ID
+
 const data = [
   {
     id: uuidv4(),

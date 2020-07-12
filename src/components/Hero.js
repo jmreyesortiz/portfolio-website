@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import Links from "../constants/SocialLinks"
+import Links from "../constants/sociallinks"
 import Part from "react-particles-js"
 import { Link } from "gatsby"
 import { useContext } from "react"
@@ -11,6 +11,7 @@ const Hero = () => {
 
   return (
     <HeroHeader>
+      {/* Particles Component with the right speficiations*/}
       <Particles
         params={{
           particles: {
@@ -127,7 +128,7 @@ const Hero = () => {
         <HeroInfo>
           <div>
             <Underline></Underline>
-            <H1>Juan Reyes Ortiz</H1>
+            <H1>Juan Reyes-Ortiz</H1>
             <H4>Software Engineer</H4>
             <Link to="/about">
               <HeroButton>About Me</HeroButton>
@@ -149,13 +150,12 @@ const H4 = styled.h4`
 const Underline = styled.div`
   margin-bottom: -1rem;
   margin-left: 0;
-
   margin-right: auto;
   width: 5rem;
   height: 0.25rem;
-
   background: ${({ theme }) => theme.colorPrimary5};
 `
+//Particles component positioning
 const Particles = styled(Part)`
   position: absolute;
   margin-top: -5rem;

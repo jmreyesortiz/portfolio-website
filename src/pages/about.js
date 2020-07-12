@@ -4,7 +4,7 @@ import Layout from "../components/Layout"
 import styled from "styled-components"
 import SEO from "../components/SEO"
 import ReactMarkdown from "react-markdown"
-import { FaWrench, FaCode, FaLink } from "react-icons/fa"
+import { FaWrench, FaLink, FaUniversity } from "react-icons/fa"
 
 const About = ({
   data: {
@@ -18,71 +18,119 @@ const About = ({
         title="About | Juan M. Reyes-Ortiz"
         description="About Page jmreyesortiz.com"
       />
-
       <AboutPage>
-        <AboutCenter>
-          <AboutText>
+        <AbtCtr>
+          <AbtTxtCtr>
             <h2>Hi, Im Juan M. Reyes-Ortiz </h2>
             <Underline></Underline>
-            <h4>Software Engineer from Houston, Tx</h4>
-            <ReactMarkdown>{content}</ReactMarkdown>
-          </AboutText>
-          <SkillsDiv>
-            <h3>
+            <Greet>Software Engineer from Houston, Tx</Greet>
+            <Txt>
+              <ReactMarkdown>{content}</ReactMarkdown>
+            </Txt>
+          </AbtTxtCtr>
+          <SklCtr>
+            <TtlTxt>
               Skills <FaWrench></FaWrench>
-            </h3>
-            <Skills1>
+              <Underline />
+            </TtlTxt>
+            <Skl1>
               <Desc>Programming:</Desc>
-              <Category>
+              <Cat>
+                {/* Iteration for the title stack*/}
                 {stack.map(item => {
                   return <span key={item.id}>{item.title}</span>
                 })}
-              </Category>
-            </Skills1>
-            <Skills2>
+              </Cat>
+            </Skl1>
+            <Skl2>
               <Desc>Tools and Technologies:</Desc>
-              <Category>
+              <Cat>
+                {/* Iteration for the tools stack */}
                 {tools.map(item => {
                   return <span key={item.id}>{item.tool}</span>
                 })}
-              </Category>
-            </Skills2>
-            <Skills3>
+              </Cat>
+            </Skl2>
+            <Skl3>
               <Desc>Databases:</Desc>
-              <Category>
+              <Cat>
+                {/* Iteration for the stack database*/}
                 {databases.map(item => {
                   return <span key={item.id}>{item.database}</span>
                 })}
-              </Category>
-            </Skills3>
-          </SkillsDiv>
-          <LinksCenter>
-            <h3>
+              </Cat>
+            </Skl3>
+          </SklCtr>
+          <EdCtr>
+            <TtlTxt>
+              Education <FaUniversity></FaUniversity>
+              <Underline />
+            </TtlTxt>
+            <EdUl>
+              <EdLi>
+                <h4>University of Houston Downtown</h4> Bachelors of Science in
+                Computer Science - 2019
+              </EdLi>
+            </EdUl>
+          </EdCtr>
+          <LnkCtr>
+            <TtlTxt>
               Links <FaLink></FaLink>
-            </h3>
-            <LinksLu>
-              <LinksLi>
+              <Underline />
+            </TtlTxt>
+            <LnkUl>
+              <LnkLi>
                 <LinkA href="/projects">
-                  <h4>Projects</h4>
+                  <Desc>Projects</Desc>
                 </LinkA>
-              </LinksLi>
-              <LinksLi>
+              </LnkLi>
+              <LnkLi>
                 <LinkA href="/blog">
-                  <h4>Blog </h4>
+                  <Desc>Blog </Desc>
                 </LinkA>
-              </LinksLi>
-              <LinksLi>
+              </LnkLi>
+              <LnkLi>
                 <LinkA href="/contact">
-                  <h4>Contact Me</h4>
+                  <Desc>Contact Me</Desc>
                 </LinkA>
-              </LinksLi>
-            </LinksLu>
-          </LinksCenter>
-        </AboutCenter>
+              </LnkLi>
+            </LnkUl>
+          </LnkCtr>
+        </AbtCtr>
       </AboutPage>
     </Layout>
   )
 }
+
+const Greet = styled.h4`
+  font-family: ${({ theme }) => theme.secondaryFont};
+`
+
+const AboutPage = styled.section`
+  min-height: calc(100vh - 5rem - 9rem);
+  padding: 5rem 0;
+  margin-top: 1rem;
+
+  background: ${({ theme }) => theme.body};
+`
+const AbtCtr = styled.div`
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1170px;
+  @media screen and (min-width: 992px) {
+    column-gap: 2rem;
+    width: 95vw;
+  }
+`
+const AbtTxtCtr = styled.div`
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 2rem;
+`
+
+const Txt = styled.p`
+  font-size: 1rem;
+`
 
 const LinkA = styled(Link)`
   text-decoration: underline;
@@ -92,101 +140,80 @@ const LinkA = styled(Link)`
     color: ${({ theme }) => theme.colorPrimary5};
   }
 `
-const LinksLu = styled.ul`
-  margin-top: -1rem;
-  list-style-type: disc;
-`
-const LinksLi = styled.li``
 
-const SkillsDiv = styled.div`
-  margin-top: -1rem;
-  margin: 0 auto;
-  max-width: 1170px;
-  display: grid;
+const SklCtr = styled.div`
+  max-width: 700px;
+  margin: auto;
+`
+const Skl1 = styled.div`
+  margin-top: -1.5rem;
+`
+const Skl2 = styled.div`
+  margin-top: -1.5rem;
+`
+const Skl3 = styled.div`
+  margin-top: -1.5rem;
+`
 
-  @media screen and (min-width: 992px) {
-    margin-top: -1rem;
-    display: grid;
-    align-items: center;
-    column-gap: 1rem;
-  }
-`
-const Skills1 = styled.div`
-  margin-top: -1rem;
-  grid-column: 1 / 3;
-`
-const Skills2 = styled.div`
-  grid-column: 1/ 3;
-  margin-top: -2rem;
-`
-const Skills3 = styled.div`
-  grid-column: 1 / 3;
-  margin-top: -2rem;
+const TtlTxt = styled.h3`
+  font-family: ${({ theme }) => theme.secondaryFont};
+  margin-bottom: 2.5rem;
 `
 
 const Desc = styled.h4`
-  font-family: ${({ theme }) => theme.primaryFont};
+  font-family: ${({ theme }) => theme.secondaryFont};
 `
-const Category = styled.section`
+const Cat = styled.section`
   margin-bottom: 1rem;
   span {
     :nth-child(1) {
-      border-color: ${({ theme }) => theme.stackTextColor};
-      color: ${({ theme }) => theme.stackBorderColor};
+      border-color: ${({ theme }) => theme.stackTextColor2};
+      color: ${({ theme }) => theme.stackBorderColor2};
     }
     :nth-child(2) {
-      border-color: ${({ theme }) => theme.stackTextColor};
-      color: ${({ theme }) => theme.stackBorderColor};
+      border-color: ${({ theme }) => theme.stackTextColor2};
+      color: ${({ theme }) => theme.stackBorderColor2};
     }
     margin-right: 0.7rem;
     font-family: ${({ theme }) => theme.secondaryFont};
     display: inline-block;
     border: 1px solid;
     word-spacing: 5px;
-    color: ${({ theme }) => theme.stackTextColor};
     padding: 0.25rem 0.5rem;
     border-color: ${({ theme }) => theme.stackBorderColor};
+    color: ${({ theme }) => theme.stackTextColor};
     font-weight: lighter;
     font-size: 0.9rem;
     margin-bottom: 1rem;
   }
 `
-const AboutPage = styled.section`
-  display: grid;
-  background: ${({ theme }) => theme.colorGrey10};
-  padding: 4rem 0;
-  margin-top: 2rem;
-  text-align: justify;
-  align-items: center;
-  width: 100%;
+
+const LnkCtr = styled.div`
+  max-width: 700px;
+  margin: auto;
 `
-const AboutCenter = styled.div`
-  width: 90vw;
+const LnkUl = styled.ul`
   margin: 0 auto;
-  max-width: 1170px;
-  display: grid;
-  @media screen and (min-width: 992px) {
-    margin-left: 40rem;
-    align-items: center;
-    column-gap: 2rem;
-    width: 95vw;
-  }
+  margin-top: -1.5rem;
+  list-style-type: disc;
 `
-const LinksCenter = styled(AboutCenter)`
-  margin-top: -1rem;
-  grid-column: 1 / 3;
-
-  @media screen and (min-width: 992px) {
-    margin-left: 40rem;
-    align-items: center;
-    column-gap: 2rem;
-    width: 95vw;
-    margin-left: 0;
-  }
+const LnkLi = styled.li`
+  margin-bottom: -1rem;
 `
 
-const AboutText = styled.article`
-  grid-column: 1 / 3;
+const EdCtr = styled.div`
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 3rem;
+`
+const EdUl = styled.ul`
+  margin: 0 auto;
+  margin-top: -1.5rem;
+  list-style-type: disc;
+`
+
+const EdLi = styled.li`
+  margin-bottom: -1rem;
 `
 
 export const query = graphql`
@@ -222,7 +249,7 @@ export const query = graphql`
 
 const Underline = styled.section`
   width: 5rem;
-  height: 0.25rem;
+  height: 0.15rem;
   margin-bottom: 1.25rem;
   background: ${({ theme }) => theme.colorPrimary5};
 `

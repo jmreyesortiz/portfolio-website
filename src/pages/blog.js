@@ -25,7 +25,7 @@ const ArticlePage = styled.section`
 `
 
 export default Article
-
+// Blog Page. Query to display blog objects.
 export const query = graphql`
   {
     allStrapiArticles {

@@ -32,6 +32,7 @@ const Logo = () => {
   )
 }
 
+//Filter for Dark Mode
 const LogoImage = styled(Image)`
   -webkit-filter: ${({ theme }) => theme.webKitFilter};
   filter: ${({ theme }) => theme.imageFilter};

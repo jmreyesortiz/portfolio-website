@@ -7,7 +7,6 @@ const contact = () => {
   return (
     <FormLayout>
       <SEO title="Contact | Juan M. Reyes Ortiz" description="Contact"></SEO>
-
       <ContactPage>
         <ContactForm>
           <Heading>Get in Touch!</Heading>

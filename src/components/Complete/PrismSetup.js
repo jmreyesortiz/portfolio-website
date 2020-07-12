@@ -6,7 +6,6 @@ import styled from "styled-components"
 export const PrismWrapper = props => {
   const className = props.children.props.className
   let language = ""
-
   if (className === "language-jsx") {
     language = "jsx"
   } else if (className === "language-css") {
@@ -44,11 +43,12 @@ export const PrismWrapper = props => {
     </Highlight>
   )
 }
+
 // Styling Only
 const Pre = styled.pre`
   background: #1e1e1e;
   padding: 1rem 1.5rem;
-  border-radius: var(--radius);
+  border-radius: ${({ theme }) => theme.radius};
   margin: 3rem 0;
   font-size: 0.9rem;
   font-family: "Courier New", Courier, monospace;
@@ -66,8 +66,8 @@ const Pre = styled.pre`
     transform: translateY(-100%);
     text-transform: uppercase;
     padding: 0.05rem 0.85rem 0;
-    border-top-left-radius: var(--radius);
-    border-top-right-radius: var(--radius);
+    border-top-left-radius: ${({ theme }) => theme.radius};
+    border-top-right-radius: ${({ theme }) => theme.radius};
     background: #1e1e1e;
   }
 `

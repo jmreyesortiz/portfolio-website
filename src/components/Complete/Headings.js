@@ -26,7 +26,7 @@ const HeadingTwo = styled.div`
   .underline {
     width: 5rem;
     height: 5px;
-    background: var(--clr-primary-5);
+    background: ${({ theme }) => theme.colorPrimary5};
   }
 `
 export const myH4 = props => {

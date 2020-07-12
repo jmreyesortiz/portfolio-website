@@ -43,10 +43,10 @@ export const BlockQuote = ({ children, display }) => {
 const Wrapper = styled.blockquote`
   .container {
     padding: 2rem 1.5rem;
-    background: var(--clr-grey-10);
-    border-radius: var(--radius);
-    color: var(--clr-grey-1);
-    border-left: 3px solid var(--clr-grey-5);
+    background: ${({ theme }) => theme.colorGrey10};
+    border-radius: ${({ theme }) => theme.radius};
+    color: ${({ theme }) => theme.colorGrey1};
+    border-left: 3px solid ${({ theme }) => theme.colorGrey5};
     position: relative;
     margin: 2rem 0;
   }
@@ -60,19 +60,19 @@ const Wrapper = styled.blockquote`
     position: absolute;
     top: 0;
     left: -3px;
-    background: var(--clr-white);
+    background: ${({ theme }) => theme.colorWhite};
     transform: translate(-50%, -50%);
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    border: 6px solid var(--clr-white);
+    border: 6px solid ${({ theme }) => theme.colorWhite};
   }
   .info {
-    background: var(--clr-primary-10);
-    color: var(--clr-primary-1);
-    border-color: var(--clr-primary-5);
+    background: ${({ theme }) => theme.colorPrimary10};
+    color: ${({ theme }) => theme.colorPrimary1};
+    border-color: ${({ theme }) => theme.colorPrimary5};
     .icon {
-      color: var(--clr-primary-5);
+      color: ${({ theme }) => theme.colorPrimary5};
     }
   }
   .warning {
@@ -91,14 +91,14 @@ const Wrapper = styled.blockquote`
       align-items: center;
     }
     font-style: italic;
-    color: var(--clr-grey-5);
+    color: ${({ theme }) => theme.colorGrey5};
     line-height: 1.8;
     word-spacing: 3px;
     font-size: 1.2rem;
     margin: 2rem 0;
     .quote-icon {
       font-size: 6rem;
-      color: var(--clr-primary-5);
+      color: ${({ theme }) => theme.colorPrimary5};
     }
   }
 `

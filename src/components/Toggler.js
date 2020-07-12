@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { func, string } from "prop-types"
+import { func, bool } from "prop-types"
 
 const Toggle = ({ theme, toggleTheme, isNav }) => {
   return (
@@ -97,7 +97,7 @@ const SunIcon = styled.span``
 const MoonIcon = styled.span``
 
 Toggle.propTypes = {
-  theme: string.isRequired,
+  theme: bool.isRequired,
   toggleTheme: func.isRequired,
 }
 

@@ -5,6 +5,10 @@ import styled from "styled-components"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Title from "../components/Title"
 import SEO from "../components/SEO"
+
+// MDX template for each blog.
+// MDX Renderer Renders the article information coming from strapi.
+
 const ComponentName = ({ data }) => {
   const { body } = data.article.childStrapiArticlesContent.childMdx
   const { title } = data.article
@@ -37,7 +41,7 @@ const Separator = styled.h4`
   color: ${({ theme }) => theme.colorPrimary5};
 `
 const Underline = styled.section`
-  width: 25rem;
+  width: 40vh;
   height: 0.15rem;
   margin-top: 0.5rem;
   margin-bottom: 1.25rem;
@@ -74,6 +78,7 @@ const Category = styled.h4``
 const Author = styled.h4``
 const Date = styled.h4``
 
+// Article Query from Strapi.
 export const query = graphql`
   query GetSingleArticle($slug: String) {
     article: strapiArticles(slug: { eq: $slug }) {

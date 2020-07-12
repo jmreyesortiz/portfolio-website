@@ -3,10 +3,11 @@ import styled from "styled-components"
 import Title from "../components/Title"
 import Article from "../components/Article"
 
-const Articles = ({ articles, title, showLink }) => {
+const Articles = ({ articles, title }) => {
   return (
     <Section>
       <Title title={title} />
+      {/* Use map for each article. Get key for React key needs, give ...articles as prop. */}
       <ArticlesCenter>
         {articles.map(article => {
           return <Article key={article.id} {...article}></Article>

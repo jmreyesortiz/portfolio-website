@@ -15,15 +15,19 @@ const Project = ({ description, title, github, stack, url, image, index }) => {
         <ProjNumber>{index + 1}</ProjNumber>
         <ProjTitle>{title}</ProjTitle>
         <ProjDescription>{description}</ProjDescription>
+        {/* Using Map to go through the Strapi Stack items displaying them. */}
         <ProjStack>
           {stack.map(item => {
             return <span key={item.id}>{item.title}</span>
           })}
         </ProjStack>
         <ProjLinks>
-          <ProjIconLink href={github}>
-            <FaGithubSquare />
-          </ProjIconLink>
+          <Div>
+            <ProjIconLink href={github}>
+              <FaGithubSquare />
+            </ProjIconLink>
+          </Div>
+          {/* Icon, if it has a props as Google play display the link. */}
           <ProjIconLink href={url}>
             {stack.map(item => {
               if (item.title === "Google Play") {
@@ -39,6 +43,10 @@ const Project = ({ description, title, github, stack, url, image, index }) => {
 }
 
 export default Project
+
+const Div = styled.div`
+  display: inline;
+`
 
 export const Child = styled.div`
   height: 100%;
@@ -121,6 +129,7 @@ export const Proj = styled.section`
   }
 `
 
+// Animation for the Image. when :hover
 export const ProjImage = styled(Image)`
   ${Proj}:hover & ::after {
     opacity: 0;
@@ -180,16 +189,18 @@ export const ProjDescription = styled.p`
   font-family: ${({ theme }) => theme.primaryFont};
   color: ${({ theme }) => theme.colorGrey11};
 `
+
+// Coloring first two stack items with :nth childe
 export const ProjStack = styled.section`
   margin-bottom: 1rem;
   span {
     :nth-child(1) {
-      border-color: ${({ theme }) => theme.stackTextColor};
-      color: ${({ theme }) => theme.stackBorderColor};
+      border-color: ${({ theme }) => theme.stackTextColor2};
+      color: ${({ theme }) => theme.stackBorderColor2};
     }
     :nth-child(2) {
-      border-color: ${({ theme }) => theme.stackTextColor};
-      color: ${({ theme }) => theme.stackBorderColor};
+      border-color: ${({ theme }) => theme.stackTextColor2};
+      color: ${({ theme }) => theme.stackBorderColor2};
     }
     margin-right: 0.7rem;
     font-family: ${({ theme }) => theme.secondaryFont};
@@ -228,11 +239,11 @@ export const ProjInfo = styled.section`
 export const ProjLinks = styled.section``
 
 export const ProjIconLink = styled.a`
-  color: ${({ theme }) => theme.text};
+  color: ${({ theme }) => theme.colorPrimary5};
   font-size: 2rem;
   margin-right: 1rem;
   transition: ${({ theme }) => theme.transition};
   :hover {
-    color: ${({ theme }) => theme.colorPrimary5};
+    color: ${({ theme }) => theme.text};
   }
 `

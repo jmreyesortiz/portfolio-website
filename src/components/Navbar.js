@@ -3,7 +3,7 @@ import Logo from "./Logo"
 import Links from "../constants/links"
 import styled from "styled-components"
 import { FaAlignRight } from "react-icons/fa"
-import Toggler from "./Toggler"
+import DarkModeToggle from "./Toggler"
 const Navbar = ({ toggleSidebar, theme, toggleTheme }) => {
   return (
     <>
@@ -11,13 +11,19 @@ const Navbar = ({ toggleSidebar, theme, toggleTheme }) => {
         <NavCenter>
           <NavHeader>
             <NavLogo />
+            {/* Coming from Layout. When Clicked Toggle Sidebar*/}
             <ToggleButton onClick={toggleSidebar}>
               <FaAlignRight />
             </ToggleButton>
           </NavHeader>
           <Links></Links>
         </NavCenter>
-        <Toggler theme={theme} toggleTheme={toggleTheme} isNav={true}></Toggler>
+        {/* Props coming from layout, passed to the toggle Button in Navbar*/}
+        <DarkModeToggle
+          theme={theme}
+          toggleTheme={toggleTheme}
+          isNav={true}
+        ></DarkModeToggle>
       </Nav>
     </>
   )

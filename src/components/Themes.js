@@ -4,22 +4,23 @@ export const lightTheme = {
   body2: "#f1f5f8",
   text: "#363537",
   toggleBorder: "#FFF",
-  colorHeader: "#FFF",
   background: "#062039",
+  colorHeader: "#FFF",
+
   //Toggle Button
   colorMoon: "#9E9E9E",
   colorSun: "#f56d23",
-
+  // Button
+  buttonColor: "#363537",
+  buttonTxtColor: "#fff",
   //Logo Change
   webKitFilter: "",
   imageFilter: "",
-
-  buttonColor: "#363537",
-  buttonTxtColor: "#fff",
   //Stack
-  stackBorderColor: "#ff7043",
-  stackTextColor: "#363537",
-
+  stackBorderColor: "#000000",
+  stackTextColor: "	#000000",
+  stackBorderColor2: "#ff7043",
+  stackTextColor2: "#000000",
   // Primary Colors
   colorPrimary1: "#FFE0B2",
   colorPrimary2: "#716913",
@@ -44,13 +45,11 @@ export const lightTheme = {
   //Navbar Color
   colorGrey9: "#dae2ec",
   colorGrey10: "#f1f5f8",
-  // Red Colors
+  // Other Colors
   colorGreenDark: "#1d9527",
   colorRedDark: "#bb2525",
   colorRedLight: "#e66b6b",
   colorWhite: "#fff",
-
-  //Other Colors
   colorNav: "#fff",
   //PrimaryFonts + Misc
   primaryFont: "Open Sans",
@@ -78,16 +77,17 @@ export const darkTheme = {
   //Toggle Button
   colorMoon: "#37bcc8",
   colorSun: "#BDBDBD",
-
-  buttonColor: "#363537",
-  buttonTxtColor: "#fff",
+  // Button
+  buttonColor: "#fff",
+  buttonTxtColor: "#363537",
   //Logo Change
   webKitFilter: "opacity(.4) drop-shadow(0 0 0 white)",
   imageFilter: "opacity(.4) drop-shadow(0 0 0 white)",
-
   //Stack
   stackBorderColor: "#fff",
-  stackTextColor: "#2caeba",
+  stackTextColor: "#fff",
+  stackBorderColor2: "#37bcc8",
+  stackTextColor2: "#fff",
   // Primary Colors
   colorPrimary: "#FFF",
   colorPrimary2: "FFF",
@@ -99,9 +99,9 @@ export const darkTheme = {
   colorPrimary7: "#52d1da",
   colorPrimary8: "#88ebf2",
   colorPrimary9: "#bff8fd",
+  //BACKGROUND 2
   colorPrimary10: "#455A64",
   colorPrimary11: "#fafafa",
-
   //darkest grey
   colorGrey1: "#102a42",
   colorGrey3: "#324d67",
@@ -109,17 +109,14 @@ export const darkTheme = {
   //gray for paragraphs
   colorGrey5: "#617d98",
   colorGrey8: "#bcccdc",
-  //Color navbar too
+  //Navbar Color
   colorGrey9: "#dae2ec",
-  //BACKGROUND 2
   colorGrey10: "#62656C",
   //Other Colors
   colorGreenDark: "#1d9527",
   colorRedDark: "#bb2525",
   colorRedLight: "#e66b6b",
   colorWhite: "#363537",
-
-  //Other Colors
   colorNav: "#212121",
   //Fonts + Misc
   primaryFont: "Open Sans",

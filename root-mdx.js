@@ -1,5 +1,7 @@
 import React from "react"
 import { MDXProvider } from "@mdx-js/react"
+
+// Imports these components to be used in MDX to create great styling.
 import {
   PrismWrapper,
   Headings,

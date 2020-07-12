@@ -1,6 +1,8 @@
 const crypto = require("crypto")
 const path = require("path")
 
+// Create the pages according to the slug name of the article, which is later linked in the article template
+
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const result = await graphql(`
@@ -24,6 +26,7 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 }
 
+// Creates a new Node that is able to obtain MDX information to be later consumed with the MDX renderer in the article template
 module.exports.onCreateNode = async ({ node, actions, createNodeId }) => {
   if (node.internal.type === "StrapiArticles") {
     const newNode = {

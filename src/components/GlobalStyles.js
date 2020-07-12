@@ -8,6 +8,9 @@ export const GlobalStyles = createGlobalStyle`
   padding: 0;
   box-sizing: border-box;
 }
+p{
+  font-size: 1rem;
+}
 body {
     line-height: 1.5;
     font-size: 0.875rem;
@@ -108,9 +111,6 @@ footer h4 span{
   }
 }
 
-
-/* Might have to change this later*/
-
 button{
 text-transform: uppercase;
   font-family: ${({ theme }) => theme.secondaryFont};
@@ -127,17 +127,13 @@ text-transform: uppercase;
   cursor: pointer;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: ${({ theme }) => theme.radius};
-
-
   :hover {
   color: ${({ theme }) => theme.buttonTxtColor};
   background: ${({ theme }) => theme.buttonColor};
 }
-
 .section {
   padding: 5rem 0;
 }
-
 }
 
 

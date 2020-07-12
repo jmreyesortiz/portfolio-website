@@ -9,10 +9,11 @@ import useDarkMode from "use-dark-mode"
 
 const Layout = ({ children }) => {
   //Dark Mode
-
   const darkMode = useDarkMode(false)
   const themeMode = darkMode.value ? darkTheme : lightTheme
-
+  console.log("dmode value is" + darkMode.value)
+  let darkModeValue = darkMode.value
+  console.log(darkModeValue)
   //SideBar
   const [isOpen, setIsOpen] = React.useState(false)
   const toggleSidebar = () => {
@@ -27,11 +28,11 @@ const Layout = ({ children }) => {
 
           <Navbar
             toggleTheme={darkMode.toggle}
-            theme={darkMode.value}
+            theme={darkModeValue}
             toggleSidebar={toggleSidebar}
           />
           <SideBar
-            theme={darkMode.value}
+            theme={darkModeValue}
             toggleTheme={darkMode.toggle}
             isOpen={isOpen}
             toggleSidebar={toggleSidebar}

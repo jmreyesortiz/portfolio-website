@@ -1,6 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 
+// Series of Titles used in according to their need.
+
 const Title = ({ title, aboutTitle, articleTitle }) => {
   if (aboutTitle) {
     return (

@@ -2,27 +2,30 @@ import React from "react"
 import styled from "styled-components"
 import Links from "../constants/links"
 import { FaTimes } from "react-icons/fa"
-import SocialLinks from "../constants/SocialLinks"
-import DarkModeToggle from "./Toggler"
+import SocialLinks from "../constants/sociallinks"
+import Toggle from "./Toggler"
 
 const SideBar = ({ isOpen, toggleSidebar, toggleTheme, theme }) => {
-  const Links1 = <Links toggleAnimation={true} sideLinks="sidebar" />
+  // Variables for both links to be used as inputs for the function
+  const NormLinks = <Links toggleAnimation={true} sideLinks="sidebar" />
   const SocLinks = <SLinks isSideBar={true} toggleAnimation />
   return (
     <SBar sideBarBool={isOpen}>
       <CloseButton onClick={toggleSidebar}>
         <FaTimes />
       </CloseButton>
+      {/* Display the Menu Links, and the Social media Links with the Function */}
       <div>
-        {showLinks(isOpen, Links1)}
-        <Toggle theme={theme} toggleTheme={toggleTheme} />
+        {showLinks(isOpen, NormLinks)}
+        {/* Dark Mode Toggle Button with prop buttons comign from layout */}
+        <DarkModeToggle theme={theme} toggleTheme={toggleTheme} />
         {showLinks(isOpen, SocLinks)}
       </div>
     </SBar>
   )
 }
 
-const Toggle = styled(DarkModeToggle)`
+const DarkModeToggle = styled(Toggle)`
   font-size: 2rem;
 `
 
@@ -58,6 +61,7 @@ const CloseButton = styled.button`
 
 const SLinks = styled(SocialLinks)``
 
+// Function to return the links.
 function showLinks(isOpen, links) {
   if (isOpen) {
     return links

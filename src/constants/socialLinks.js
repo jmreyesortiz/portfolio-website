@@ -4,6 +4,9 @@ import { FaLinkedin, FaGithub, FaMedium, FaTwitterSquare } from "react-icons/fa"
 import styled from "styled-components"
 import { keyframes } from "styled-components"
 
+//Social Media information utilized all over the app
+// UUidv4 utilized to provide a unique ID
+
 const SocialLinks = ({ color, toggleAnimation, isSideBar }) => {
   if (toggleAnimation) {
     return (
