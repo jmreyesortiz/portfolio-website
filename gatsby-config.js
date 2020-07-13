@@ -15,7 +15,6 @@ module.exports = {
   },
   /* Your site config here */
   plugins: [
-    "gatsby-plugin-use-dark-mode",
     `gatsby-plugin-scroll-reveal`,
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,

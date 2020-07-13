@@ -10,7 +10,7 @@ const Toggle = ({ theme, toggleTheme, isNav }) => {
         <ToggleControl>
           <ToggleCheckbox
             type="checkbox"
-            checked={theme}
+            checked={!theme}
             onChange={toggleTheme}
             id="dmcheck"
           ></ToggleCheckbox>
