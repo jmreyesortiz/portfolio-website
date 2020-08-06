@@ -7,7 +7,7 @@ const Article = ({ title, image, date, category, slug, desc }) => {
   return (
     <Div>
       <ArticleComp to={`/articles/${slug}`}>
-        <article>
+        <ArticleArt>
           <ArticleImage fluid={image.childImageSharp.fluid}></ArticleImage>
           <ArticleCard>
             <h4>{title}</h4>
@@ -19,7 +19,7 @@ const Article = ({ title, image, date, category, slug, desc }) => {
             </Category>
             <Date>{date}</Date>
           </ArticleFooter>
-        </article>
+        </ArticleArt>
       </ArticleComp>
     </Div>
   )
@@ -31,14 +31,14 @@ const Date = styled.p`
 const Div = styled.div`
   padding-bottom: 5rem;
 `
-
+const ArticleArt = styled.article`
+  background: ${({ theme }) => theme.colorGrey10};
+  box-shadow: ${({ theme }) => theme.lightShadow};
+`
 const ArticleComp = styled(Link)`
   display: block;
   height: 100%;
-
-  background: ${({ theme }) => theme.colorGrey10};
   border-radius: ${({ theme }) => theme.radius};
-  box-shadow: ${({ theme }) => theme.lightShadow};
   transition: ${({ theme }) => theme.transition};
   :hover {
     box-shadow: ${({ theme }) => theme.darkShadow};
@@ -48,9 +48,6 @@ const ArticleComp = styled(Link)`
     height: 100%;
     display: grid;
     grid-template-rows: auto 1fr;
-  }
-  p {
-    color: ${({ theme }) => theme.text};
   }
 `
 
@@ -72,7 +69,6 @@ const ArticleCard = styled.div`
   padding: 1.5rem 1rem;
   h4 {
     font-family: ${({ theme }) => theme.secondaryFont};
-    color: ${({ theme }) => theme.text};
   }
 `
 
@@ -85,7 +81,6 @@ const ArticleFooter = styled.div`
   p {
     margin-bottom: 0;
     font-weight: bold;
-    color: ${({ theme }) => theme.text};
   }
 
   p:first-of-type {
@@ -93,14 +88,13 @@ const ArticleFooter = styled.div`
     span {
       margin-right: 0.7rem;
       font-family: ${({ theme }) => theme.secondaryFont};
+      border-color: ${({ theme }) => theme.text};
       display: inline-block;
       border: 1.4px solid;
       word-spacing: 5px;
-      border-color: ${({ theme }) => theme.text};
       padding: 0.2rem;
       padding-top: 0.1rem;
       padding-bottom: 0.1rem;
-      border-color: ${({ theme }) => theme.text};
       font-weight: lighter;
       font-size: 0.9rem;
       margin-bottom: 0.5rem;

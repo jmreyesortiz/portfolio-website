@@ -1,21 +1,23 @@
 import React from "react"
 import styled from "styled-components"
-import { func, bool } from "prop-types"
+import { func, bool, string } from "prop-types"
 
 const Toggle = ({ theme, toggleTheme, isNav }) => {
+  const isLight = theme === "light"
   return (
     <>
       <DarkModeToggle isNav={isNav}>
-        <SunIcon>☀</SunIcon>
-        <ToggleControl>
+        <SunIcon onClick={toggleTheme}>☀</SunIcon>
+        {/*
+          <ToggleControl>
           <ToggleCheckbox
             type="checkbox"
             checked={!theme}
             onChange={toggleTheme}
             id="dmcheck"
           ></ToggleCheckbox>
-          <ToggleLabel htmlFor="dmcheck" />
-        </ToggleControl>
+              <ToggleLabel htmlFor="dmcheck" />
+        </ToggleControl>*/}
         <MoonIcon>☾</MoonIcon>
       </DarkModeToggle>
     </>
@@ -68,15 +70,12 @@ const ToggleCheckbox = styled.input`
   cursor: pointer;
   vertical-align: 2px;
   outline: none;
-
   &:checked + label {
     left: 30px;
   }
-
   &:focus-visible {
     outline: solid 2px white;
   }
-
   & + label {
     display: inline-block;
     width: 18px;
@@ -93,11 +92,11 @@ const ToggleCheckbox = styled.input`
 `
 
 const ToggleLabel = styled.label``
-const SunIcon = styled.span``
+const SunIcon = styled.button``
 const MoonIcon = styled.span``
 
 Toggle.propTypes = {
-  theme: bool.isRequired,
+  theme: string.isRequired,
   toggleTheme: func.isRequired,
 }
 

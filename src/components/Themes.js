@@ -1,18 +1,17 @@
 export const lightTheme = {
   //BACKGROUND 1
-  body: "#FFF",
+  body: "#ffffff",
   body2: "#f1f5f8",
   text: "#363537",
-  toggleBorder: "#FFF",
-  background: "#062039",
-  colorHeader: "#FFF",
-
+  toggleBorder: "#ffffff",
+  background: "#000000",
+  colorHeader: "#ffffff",
   //Toggle Button
-  colorMoon: "#9E9E9E",
+  colorMoon: "#9e9e9e",
   colorSun: "#f56d23",
   // Button
   buttonColor: "#363537",
-  buttonTxtColor: "#fff",
+  buttonTxtColor: "#ffffff",
   //Logo Change
   webKitFilter: "",
   imageFilter: "",
@@ -22,9 +21,9 @@ export const lightTheme = {
   stackBorderColor2: "#ff7043",
   stackTextColor2: "#000000",
   // Primary Colors
-  colorPrimary1: "#FFE0B2",
+  colorPrimary1: "ffe0b2",
   colorPrimary2: "#716913",
-  colorPrimary3: "#EF6C00",
+  colorPrimary3: "ef6c00",
   colorPrimary4: "#ff7043",
   colorPrimary5: "#ff7043",
   // lighter shades
@@ -49,8 +48,8 @@ export const lightTheme = {
   colorGreenDark: "#1d9527",
   colorRedDark: "#bb2525",
   colorRedLight: "#e66b6b",
-  colorWhite: "#fff",
-  colorNav: "#fff",
+  colorWhite: "#ffffff",
+  colorNav: "#ffffff",
   //PrimaryFonts + Misc
   primaryFont: "Open Sans",
   secondaryFont: "Staatliches",
@@ -68,29 +67,29 @@ export const lightTheme = {
 }
 
 export const darkTheme = {
-  body: "#363537",
+  body: "#424242",
   body2: "#f1f5f8",
-  text: "#FFF",
+  text: "#ffffff",
   toggleBorder: "#6B8096",
-  background: "#062039",
-  colorHeader: "#FFF",
+  background: "#000000",
+  colorHeader: "#ffffff",
   //Toggle Button
   colorMoon: "#37bcc8",
   colorSun: "#BDBDBD",
   // Button
-  buttonColor: "#fff",
+  buttonColor: "#ffffff",
   buttonTxtColor: "#363537",
   //Logo Change
   webKitFilter: "opacity(.4) drop-shadow(0 0 0 white)",
   imageFilter: "opacity(.4) drop-shadow(0 0 0 white)",
   //Stack
-  stackBorderColor: "#fff",
-  stackTextColor: "#fff",
+  stackBorderColor: "#ffffff",
+  stackTextColor: "#ffffff",
   stackBorderColor2: "#37bcc8",
-  stackTextColor2: "#fff",
+  stackTextColor2: "#ffffff",
   // Primary Colors
-  colorPrimary: "#FFF",
-  colorPrimary2: "FFF",
+  colorPrimary: "#ffffff",
+  colorPrimary2: "#ffffff",
   colorPrimary3: "#0e7c86",
   colorPrimary4: "#149199",
   colorPrimary5: "#2caeba",
@@ -117,7 +116,7 @@ export const darkTheme = {
   colorRedDark: "#bb2525",
   colorRedLight: "#e66b6b",
   colorWhite: "#363537",
-  colorNav: "#212121",
+  colorNav: "#1b1b1b",
   //Fonts + Misc
   primaryFont: "Open Sans",
   secondaryFont: "Staatliches",

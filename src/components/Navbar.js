@@ -3,7 +3,6 @@ import Logo from "./Logo"
 import Links from "../constants/links"
 import styled from "styled-components"
 import { FaAlignRight } from "react-icons/fa"
-import DarkModeToggle from "./Toggler"
 const Navbar = ({ toggleSidebar, theme, toggleTheme }) => {
   return (
     <>
@@ -19,11 +18,6 @@ const Navbar = ({ toggleSidebar, theme, toggleTheme }) => {
           <Links></Links>
         </NavCenter>
         {/* Props coming from layout, passed to the toggle Button in Navbar*/}
-        <DarkModeToggle
-          theme={theme}
-          toggleTheme={toggleTheme}
-          isNav={true}
-        ></DarkModeToggle>
       </Nav>
     </>
   )
@@ -44,7 +38,6 @@ const Nav = styled.nav`
   align-items: center;
   z-index: 200;
   /* Navbar Color */
-  background: ${({ theme }) => theme.colorNav};
 `
 const NavCenter = styled.section`
   width: 90vw;

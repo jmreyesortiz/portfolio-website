@@ -3,7 +3,6 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/Layout"
 import styled from "styled-components"
 import SEO from "../components/SEO"
-import ReactMarkdown from "react-markdown"
 import { FaWrench, FaLink, FaUniversity } from "react-icons/fa"
 
 const About = ({
@@ -11,7 +10,7 @@ const About = ({
     about: { nodes },
   },
 }) => {
-  const { stack, content, tools, databases } = nodes[0]
+  const { stack, tools, databases } = nodes[0]
   return (
     <Layout>
       <SEO
@@ -24,9 +23,16 @@ const About = ({
             <h2>Hi, Im Juan M. Reyes-Ortiz </h2>
             <Underline></Underline>
             <Greet>Software Engineer from Houston, Tx</Greet>
-            <Txt>
-              <ReactMarkdown>{content}</ReactMarkdown>
-            </Txt>
+            <p>
+              I fell in love with software development, and never looked back. I
+              started developing <strong>Android </strong>apps using
+              <strong> Java. </strong>
+              At the same time, I delved into web development and currently use
+              <strong> React JS, Gatsby, or Node</strong>. I naturally love
+              learning new things and
+              <LinkA to="/blog"> writing about them</LinkA>. For any inquiry,
+              please feel free to <LinkA to="/contact">contact me.</LinkA>.
+            </p>
           </AbtTxtCtr>
           <SklCtr>
             <TtlTxt>
@@ -80,17 +86,17 @@ const About = ({
             </TtlTxt>
             <LnkUl>
               <LnkLi>
-                <LinkA href="/projects">
+                <LinkA to="/projects">
                   <Desc>Projects</Desc>
                 </LinkA>
               </LnkLi>
               <LnkLi>
-                <LinkA href="/blog">
+                <LinkA to="/blog">
                   <Desc>Blog </Desc>
                 </LinkA>
               </LnkLi>
               <LnkLi>
-                <LinkA href="/contact">
+                <LinkA to="/contact">
                   <Desc>Contact Me</Desc>
                 </LinkA>
               </LnkLi>
@@ -105,13 +111,10 @@ const About = ({
 const Greet = styled.h4`
   font-family: ${({ theme }) => theme.secondaryFont};
 `
-
 const AboutPage = styled.section`
   min-height: calc(100vh - 5rem - 9rem);
   padding: 5rem 0;
   margin-top: 1rem;
-
-  background: ${({ theme }) => theme.body};
 `
 const AbtCtr = styled.div`
   width: 90vw;
@@ -128,13 +131,8 @@ const AbtTxtCtr = styled.div`
   margin-bottom: 2rem;
 `
 
-const Txt = styled.p`
-  font-size: 1rem;
-`
-
 const LinkA = styled(Link)`
   text-decoration: underline;
-
   color: ${({ theme }) => theme.text};
   :hover {
     color: ${({ theme }) => theme.colorPrimary5};

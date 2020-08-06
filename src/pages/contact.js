@@ -5,7 +5,7 @@ import SEO from "../components/SEO"
 
 const contact = () => {
   return (
-    <FormLayout>
+    <Layout>
       <SEO title="Contact | Juan M. Reyes Ortiz" description="Contact"></SEO>
       <ContactPage>
         <ContactForm>
@@ -19,12 +19,12 @@ const contact = () => {
                 placeholder="email"
               ></EmailText>
               <TextArea name="message" placeholder="message" rows="5" />
-              <SubmitButton type="submit">Submit Here</SubmitButton>
+              <SubmitButton type="submit">Submit</SubmitButton>
             </FormContent>
           </FormGroup>
         </ContactForm>
       </ContactPage>
-    </FormLayout>
+    </Layout>
   )
 }
 
@@ -33,8 +33,6 @@ const Heading = styled.h3`
   padding-top: 1.25rem;
   color: ${({ theme }) => theme.text};
 `
-
-const FormLayout = styled(Layout)``
 
 const ContactPage = styled.section`
   min-height: calc(100vh - 5rem - 9rem);
@@ -56,7 +54,7 @@ const ContactForm = styled.form`
     box-shadow: ${({ theme }) => theme.darkShadow};
   }
 `
-const FormGroup = styled.form`
+const FormGroup = styled.div`
   padding: 1rem 1.5rem;
 `
 const FormContent = styled.div`

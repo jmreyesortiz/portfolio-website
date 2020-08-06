@@ -28,7 +28,6 @@
     "gatsby-remark-images": "^3.3.16",
     "gatsby-source-filesystem": "^2.3.14",
     "gatsby-source-strapi": "0.0.12",
-    "gatsby-styled-components-dark-mode": "^1.2.0",
     "gatsby-transformer-sharp": "^2.5.7",
     "prism-react-renderer": "^1.1.1",
     "react": "^16.12.0",

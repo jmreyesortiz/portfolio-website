@@ -3,12 +3,8 @@ import styled from "styled-components"
 import Links from "../constants/sociallinks"
 import Part from "react-particles-js"
 import { Link } from "gatsby"
-import { useContext } from "react"
-import { ThemeContext } from "styled-components"
 
 const Hero = () => {
-  const themeContext = useContext(ThemeContext)
-
   return (
     <HeroHeader>
       {/* Particles Component with the right speficiations*/}
@@ -23,7 +19,7 @@ const Hero = () => {
               },
             },
             color: {
-              value: themeContext.colorPrimary4,
+              value: "#ff7043",
             },
             shape: {
               type: "circle",

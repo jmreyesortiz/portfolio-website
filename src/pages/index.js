@@ -13,26 +13,20 @@ export default ({ data }) => {
   } = data
 
   return (
-    <>
-      <Layout>
-        <SEO
-          title="Home | Juan M. Reyes Ortiz"
-          description="Home Page Jmreyesortiz.com"
-        />
-        <Hero></Hero>
-        <Projects
-          booleanLink
-          projects={projects}
-          title="Featured Projects"
-          showLink
-        />
-        <Articles
-          articles={articles}
-          title="Latest Articles"
-          showLink
-        ></Articles>
-      </Layout>
-    </>
+    <Layout>
+      <SEO
+        title="Home | Juan M. Reyes Ortiz"
+        description="Home Page Jmreyesortiz.com"
+      />
+      <Hero></Hero>
+      <Projects
+        booleanLink
+        projects={projects}
+        title="Featured Projects"
+        showLink
+      />
+      <Articles articles={articles} title="Latest Articles" showLink></Articles>
+    </Layout>
   )
 }
 

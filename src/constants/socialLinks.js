@@ -33,7 +33,7 @@ const data = [
   {
     id: uuidv4(),
     icon: <FaMedium className="social-icon"></FaMedium>,
-    url: "https://twitter.com/jmreyesortiz",
+    url: "https://medium.com/@jmreyesortiz/",
   },
   {
     id: uuidv4(),

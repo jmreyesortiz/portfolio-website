@@ -3,9 +3,8 @@ import styled from "styled-components"
 import Links from "../constants/links"
 import { FaTimes } from "react-icons/fa"
 import SocialLinks from "../constants/sociallinks"
-import Toggle from "./Toggler"
 
-const SideBar = ({ isOpen, toggleSidebar, toggleTheme, theme }) => {
+const SideBar = ({ isOpen, toggleSidebar }) => {
   // Variables for both links to be used as inputs for the function
   const NormLinks = <Links toggleAnimation={true} sideLinks="sidebar" />
   const SocLinks = <SLinks isSideBar={true} toggleAnimation />
@@ -17,20 +16,13 @@ const SideBar = ({ isOpen, toggleSidebar, toggleTheme, theme }) => {
       {/* Display the Menu Links, and the Social media Links with the Function */}
       <div>
         {showLinks(isOpen, NormLinks)}
-        {/* Dark Mode Toggle Button with prop buttons comign from layout */}
-        <DarkModeToggle theme={theme} toggleTheme={toggleTheme} />
         {showLinks(isOpen, SocLinks)}
       </div>
     </SBar>
   )
 }
 
-const DarkModeToggle = styled(Toggle)`
-  font-size: 2rem;
-`
-
 const SBar = styled.aside`
-  background: ${({ theme }) => theme.body};
   position: fixed;
   top: 0;
   left: 0;

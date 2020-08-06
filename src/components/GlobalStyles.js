@@ -7,8 +7,16 @@ export const GlobalStyles = createGlobalStyle`
   padding: 0;
   box-sizing: border-box;
 }
+
 p{
   font-size: 1rem;
+  color: ${({ theme }) => theme.text};
+}
+
+nav{
+  background: ${({ theme }) => theme.colorNav};
+  background-color: ${({ theme }) => theme.colorNav};
+
 }
 body {
     line-height: 1.5;
@@ -31,11 +39,13 @@ h1,
 h2,
 h3,
 h4 {
-  letter-spacing: ${({ theme }) => theme.spacing};;
+  letter-spacing: ${({ theme }) => theme.spacing};
   text-transform: capitalize;
   line-height: 1.25;
   margin-bottom: 0.75rem;
-  font-family: ${({ theme }) => theme.primaryFont};;
+  font-family: ${({ theme }) => theme.primaryFont};
+  color: ${({ theme }) => theme.text};
+
 }
 h1 {
   font-size: 3rem;
