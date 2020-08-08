@@ -23,6 +23,7 @@ const SideBar = ({ isOpen, toggleSidebar }) => {
 }
 
 const SBar = styled.aside`
+  background: ${({ theme }) => theme.body};
   position: fixed;
   top: 0;
   left: 0;

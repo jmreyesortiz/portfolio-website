@@ -1,9 +1,18 @@
 import React from "react"
 import Image from "gatsby-image"
-import { FaGithubSquare, FaGooglePlay } from "react-icons/fa"
+import { FaGithubSquare, FaGooglePlay, FaExternalLinkAlt } from "react-icons/fa"
 import styled from "styled-components"
 
-const Project = ({ description, title, github, stack, url, image, index }) => {
+const Project = ({
+  description,
+  title,
+  github,
+  stack,
+  url,
+  image,
+  index,
+  ind,
+}) => {
   return (
     <Proj>
       <Parent>
@@ -23,15 +32,17 @@ const Project = ({ description, title, github, stack, url, image, index }) => {
         </ProjStack>
         <ProjLinks>
           <Div>
-            <ProjIconLink href={github}>
+            <ProjIconLink target="_blank" href={github}>
               <FaGithubSquare />
             </ProjIconLink>
           </Div>
           {/* Icon, if it has a props as Google play display the link. */}
-          <ProjIconLink href={url}>
+          <ProjIconLink target="_blank" href={url}>
             {stack.map(item => {
               if (item.title === "Google Play") {
                 return <FaGooglePlay key={item.id} />
+              } else if (item.title === "Express") {
+                return <FaExternalLinkAlt key={item.id} />
               }
               return null
             })}

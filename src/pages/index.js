@@ -32,9 +32,13 @@ export default ({ data }) => {
 
 export const query = graphql`
   {
-    allStrapiProjects(filter: { featured: { eq: true } }) {
+    allStrapiProjects(
+      sort: { fields: ind }
+      filter: { featured: { eq: true } }
+    ) {
       nodes {
         github
+        ind
         id
         description
         title

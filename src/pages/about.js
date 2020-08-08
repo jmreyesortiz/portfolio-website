@@ -10,7 +10,9 @@ const About = ({
     about: { nodes },
   },
 }) => {
-  const { stack, tools, databases } = nodes[0]
+  const ReactMarkdown = require("react-markdown")
+
+  const { stack, tools, databases, content } = nodes[0]
   return (
     <Layout>
       <SEO
@@ -23,16 +25,7 @@ const About = ({
             <h2>Hi, Im Juan M. Reyes-Ortiz </h2>
             <Underline></Underline>
             <Greet>Software Engineer from Houston, Tx</Greet>
-            <p>
-              I fell in love with software development, and never looked back. I
-              started developing <strong>Android </strong>apps using
-              <strong> Java. </strong>
-              At the same time, I delved into web development and currently use
-              <strong> React JS, Gatsby, or Node</strong>. I naturally love
-              learning new things and
-              <LinkA to="/blog"> writing about them</LinkA>. For any inquiry,
-              please feel free to <LinkA to="/contact">contact me.</LinkA>.
-            </p>
+            <ReactMarkdown>{content}</ReactMarkdown>
           </AbtTxtCtr>
           <SklCtr>
             <TtlTxt>
@@ -58,7 +51,7 @@ const About = ({
               </Cat>
             </Skl2>
             <Skl3>
-              <Desc>Databases:</Desc>
+              <Desc>Back-End:</Desc>
               <Cat>
                 {/* Iteration for the stack database*/}
                 {databases.map(item => {

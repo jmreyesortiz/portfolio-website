@@ -23,10 +23,11 @@ export default ProjectsPage
 
 export const query = graphql`
   {
-    allStrapiProjects {
+    allStrapiProjects(sort: { fields: ind }) {
       nodes {
         github
         id
+        ind
         description
         title
         url

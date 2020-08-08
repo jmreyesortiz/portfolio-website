@@ -7,6 +7,7 @@ import {
   Headings,
   Code,
   BlockQuote,
+  MdxImage,
 } from "./src/components/Complete"
 
 const components = {
@@ -15,6 +16,7 @@ const components = {
   inlineCode: Code,
   blockquote: BlockQuote,
   pre: PrismWrapper,
+  mdxImage: MdxImage,
 }
 
 export const wrapMDX = ({ element }) => {

@@ -124,7 +124,7 @@ const Hero = () => {
         <HeroInfo>
           <div>
             <Underline></Underline>
-            <H1>Juan Reyes-Ortiz</H1>
+            <Name>Juan Reyes-Ortiz</Name>
             <H4>Software Engineer</H4>
             <Link to="/about">
               <HeroButton>About Me</HeroButton>
@@ -137,11 +137,17 @@ const Hero = () => {
   )
 }
 
-const H1 = styled.h1`
+const Name = styled.h1`
   color: ${({ theme }) => theme.colorHeader};
+  @media screen and (max-width: 768px) {
+    font-size: 2.3rem;
+  }
 `
 const H4 = styled.h4`
   color: ${({ theme }) => theme.colorHeader};
+  @media screen and (max-width: 768px) {
+    font-size: 0.9rem;
+  }
 `
 const Underline = styled.div`
   margin-bottom: -1rem;
@@ -160,19 +166,15 @@ const Particles = styled(Part)`
   align-items: center;
   width: 100%;
   margin: 0 auto;
-  height: 80vh;
+  height: 70vh;
 
-  @media screen and (min-width: 992px) {
-    height: 70vh;
-  }
   @media screen and (max-width: 992px) {
-    height: 70vh;
+    height: 65vh;
     opacity: 1;
   }
 `
 const HeroHeader = styled.header`
   background: ${({ theme }) => theme.background};
-
   height: 80vh;
 
   @media screen and (min-width: 992px) {
