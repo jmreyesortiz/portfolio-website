@@ -15,7 +15,7 @@ export const PrismWrapper = props => {
   } else if (className === "language-js") {
     language = "js"
   } else if (className === "language-Java") {
-    language = "Java"
+    language = "java"
   }
   return (
     <Highlight

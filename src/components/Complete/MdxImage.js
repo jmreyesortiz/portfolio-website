@@ -13,7 +13,7 @@ export const MdxImage = ({ children }) => {
 const MdxImg = styled.div`
   img {
     width: 40rem;
-    border-radius: 100px;
+    border-radius: 14px;
     object-fit: cover;
   }
 `
