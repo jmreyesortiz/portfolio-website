@@ -16,6 +16,7 @@ const ComponentName = ({ data }) => {
   const { category } = data.article
   const { desc } = data.article
 
+  //Returns the template version of the article programmatically
   return (
     <Layout>
       <SEO title={title} description={desc}></SEO>
