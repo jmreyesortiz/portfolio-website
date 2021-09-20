@@ -1,35 +1,14 @@
 import React from "react"
 import styled from "styled-components"
-import { func, bool, string } from "prop-types"
-
-const Toggle = ({ theme, toggleTheme, isNav }) => {
-  const isLight = theme === "light"
-  return (
-    <>
-      <DarkModeToggle isNav={isNav}>
-        <SunIcon onClick={toggleTheme}>☀</SunIcon>
-        {/*
-          <ToggleControl>
-          <ToggleCheckbox
-            type="checkbox"
-            checked={!theme}
-            onChange={toggleTheme}
-            id="dmcheck"
-          ></ToggleCheckbox>
-              <ToggleLabel htmlFor="dmcheck" />
-        </ToggleControl>*/}
-        <MoonIcon>☾</MoonIcon>
-      </DarkModeToggle>
-    </>
-  )
-}
+import { func, string } from "prop-types"
 
 const DarkModeToggle = styled.section`
   display: flex;
   margin: 0 auto;
+  margin-left: 2rem;
   justify-content: center;
   margin-left: 2rem;
-  & > span {
+  & > button {
     font-size: 1em;
     background: none;
     border: none;
@@ -45,7 +24,7 @@ const DarkModeToggle = styled.section`
   }
   @media screen and (max-width: 768px) {
     justify-content: center;
-    margin-left: 7rem;
+    margin-left: 6rem;
     ${props => (props.isNav ? { display: "none" } : { display: "absolute" })}
     ${props => (props.isNav ? { position: "relative" } : { position: "fixed" })}
   }
@@ -93,7 +72,27 @@ const ToggleCheckbox = styled.input`
 
 const ToggleLabel = styled.label``
 const SunIcon = styled.button``
-const MoonIcon = styled.span``
+const MoonIcon = styled.button``
+
+const Toggle = ({ theme, toggleTheme, isNav }) => {
+  return (
+    <>
+      <DarkModeToggle isNav={isNav}>
+        <SunIcon>☀</SunIcon>
+        <ToggleControl>
+          <ToggleCheckbox
+            type="checkbox"
+            checked={theme === "light" ? false : true}
+            onChange={toggleTheme}
+            id="dmcheck"
+          ></ToggleCheckbox>
+          <ToggleLabel htmlFor="dmcheck" />
+        </ToggleControl>
+        <MoonIcon>☾</MoonIcon>
+      </DarkModeToggle>
+    </>
+  )
+}
 
 Toggle.propTypes = {
   theme: string.isRequired,

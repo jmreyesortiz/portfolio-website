@@ -3,16 +3,7 @@ import Image from "gatsby-image"
 import { FaGithubSquare, FaGooglePlay, FaExternalLinkAlt } from "react-icons/fa"
 import styled from "styled-components"
 
-const Project = ({
-  description,
-  title,
-  github,
-  stack,
-  url,
-  image,
-  index,
-  ind,
-}) => {
+const Project = ({ description, title, github, stack, url, image, index }) => {
   return (
     <Proj>
       <Parent>
@@ -88,7 +79,6 @@ export const Parent = styled.div`
   z-index: 1;
   overflow: hidden;
   position: relative;
-
   display: inline-block;
   :hover ${Child} {
     -ms-transform: scale(1.2);

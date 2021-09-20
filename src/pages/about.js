@@ -4,6 +4,8 @@ import Layout from "../components/Layout"
 import styled from "styled-components"
 import SEO from "../components/SEO"
 import { FaWrench, FaLink, FaUniversity } from "react-icons/fa"
+import { dataLinks } from "../constants/mainTech"
+import Acc from "../components/Accordion"
 
 const About = ({
   data: {
@@ -11,8 +13,8 @@ const About = ({
   },
 }) => {
   const ReactMarkdown = require("react-markdown")
-
   const { stack, tools, databases, content } = nodes[0]
+
   return (
     <Layout>
       <SEO
@@ -21,85 +23,109 @@ const About = ({
       />
       <AboutPage>
         <AbtCtr>
-          <AbtTxtCtr>
+          <AboutTextCenter>
             <h2>Hi, Im Juan M. Reyes-Ortiz </h2>
             <Underline></Underline>
             <Greet>Software Engineer from Houston, Tx</Greet>
             <ReactMarkdown>{content}</ReactMarkdown>
-          </AbtTxtCtr>
-          <SklCtr>
-            <TtlTxt>
-              Skills <FaWrench></FaWrench>
+            <SkillText>
+              Tech I've been working with
               <Underline />
-            </TtlTxt>
-            <Skl1>
-              <Desc>Programming:</Desc>
-              <Cat>
-                {/* Iteration for the title stack*/}
-                {stack.map(item => {
-                  return <span key={item.id}>{item.title}</span>
-                })}
-              </Cat>
-            </Skl1>
-            <Skl2>
-              <Desc>Tools and Technologies:</Desc>
-              <Cat>
-                {/* Iteration for the tools stack */}
-                {tools.map(item => {
-                  return <span key={item.id}>{item.tool}</span>
-                })}
-              </Cat>
-            </Skl2>
-            <Skl3>
-              <Desc>Back-End:</Desc>
-              <Cat>
-                {/* Iteration for the stack database*/}
-                {databases.map(item => {
-                  return <span key={item.id}>{item.database}</span>
-                })}
-              </Cat>
-            </Skl3>
-          </SklCtr>
-          <EdCtr>
-            <TtlTxt>
-              Education <FaUniversity></FaUniversity>
+            </SkillText>
+            <TechGrid>
+              {dataLinks.map(item => {
+                return (
+                  <MainCategory>
+                    <span key={item.id}>{item.text}</span>
+                  </MainCategory>
+                )
+              })}
+            </TechGrid>
+
+            <SkillText>
+              More About Me
               <Underline />
-            </TtlTxt>
-            <EdUl>
-              <EdLi>
-                <h4>University of Houston Downtown</h4> Bachelors of Science in
-                Computer Science - 2019
-              </EdLi>
-            </EdUl>
-          </EdCtr>
-          <LnkCtr>
-            <TtlTxt>
-              Links <FaLink></FaLink>
-              <Underline />
-            </TtlTxt>
-            <LnkUl>
-              <LnkLi>
-                <LinkA to="/projects">
-                  <Desc>Projects</Desc>
-                </LinkA>
-              </LnkLi>
-              <LnkLi>
-                <LinkA to="/blog">
-                  <Desc>Blog </Desc>
-                </LinkA>
-              </LnkLi>
-              <LnkLi>
-                <LinkA to="/contact">
-                  <Desc>Contact Me</Desc>
-                </LinkA>
-              </LnkLi>
-            </LnkUl>
-          </LnkCtr>
+            </SkillText>
+
+            <Accordion title="Skills">
+              <Skill>
+                <Description>Programming Languages:</Description>
+                <Category>
+                  {/* Iteration for the title stack*/}
+                  {stack.map(item => {
+                    return <span key={item.id}>{item.title}</span>
+                  })}
+                </Category>
+              </Skill>
+              <Skill>
+                <Description>Frameworks and Tools:</Description>
+                <Category>
+                  {/* Iteration for the tools stack */}
+                  {tools.map(item => {
+                    return <span key={item.id}>{item.tool}</span>
+                  })}
+                </Category>
+              </Skill>
+              <Skill>
+                <Description>IDE’s and other technologies:</Description>
+                <Category>
+                  {/* Iteration for the stack database*/}
+                  {databases.map(item => {
+                    return <span key={item.id}>{item.database}</span>
+                  })}
+                </Category>
+              </Skill>
+            </Accordion>
+            <Accordion title="Education">
+              <EducationCenter>
+                {/* <SkillText>
+                  Education <FaUniversity></FaUniversity>
+                  <Underline />
+                </SkillText> */}
+                <EdUl>
+                  <EdLi>
+                    <h4>University of Houston Downtown</h4> Bachelors of Science
+                    in Computer Science - 2019
+                  </EdLi>
+                </EdUl>
+              </EducationCenter>
+            </Accordion>
+            <Accordion title="Links">
+              <LnkUl>
+                <LnkLi>
+                  <LinkTo to="/projects">
+                    <Description>Projects</Description>
+                  </LinkTo>
+                </LnkLi>
+                <LnkLi>
+                  <LinkTo to="/blog">
+                    <Description>Blog </Description>
+                  </LinkTo>
+                </LnkLi>
+                <LnkLi>
+                  <LinkTo to="/contact">
+                    <Description>Contact Me</Description>
+                  </LinkTo>
+                </LnkLi>
+              </LnkUl>
+            </Accordion>
+          </AboutTextCenter>
         </AbtCtr>
       </AboutPage>
     </Layout>
   )
 }
+
+const Accordion = styled(Acc)`
+  margin-top: 2rem;
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+`
+
+const TechGrid = styled.div`
+  display: grid;
+  grid-template-columns: 150px 150px 150px;
+`
 
 const Greet = styled.h4`
   font-family: ${({ theme }) => theme.secondaryFont};
@@ -118,13 +144,13 @@ const AbtCtr = styled.div`
     width: 95vw;
   }
 `
-const AbtTxtCtr = styled.div`
-  max-width: 700px;
+const AboutTextCenter = styled.div`
+  max-width: 43.5em;
   margin: auto;
   margin-bottom: 2rem;
 `
 
-const LinkA = styled(Link)`
+const LinkTo = styled(Link)`
   text-decoration: underline;
   color: ${({ theme }) => theme.text};
   :hover {
@@ -132,29 +158,23 @@ const LinkA = styled(Link)`
   }
 `
 
-const SklCtr = styled.div`
-  max-width: 700px;
+const SkillsCenter = styled.div`
+  max-width: 43.5em;
   margin: auto;
 `
-const Skl1 = styled.div`
+const Skill = styled.div`
   margin-top: -1.5rem;
 `
-const Skl2 = styled.div`
-  margin-top: -1.5rem;
-`
-const Skl3 = styled.div`
-  margin-top: -1.5rem;
+const SkillText = styled.h3`
+  font-family: ${({ theme }) => theme.secondaryFont};
+  margin-bottom: 3rem;
+  font-size: 1.8rem;
 `
 
-const TtlTxt = styled.h3`
-  font-family: ${({ theme }) => theme.secondaryFont};
-  margin-bottom: 2.5rem;
-`
-
-const Desc = styled.h4`
+const Description = styled.h4`
   font-family: ${({ theme }) => theme.secondaryFont};
 `
-const Cat = styled.section`
+const Category = styled.section`
   margin-bottom: 1rem;
   span {
     :nth-child(1) {
@@ -162,6 +182,10 @@ const Cat = styled.section`
       color: ${({ theme }) => theme.stackBorderColor2};
     }
     :nth-child(2) {
+      border-color: ${({ theme }) => theme.stackTextColor2};
+      color: ${({ theme }) => theme.stackBorderColor2};
+    }
+    :nth-child(3) {
       border-color: ${({ theme }) => theme.stackTextColor2};
       color: ${({ theme }) => theme.stackBorderColor2};
     }
@@ -174,7 +198,7 @@ const Cat = styled.section`
     border-color: ${({ theme }) => theme.stackBorderColor};
     color: ${({ theme }) => theme.stackTextColor};
     font-weight: lighter;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     margin-bottom: 1rem;
   }
 `
@@ -192,7 +216,7 @@ const LnkLi = styled.li`
   margin-bottom: -1rem;
 `
 
-const EdCtr = styled.div`
+const EducationCenter = styled.div`
   max-width: 700px;
   margin: auto;
   margin-bottom: 3rem;
@@ -205,6 +229,21 @@ const EdUl = styled.ul`
 
 const EdLi = styled.li`
   margin-bottom: -1rem;
+`
+
+const MainCategory = styled.section`
+  margin-bottom: 1rem;
+  margin-right: 0.7rem;
+  font-family: ${({ theme }) => theme.secondaryFont};
+  display: inline-block;
+  border: 2px solid;
+  word-spacing: 5px;
+  padding: 0.25rem 0.5rem;
+  border-color: ${({ theme }) => theme.stackTextColor2};
+  color: ${({ theme }) => theme.stackBorderColor2};
+  font-weight: medium;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
 `
 
 export const query = graphql`
@@ -240,7 +279,7 @@ export const query = graphql`
 
 const Underline = styled.section`
   width: 5rem;
-  height: 0.15rem;
+  height: 0.2rem;
   margin-bottom: 1.25rem;
   background: ${({ theme }) => theme.colorPrimary5};
 `

@@ -17,6 +17,7 @@ const Navbar = ({ toggleSidebar, theme, toggleTheme }) => {
           </NavHeader>
           <Links></Links>
         </NavCenter>
+        {/*<Toggler theme={theme} toggleTheme={toggleTheme} isNav={true}></Toggler> */}
         {/* Props coming from layout, passed to the toggle Button in Navbar*/}
       </Nav>
     </>
@@ -62,7 +63,6 @@ const ToggleButton = styled.button`
   color: ${({ theme }) => theme.colorPrimary5};
   cursor: pointer;
   transition: ${({ theme }) => theme.transition};
-
   &:hover {
     color: ${({ theme }) => theme.colorPrimary2};
   }
