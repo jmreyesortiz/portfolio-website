@@ -28,10 +28,10 @@ const Acc = ({ children, title }) => {
   return (
     <Accordion>
       <AccordionItem>
-        <AccordionTitle onClick={() => setIsActive(!isActive)}>
+        <AccordionTitle isActive  = {isActive} onClick={() => setIsActive(!isActive)}>
           <SkillText>{titleSelect(title)}</SkillText>
           <PlusSign>{isActive ? "-" : "+"}</PlusSign>
-        </AccordionTitle>
+        </AccordionTitle >
         {isActive && <AccordionContent>{children}</AccordionContent>}
       </AccordionItem>
     </Accordion>
@@ -67,6 +67,7 @@ margin-top: 1rem;
 const AccordionItem = styled.div`
 `
 const AccordionTitle = styled.div`
+  background-color: ${props => !props.isActive? 'white':({ theme }) => theme.colorPrimary5 };
   border: .2rem solid black;
   padding: .5rem;
   display: flex;
@@ -74,11 +75,11 @@ const AccordionTitle = styled.div`
   justify-content: space-between;
   cursor: pointer;
   /* background-color: ${({ theme }) => theme.colorPrimary5}; */
-  background-color: white;
+  /* background-color: white; */
   :hover {
     background-color: black;
     h3{
-        color: ${({ theme }) => theme.colorPrimary5};
+        color: white;
     }
   }
 `

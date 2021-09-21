@@ -11,7 +11,7 @@ module.exports = {
     author: "@jmreyesortiz",
     twitterUsername: "@jmreyesortiz",
     image: "/twitter-img.png",
-    siteUrl: "https://jmreyesortiz.com",
+    siteUrl: "https://jmro.dev",
   },
   /* Your site config here */
   plugins: [

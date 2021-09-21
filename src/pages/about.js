@@ -3,7 +3,6 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/Layout"
 import styled from "styled-components"
 import SEO from "../components/SEO"
-import { FaWrench, FaLink, FaUniversity } from "react-icons/fa"
 import { dataLinks } from "../constants/mainTech"
 import Acc from "../components/Accordion"
 
@@ -94,17 +93,17 @@ const About = ({
               <LnkUl>
                 <LnkLi>
                   <LinkTo to="/projects">
-                    <Description>Projects</Description>
+                    <MoreLinks>Projects</MoreLinks>
                   </LinkTo>
                 </LnkLi>
                 <LnkLi>
                   <LinkTo to="/blog">
-                    <Description>Blog </Description>
+                    <MoreLinks>Blog </MoreLinks>
                   </LinkTo>
                 </LnkLi>
                 <LnkLi>
                   <LinkTo to="/contact">
-                    <Description>Contact Me</Description>
+                    <MoreLinks>Contact Me</MoreLinks>
                   </LinkTo>
                 </LnkLi>
               </LnkUl>
@@ -158,10 +157,10 @@ const LinkTo = styled(Link)`
   }
 `
 
-const SkillsCenter = styled.div`
-  max-width: 43.5em;
-  margin: auto;
-`
+// const SkillsCenter = styled.div`
+//   max-width: 43.5em;
+//   margin: auto;
+// `
 const Skill = styled.div`
   margin-top: -1.5rem;
 `
@@ -174,6 +173,12 @@ const SkillText = styled.h3`
 const Description = styled.h4`
   font-family: ${({ theme }) => theme.secondaryFont};
 `
+
+const MoreLinks = styled.h4`
+  font-family: ${({ theme }) => theme.secondaryFont};
+  font-size: 1.5rem;
+`
+
 const Category = styled.section`
   margin-bottom: 1rem;
   span {
@@ -203,10 +208,10 @@ const Category = styled.section`
   }
 `
 
-const LnkCtr = styled.div`
-  max-width: 700px;
-  margin: auto;
-`
+// const LnkCtr = styled.div`
+//   max-width: 700px;
+//   margin: auto;
+// `
 const LnkUl = styled.ul`
   margin: 0 auto;
   margin-top: -1.5rem;

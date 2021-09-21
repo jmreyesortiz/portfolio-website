@@ -16,7 +16,7 @@ export default ({ data }) => {
     <Layout>
       <SEO
         title="Home | Juan M. Reyes Ortiz"
-        description="Home Page Jmreyesortiz.com"
+        description="Home Page jmro.dev"
       />
       <Hero></Hero>
       <Projects

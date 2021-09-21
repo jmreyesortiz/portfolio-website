@@ -8,13 +8,13 @@ const contact = () => {
     <Layout>
       <SEO title="Contact | Juan M. Reyes Ortiz" description="Contact"></SEO>
       <ContactPage>
-        <ContactForm>
+        <ContactForm action="https://formspree.io/f/xgenzowp" method="POST">
           <Heading>Get in Touch!</Heading>
-          <FormGroup action="https://formspree.io/xgenzowp" method="POST">
+          <FormGroup>
             <FormContent>
               <InputText name="name" type="text" placeholder="name"></InputText>
               <EmailText
-                name="email"
+                name="_replyto"
                 type="email"
                 placeholder="email"
               ></EmailText>

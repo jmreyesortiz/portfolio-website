@@ -162,7 +162,6 @@ const Particles = styled(Part)`
   position: absolute;
   margin-top: -5rem;
   padding-top: 5rem;
-  display: grid;
   align-items: center;
   width: 100%;
   margin: 0 auto;
