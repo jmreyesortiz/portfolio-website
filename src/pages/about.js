@@ -119,11 +119,20 @@ const Accordion = styled(Acc)`
   margin-top: 2rem;
   padding-top: 2rem;
   margin-bottom: 2rem;
+  width: 100%;
 `
 
 const TechGrid = styled.div`
   display: grid;
-  grid-template-columns: 150px 150px 150px;
+  grid-template-columns: auto auto auto;
+
+  @media (max-width: 462px){
+    /* display: flex;
+    flex-direction: column;
+    width: 100%; */
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
 `
 
 const Greet = styled.h4`

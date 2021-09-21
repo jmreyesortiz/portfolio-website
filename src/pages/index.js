@@ -3,7 +3,7 @@ import Layout from "../components/Layout"
 import Hero from "../components/Hero"
 import Projects from "../components/Projects.js"
 import { graphql } from "gatsby"
-import Articles from "../components/Articles"
+// import Articles from "../components/Articles"
 import SEO from "../components/SEO"
 export default ({ data }) => {
   //destructuring
@@ -25,7 +25,7 @@ export default ({ data }) => {
         title="Featured Projects"
         showLink
       />
-      <Articles articles={articles} title="Latest Articles" showLink></Articles>
+      {/* <Articles articles={articles} title="Latest Articles" showLink></Articles> */}
     </Layout>
   )
 }

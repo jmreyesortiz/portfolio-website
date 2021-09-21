@@ -61,7 +61,7 @@ margin-top: 1rem;
   max-width: 700px;
   justify-self: left;
   @media screen and (max-width: 700px) {
-    width: 90%;
+    width: 100%;
   }
 `
 const AccordionItem = styled.div`

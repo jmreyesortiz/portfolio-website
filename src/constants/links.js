@@ -23,11 +23,11 @@ const data = [
     text: "projects",
     url: "/projects/",
   },
-  {
-    id: uuidv4(),
-    text: "blog",
-    url: "/blog/",
-  },
+  // {
+  //   id: uuidv4(),
+  //   text: "blog",
+  //   url: "/blog/",
+  // },
   {
     id: uuidv4(),
     text: "contact",
