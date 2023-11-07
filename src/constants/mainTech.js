@@ -2,23 +2,23 @@ import { v4 as uuidv4 } from "uuid"
 export const dataLinks = [
   {
     id: uuidv4(),
-    text: "React",
+    text: "Django",
   },
   {
     id: uuidv4(),
-    text: "TypesCript",
-  },
-  {
-    id: uuidv4(),
-    text: "JavaScript",
-  },
-  {
-    id: uuidv4(),
-    text: "NodeJS",
+    text: "Python",
   },
   {
     id: uuidv4(),
     text: "GraphQL",
+  },
+  {
+    id: uuidv4(),
+    text: "Javascript",
+  },
+  {
+    id: uuidv4(),
+    text: "React",
   },
   {
     id: uuidv4(),

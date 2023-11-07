@@ -30,11 +30,11 @@ const data = [
     icon: <FaGithub className="social-icon"></FaGithub>,
     url: "https://github.com/jmreyesortiz",
   },
-  {
-    id: uuidv4(),
-    icon: <FaMedium className="social-icon"></FaMedium>,
-    url: "https://medium.com/@jmreyesortiz/",
-  },
+  // {
+  //   id: uuidv4(),
+  //   icon: <FaMedium className="social-icon"></FaMedium>,
+  //   url: "https://medium.com/@jmreyesortiz/",
+  // },
   {
     id: uuidv4(),
     icon: <FaTwitterSquare className="social-icon"></FaTwitterSquare>,
